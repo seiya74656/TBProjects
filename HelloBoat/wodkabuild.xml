@@ -1,0 +1,9 @@
+<project name="HelloBoat" default="build" basedir=".">
+	<!-- Information for creating the start Database for FrontBase -->
+	<property name="database.name" value="HelloBoat"/>
+	<property name="database.userid" value="wodka"/>
+	<property name="database.password" value="wodka"/>
+	
+	<property name="wodka.builder" value="/Users/__userName__/Library/Application Support/WOLips/TreasureBoat" />
+	<import file="${wodka.builder}/Templates/common-app.xml" />
+</project>

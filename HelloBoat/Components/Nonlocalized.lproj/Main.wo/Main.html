@@ -1,0 +1,22 @@
+<webobject name="PageWrapper">
+
+	<div class="row">
+		<div class="twelve columns">
+			<h2>Welcome to TreasureBoats</h2>
+			<wo:str value = "$plaintext" /><br />
+			<wo:str value = "$emptytext" valueWhenEmpty = "$plaintext" /><br />
+			<wo:str value = "$number" numberformat = "0.00" /><br />
+			<wo:str value = "$timestamp" dateformat = "%d.%m.%y" /><br />
+			<wo:str value = "$htmltext" escapeHTML = "false" /><br />
+			<wo:str value = "$markdowntext" /><br />
+			<wo:TBString value = "$markdowntext" markdown = "true" log = "true" /><br /><script>			
+			<wo:TBString value = "$someJavascript" log = "true"></wo:TBString>		</script>	
+			<wo:TBImage src = "static://images/tb.jpg"  />
+			<wo:TBImage src = "static://app:images/tb.jpg" />
+			<wo:TBImage framework = "TBContentsDelivery" filename = "images/feedback.png" />
+			<wo:TBImage src = "http://upload.wikimedia.org/wikipedia/en/0/0c/ITunes_11_Logo.png" width = "50" />
+			<webobject name="Welcome" />
+		</div>
+	</div>
+	
+</webobject>

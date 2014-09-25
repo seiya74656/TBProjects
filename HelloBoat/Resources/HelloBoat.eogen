@@ -1,0 +1,11 @@
+ -destination GeneratedEOs \
+ -extension java \
+ -java \
+ -javaTemplate _WOdkaEntity.java \
+ -model Resources/HelloBoat.eomodeld \
+ -packagedirs \
+ -subclassDestination Sources \
+ -subclassJavaTemplate WOdkaEntity.java \
+ -templatedir EOTemplates \
+ -verbose \
+ -loadModelGroup
