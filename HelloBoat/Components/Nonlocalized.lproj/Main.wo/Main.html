@@ -2,20 +2,35 @@
 
 	<div class="row">
 		<div class="twelve columns">
-			<h2>Welcome to TreasureBoats</h2>
-			<wo:str value = "$plaintext" /><br />
-			<wo:str value = "$emptytext" valueWhenEmpty = "$plaintext" /><br />
-			<wo:str value = "$number" numberformat = "0.00" /><br />
-			<wo:str value = "$timestamp" dateformat = "%d.%m.%y" /><br />
-			<wo:str value = "$htmltext" escapeHTML = "false" /><br />
-			<wo:str value = "$markdowntext" /><br />
+			<h2>TreasureBoats Examples</h2>
+			<wo:TBString value = "--- \n ***TBString***" markdown = "true"></wo:TBString>
+			
+			<wo:TBString value = "$plaintext" /><br />
+			<wo:TBString value = "$emptytext" valueWhenEmpty = "$plaintext2" /><br />
+			<wo:TBString numberformat = "0.00" value = "$number" />
+			<wo:TBString  value = "$timestamp" dateformat = "%d.%m.%y" /><br />
+			<wo:TBString value = "$htmltext" escapeHTML = "false" />
+			
+			<wo:TBString value = "--- \n ***TBImage***" markdown = "true"></wo:TBString>
+			<wo:TBString value = "$markdowntext" /><br />
 			<wo:TBString value = "$markdowntext" markdown = "true" log = "true" /><br /><script>			
 			<wo:TBString value = "$someJavascript" log = "true"></wo:TBString>		</script>	
-			<wo:TBImage src = "static://images/tb.jpg"  />
-			<wo:TBImage src = "static://app:images/tb.jpg" />
+
+			<wo:TBString value = "--- \n ***TBImage***" markdown = "true"></wo:TBString>
+			<wo:TBImage src = "static://images/tb.jpg" height = "200" width = "200" />
+			<wo name = "tbfi" />
+			<wo:TBImage src = "static://app:images/tb.jpg" height = "200" width = "200" />
 			<wo:TBImage framework = "TBContentsDelivery" filename = "images/feedback.png" />
 			<wo:TBImage src = "http://upload.wikimedia.org/wikipedia/en/0/0c/ITunes_11_Logo.png" width = "50" />
-			<webobject name="Welcome" />
+			<wo:TBImage src = "$sampleimage2"></wo:TBImage>
+			<wo:TBString value = "$sampleMarkdownImage" markdown = "true"></wo:TBString>
+
+			<wo:TBString value = "--- \n ***TBMailTo***" markdown = "true"></wo:TBString>
+			<wo:TBMailTo email = "rf@enemy.cx" useContent = "false" />
+			<wo:TBMailTo email = "rf@enemy.cx" useContent = "true">
+			<wo:TBString value = "Email Test with markdown" markdown = "true"></wo:TBString></wo:TBMailTo>
+			<wo:TBString value = "--- \n ***TBFixedLengthString***" markdown = "true"></wo:TBString>
+			<wo:TBFixedLengthString value = "hello &uuml;ber all" length = "14" escapeHTML = "false" suffixWhenTrimmed = "..."></wo:TBFixedLengthString>
 		</div>
 	</div>
 	

@@ -1,5 +1,6 @@
 package org.treasureboat.app.components;
 
+import org.treasureboat.foundation.image.TBFImage;
 import org.treasureboat.webcore.annotations.TBNonSynchronizing;
 import org.treasureboat.webcore.annotations.TBPageAccess;
 import org.treasureboat.webcore.appserver.location.TBWStaticResource;
@@ -28,13 +29,18 @@ public class Main extends TBComponent {
 	public Main(WOContext context) {
 		super(context);
 	}
-
+	
+	
 	public String plaintext() {
     return "This is a plain txt";
 }
+  
+  public String plaintext2() {
+    return "This is a plain txt when value is empty";
+}
 
   public String emptytext() {
-    return "This is a plain txt";
+    return "";
 }
   
   public int number(){
@@ -58,6 +64,20 @@ public String someJavascript(){
   return "var a = 1";
 }
 
+public TBFImage sampleimage2(){
+    return new TBFImage("static://images/logo.png", "Alt Text Image", 200, 100, "page://Main", "_blank","","-webkit-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 1);");  //IMGURL, ALT Text, Width, Height, HREF, Target, CSS, Style
+}
+
+public String sampleMarkdownImage(){
+  StringBuilder sb = new StringBuilder();
+  sb.append("---\n");
+  sb.append("***Markdown Image Sample***\n");
+  sb.append("![WithImage](static://images/logo.png) \n");
+  sb.append("---\n");
+  sb.append("Link [Testlink](http://www.google.com) \n");
+  return sb.toString();
+  
+}
 public TBWStaticResource sampleimage(){
 TBWStaticResource sr = new TBWStaticResource("static://images/tb.jpg");
  return sr;
