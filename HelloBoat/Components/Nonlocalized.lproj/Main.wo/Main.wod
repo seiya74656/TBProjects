@@ -3,7 +3,7 @@ PageWrapper : TBEDefaultPageWrapper {
 
 Formatierungslink : TBHyperlink {
 	target = "_blank";
-	string = "TBHyperlink String WOD";
+	string = "TBHyperlink String WOD to FORMATIERUNGEN";
 	pageName = "Formatierungen";
 }
 

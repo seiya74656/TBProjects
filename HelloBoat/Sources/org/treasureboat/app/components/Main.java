@@ -82,4 +82,5 @@ public TBWStaticResource sampleimage(){
 TBWStaticResource sr = new TBWStaticResource("static://images/tb.jpg");
  return sr;
  }
+
 }
