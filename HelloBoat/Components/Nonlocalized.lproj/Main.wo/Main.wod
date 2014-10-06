@@ -1,8 +1,15 @@
 PageWrapper : TBEDefaultPageWrapper {
 }
 
+Formatierungslink : TBHyperlink {
+	target = "_blank";
+	string = "TBHyperlink String WOD";
+	pageName = "Formatierungen";
+}
+
 tbfi : TBImage {
 	src = "static://images/tb.jpg";
 	height = "200";
 	width = "200";
 }
+

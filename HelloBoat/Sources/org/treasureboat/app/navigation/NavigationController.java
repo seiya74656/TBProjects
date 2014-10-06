@@ -1,9 +1,9 @@
 package org.treasureboat.app.navigation;
 
-import org.treasureboat.webcore.appserver.navbar.TBWNavigationBaseController;
-
 import org.treasureboat.app.Session;
 import org.treasureboat.app.components.Main;
+import org.treasureboat.webcore.appserver.navbar.TBWNavigationBaseController;
+
 import com.webobjects.appserver.WOActionResults;
 
 public class NavigationController extends TBWNavigationBaseController {

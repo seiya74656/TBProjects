@@ -1,9 +1,8 @@
 package org.treasureboat.app.override;
 
-import org.treasureboat.webcore.override.TBWInitializerOfFirstDataCreator;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.treasureboat.webcore.override.TBWInitializerOfFirstDataCreator;
 import org.treasureboat.webcore.security.grant.TBWGrantAccess;
 
 public class FirstDataCreator extends TBWInitializerOfFirstDataCreator { 
