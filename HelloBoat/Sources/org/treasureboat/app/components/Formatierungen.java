@@ -3,8 +3,8 @@ package org.treasureboat.app.components;
 import org.treasureboat.webcore.annotations.TBPageAccess;
 import org.treasureboat.webcore.components.TBComponent;
 
+import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
-import com.webobjects.foundation.NSTimestamp;
 
 @TBPageAccess (
     navigationState = "Welcome"
@@ -28,8 +28,10 @@ public class Formatierungen extends TBComponent {
   //********************************************************************
   //  Methods : メソッド
   //********************************************************************
-  public NSTimestamp timestamp(){
-    return new NSTimestamp();
+
+  public WOActionResults goBackToMainAction() {
+    Main nextPage = pageWithName(Main.class);
+    return nextPage;
   }
 
 }

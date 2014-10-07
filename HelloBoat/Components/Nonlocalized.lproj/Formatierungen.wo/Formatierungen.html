@@ -3,9 +3,9 @@
 	<div class="row">
 		<div class="twelve columns">
 
-			<h1>Hallo Boat</h1>
+			<h3>Hallo Boat</h3>
 			
-			Es ist <wo:TBString value = "$timestamp" dateformat = "%d.%m.%y genau %H:%M:%S" /><br />
+			Es ist <wo:TBString value = "$currentTime" dateformat = "%d.%m.%y genau %H:%M:%S" /><br />
 			Values for "dateformat":<br />
 			%H = Hour <br />
 			%M = Minute <br />
@@ -24,10 +24,14 @@
 				woff = "static://TBContentsDelivery:font/calligraffiti/Calligraffiti-webfont.woff"
 				ttf = "static://TBContentsDelivery:font/calligraffiti/Calligraffiti-webfont.ttf"
 				fontFamily = "Calligraffiti"
-				selector = "H1"
+				selector = "h3"
 				svg = "static://TBContentsDelivery:font/calligraffiti/Calligraffiti-webfont.svg" />
 
 
+			<hr />
+			<h3>Button</h3>
+			<wo:genericContainer elementName="div" class="$returnButton.cssContainerClass"><wo:TBHyperlink action="$goBackToMainAction" class="$returnButton.cssClass" string="$returnButton.name" /></wo:genericContainer>
+			
 		</div>
 	</div>
 </webobject>
