@@ -15,9 +15,15 @@
 			%y = Year<br />
 
 			<wo:TBString markdown = "true" value = "--- \n ***Buttontest***" />
-			<wo:TBString markdown = "true" value = "--- \n ***UItest***" />
 			
+			<hr />
+			<h3>UI Test</h3>
+			<wo:form>
+				<wo:textfield value="$sampleText" />
+				<wo:submit value="Send" action="$doSubmitAction" />
+			</wo:form>
 			
+			<hr />
 			<wo:TBString markdown = "true" value = "--- \n ***TBFONT***" />
 			
 			<wo:TBFont eot = "static://TBContentsDelivery:font/calligraffiti/Calligraffiti-webfont.eot"

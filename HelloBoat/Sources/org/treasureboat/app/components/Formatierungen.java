@@ -29,6 +29,19 @@ public class Formatierungen extends TBComponent {
   //  Methods : メソッド
   //********************************************************************
 
+  public String sampleText = "";
+  
+  //********************************************************************
+  //  Actions : アクション
+  //********************************************************************
+  
+  public WOActionResults doSubmitAction() {
+    
+    System.err.println("sampleText = " + sampleText);
+    
+    return goToMySelfAction();
+  }
+  
   public WOActionResults goBackToMainAction() {
     Main nextPage = pageWithName(Main.class);
     return nextPage;
