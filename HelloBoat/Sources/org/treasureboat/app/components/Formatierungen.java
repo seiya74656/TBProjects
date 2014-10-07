@@ -29,15 +29,28 @@ public class Formatierungen extends TBComponent {
   //  Methods : メソッド
   //********************************************************************
 
-  public String sampleText = "";
-  
+  public String sampleText, username, passwords = "";
   //********************************************************************
   //  Actions : アクション
   //********************************************************************
+
+  // Counter GET UND SET
+  
+  public void setcounter(int counter) {
+   this.counter = counter+1;
+  } 
+
+  public int getcounter() {
+   return counter;
+ }
+  
+  public int counter;  
+
+  // Counter GET UND SET END
   
   public WOActionResults doSubmitAction() {
-    
-    System.err.println("sampleText = " + sampleText);
+    setcounter(counter);
+    System.err.println("sampleText = " + sampleText + "\n Username = " + username + "\n Password" + passwords);
     
     return goToMySelfAction();
   }

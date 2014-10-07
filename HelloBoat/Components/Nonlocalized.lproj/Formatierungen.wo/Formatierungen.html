@@ -13,13 +13,29 @@
 			%d = Day<br />
 			%m = Month<br />
 			%y = Year<br />
-
+ 	
+ 			<div class="info alert">
+		 		Html :<br />
+		 		&lt;wo:genericContainer elementName="div" class="$returnButton.cssContainerClass"&gt;<br />
+		 		&nbsp;&nbsp;&nbsp;&nbsp;&lt;wo:TBHyperlink action="$goToMySelfAction" class="$returnButton.cssClass" string="$returnButton.name" /&gt;<br />
+		 		&lt;/wo:genericContainer&gt;
+		 	</div>
+		 	
+		 	
 			<wo:TBString markdown = "true" value = "--- \n ***Buttontest***" />
 			
 			<hr />
 			<h3>UI Test</h3>
 			<wo:form>
-				<wo:textfield value="$sampleText" />
+				Counter:
+				<wo:textfield value = "$counter" numberformat = "#" /><br />				
+				Username: 
+				<wo:textField value = "$username" /><br />
+				Password:
+				<wo:passwordField value = "$passwords"  />
+				
+				Notes:
+				<wo:textfield value="$sampleText" /><br />
 				<wo:submit value="Send" action="$doSubmitAction" />
 			</wo:form>
 			
@@ -30,13 +46,15 @@
 				woff = "static://TBContentsDelivery:font/calligraffiti/Calligraffiti-webfont.woff"
 				ttf = "static://TBContentsDelivery:font/calligraffiti/Calligraffiti-webfont.ttf"
 				fontFamily = "Calligraffiti"
-				selector = "h3"
+				selector = "h4"
 				svg = "static://TBContentsDelivery:font/calligraffiti/Calligraffiti-webfont.svg" />
 
 
 			<hr />
-			<h3>Button</h3>
-			<wo:genericContainer elementName="div" class="$returnButton.cssContainerClass"><wo:TBHyperlink action="$goBackToMainAction" class="$returnButton.cssClass" string="$returnButton.name" /></wo:genericContainer>
+			<h4>Button</h4>
+			<wo:genericContainer elementName="div" class="$returnButton.cssContainerClass">
+			<wo:TBHyperlink action="$goBackToMainAction" class="$returnButton.cssClass" string="$returnButton.name" />
+			</wo:genericContainer>
 			
 		</div>
 	</div>
