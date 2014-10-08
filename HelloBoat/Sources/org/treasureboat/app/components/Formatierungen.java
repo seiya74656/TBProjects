@@ -29,7 +29,7 @@ public class Formatierungen extends TBComponent {
   //  Methods : メソッド
   //********************************************************************
 
-  public String sampleText, usernames,passwords = "";
+  public String sampleText, username, usernames,passwords = "";
   //********************************************************************
   //  Actions : アクション
   //********************************************************************
@@ -58,8 +58,6 @@ public class Formatierungen extends TBComponent {
   return usernames;
 }
  
- public String username;
-
  // Username GET UND SET END
  
   public WOActionResults doSubmitAction() {
