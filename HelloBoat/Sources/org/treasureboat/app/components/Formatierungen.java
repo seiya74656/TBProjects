@@ -29,7 +29,7 @@ public class Formatierungen extends TBComponent {
   //  Methods : メソッド
   //********************************************************************
 
-  public String sampleText, username, passwords = "";
+  public String sampleText, usernames,passwords = "";
   //********************************************************************
   //  Actions : アクション
   //********************************************************************
@@ -48,8 +48,24 @@ public class Formatierungen extends TBComponent {
 
   // Counter GET UND SET END
   
+//Usernames GET UND SET
+  
+ public void setusernames(String username) {
+  if (username.equals("seiya")) { usernames = "OK"; } else { usernames = "NOK";}
+ } 
+
+ public String getusernames() {
+  return usernames;
+}
+ 
+ public String username;
+
+ // Username GET UND SET END
+ 
   public WOActionResults doSubmitAction() {
     setcounter(counter);
+    setusernames(username);
+    System.err.println( getcounter() + getusernames() );
     System.err.println("sampleText = " + sampleText + "\n Username = " + username + "\n Password" + passwords);
     
     return goToMySelfAction();
