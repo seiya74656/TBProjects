@@ -20,15 +20,14 @@ public class MyHome extends TBComponent {
   //********************************************************************
   //  Methods : メソッド
   //********************************************************************
-  public String username,hotelkosten, autokosten,datum, uhrzeit;
+  public String username,hotelkosten, autokosten,datum, uhrzeit, telephone;
   //********************************************************************
   //  Actions : アクション
   //********************************************************************
   
   
   public WOActionResults goBackToMainAction() {
-    Main nextPage = pageWithName(Main.class);
-    return nextPage;
+    return goToMySelfAction();
   }
 
 
