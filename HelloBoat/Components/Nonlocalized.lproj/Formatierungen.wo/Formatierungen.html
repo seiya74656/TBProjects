@@ -26,18 +26,18 @@
 			
 			<hr />
 			<h3>UI Test - <wo:TBString value = "$usernames"></wo:TBString></h3>
-			<wo:form>
+			<wo:TBForm>
 				Counter:
-				<wo:textfield value = "$counter" numberformat = "#" /><br />				
+				<wo:TBTextField value = "$counter" numberformat = "#" /><br />				
 				Username: 
-				<wo:textField value = "$username" /><br />
+				<wo:TBTextField value = "$username" /><br />
 				Password:
-				<wo:passwordField value = "$passwords"  />
+				<wo:TBPasswordField value = "$passwords"  />
 				
 				Notes:
-				<wo:textfield value="$sampleText" /><br />
+				<wo:TBTextField value="$sampleText" /><br />
 				<wo:submit value="Send" action="$doSubmitAction" />
-			</wo:form>
+			</wo:TBForm>
 			
 			<hr />
 			<wo:TBString markdown = "true" value = "--- \n ***TBFONT***" />
@@ -52,9 +52,9 @@
 
 			<hr />
 			<h4>Button</h4>
-			<wo:genericContainer elementName="div" class="$returnButton.cssContainerClass">
+			<wo:TBGenericContainer elementName="div" class="$returnButton.cssContainerClass">
 			<wo:TBHyperlink action="$goBackToMainAction" class="$returnButton.cssClass" string="$returnButton.name" />
-			</wo:genericContainer>
+			</wo:TBGenericContainer>
 			
 		</div>
 	</div>
