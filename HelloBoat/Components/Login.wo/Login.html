@@ -1,0 +1,24 @@
+<webobject name="PageWrapper">
+	<div class="row">
+		<div class="twelve columns">
+			<wo:TBString markdown = "true" value = "###Test Loginpage###" />
+			<wo:TBString markdown = "true" value = "---" />
+			<wo:TBForm>
+
+			Login: <wo:TBTextField value="$loginname" class = "$inspectButton.cssContainerClass" /><br />
+
+			Password: <wo:TBPasswordField value = "$loginpass" class = "$inspectButton.cssContainerClass" /><br /><br />
+			
+			<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
+				<wo:submit value = "Anmelden" action = "$doSubmitAction" />
+			</wo:TBGenericContainer>
+	
+			<wo:TBGenericContainer elementName="div" class="$closeButton.cssContainerClass">
+				<wo:TBHyperlink action="$goBackToMainAction" class="$returnButton.cssClass" string="$returnButton.name" />
+			</wo:TBGenericContainer>
+	
+			</wo:TBForm>
+		</div>
+	</div>
+
+</webobject>

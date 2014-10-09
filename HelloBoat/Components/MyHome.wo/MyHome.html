@@ -1,0 +1,19 @@
+<webobject name = "PageWrapper">
+
+
+	<div class="row">
+		<div class="twelve columns">
+			<wo:TBString markdown = "true" value = "###Welcome Users: ###" /><wo:TBString value = "$username"></wo:TBString>
+			<wo:TBString markdown = "true" value = "---" />
+			<wo:TBForm>
+				Uhrzeit: <wo:TBTextField value="$uhrzeit" class = "$inspectButton.cssContainerClass" /><br />
+				Datum: <wo:textField dateformat = "%m.%s.%d" value = "$datum" class = "$inspectButton.cssContainerClass"/><br />
+				Hotelkosten <wo:TBTextField value="$hotelkosten" class = "$inspectButton.cssContainerClass" /><br />
+				Autokosten <wo:TBTextField value="$autokosten" class = "$inspectButton.cssContainerClass" /><br />
+				
+				<wo:submit action = "$goBackToMainAction" value = "Speichern" />
+			</wo:TBForm>
+			
+		</div>
+	</div>
+</webobject>
