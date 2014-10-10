@@ -1,0 +1,28 @@
+2014-10-09 17:50:52.785 [Worker-5] DEBUG AgentProvider - setInitializationData. isBeta false; location jrebel/
+2014-10-09 17:50:52.792 [Worker-5] DEBUG AgentProvider - setInitializationData. isBeta true; location jr6/jrebel/
+2014-10-09 17:50:52.811 [Worker-5] DEBUG HttpNotifications - Starting JRebel Notification server on port 0
+2014-10-09 17:50:52.983 [Worker-5] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:53743/jrebel/notifications
+2014-10-09 17:50:52.999 [Worker-5] DEBUG EclipseJRebelClientAdapter - Getting license via CLI
+2014-10-09 17:50:53.011 [Worker-5] DEBUG o.z.exec.ProcessExecutor - Executing [/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/bin/java, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.env.ide=Eclipse, -Drebel.properties=/Users/seiya/.jrebel/jrebel.properties, -Drebel.license_server.legacy=false, -cp, /Applications/Eclipse441/plugins/org.zeroturnaround.eclipse.embedder_5.6.3.SR1-201409161234/jrebel/jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, , ]...
+2014-10-09 17:50:53.021 [Worker-5] DEBUG o.z.exec.ProcessExecutor - Started java.lang.UNIXProcess@463f1e44
+2014-10-09 17:50:53.300 [JRebel License Expiration Notification Checker] DEBUG EclipseJRebelClientAdapter - Getting license via CLI
+2014-10-09 17:50:53.301 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/bin/java, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.env.ide=Eclipse, -Drebel.properties=/Users/seiya/.jrebel/jrebel.properties, -Drebel.license_server.legacy=false, -cp, /Applications/Eclipse441/plugins/org.zeroturnaround.eclipse.embedder_5.6.3.SR1-201409161234/jrebel/jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, , ]...
+2014-10-09 17:50:53.305 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.UNIXProcess@12faf2c6
+2014-10-09 17:50:53.430 [Worker-5] DEBUG o.z.exec.WaitForProcess - java.lang.UNIXProcess@463f1e44 stopped with exit code 0
+2014-10-09 17:50:53.440 [Worker-5] DEBUG EclipseJRebelClientAdapter - Getting license via CLI
+2014-10-09 17:50:53.441 [Thread-26] DEBUG o.z.exec.ProcessExecutor - Executing [/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/bin/java, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.env.ide=Eclipse, -Drebel.properties=/Users/seiya/.jrebel/jrebel.properties, -Drebel.license_server.legacy=false, -cp, /Applications/Eclipse441/plugins/org.zeroturnaround.eclipse.embedder_5.6.3.SR1-201409161234/jrebel/jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, , ]...
+2014-10-09 17:50:53.445 [Thread-26] DEBUG o.z.exec.ProcessExecutor - Started java.lang.UNIXProcess@33089c1b
+2014-10-09 17:50:53.750 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.UNIXProcess@12faf2c6 stopped with exit code 0
+2014-10-09 17:50:53.887 [Thread-26] DEBUG o.z.exec.WaitForProcess - java.lang.UNIXProcess@33089c1b stopped with exit code 0
+2014-10-09 17:52:58.383 [Worker-0] DEBUG AgentProvider - setInitializationData. isBeta false; location jrebel/
+2014-10-09 17:52:58.387 [Worker-0] DEBUG AgentProvider - setInitializationData. isBeta true; location jr6/jrebel/
+2014-10-09 17:52:58.399 [Worker-0] DEBUG HttpNotifications - Starting JRebel Notification server on port 0
+2014-10-09 17:52:58.560 [Worker-0] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:53936/jrebel/notifications
+2014-10-09 17:52:58.569 [Worker-0] DEBUG EclipseJRebelClientAdapter - Getting license via CLI
+2014-10-09 17:52:58.577 [Worker-0] DEBUG o.z.exec.ProcessExecutor - Executing [/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/bin/java, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.env.ide=Eclipse, -Drebel.properties=/Users/seiya/.jrebel/jrebel.properties, -Drebel.license_server.legacy=false, -cp, /Applications/Eclipse441/plugins/org.zeroturnaround.eclipse.embedder_5.6.3.SR1-201409161234/jrebel/jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, , ]...
+2014-10-09 17:52:58.583 [Worker-0] DEBUG o.z.exec.ProcessExecutor - Started java.lang.UNIXProcess@18fb586e
+2014-10-09 17:52:58.900 [Worker-0] DEBUG o.z.exec.WaitForProcess - java.lang.UNIXProcess@18fb586e stopped with exit code 0
+2014-10-09 17:52:58.904 [Worker-0] DEBUG EclipseJRebelClientAdapter - Getting license via CLI
+2014-10-09 17:52:58.905 [Thread-23] DEBUG o.z.exec.ProcessExecutor - Executing [/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/bin/java, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.env.ide=Eclipse, -Drebel.properties=/Users/seiya/.jrebel/jrebel.properties, -Drebel.license_server.legacy=false, -cp, /Applications/Eclipse441/plugins/org.zeroturnaround.eclipse.embedder_5.6.3.SR1-201409161234/jrebel/jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, , ]...
+2014-10-09 17:52:58.910 [Thread-23] DEBUG o.z.exec.ProcessExecutor - Started java.lang.UNIXProcess@7822fa4b
+2014-10-09 17:52:59.250 [Thread-23] DEBUG o.z.exec.WaitForProcess - java.lang.UNIXProcess@7822fa4b stopped with exit code 0
