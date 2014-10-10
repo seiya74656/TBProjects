@@ -20,13 +20,29 @@ public class MyHome extends TBComponent {
   //********************************************************************
   //  Methods : メソッド
   //********************************************************************
-  public String username,hotelkosten, autokosten,datum, uhrzeit, telephone;
+  
+  public void setUsername(String username) {
+    _username = "Mr. " + username;
+  }
+  public String username() {
+    return _username;
+  }
+  private String _username;
+  
+  
+
+
+
+  public String hotelkosten, autokosten,datum, uhrzeit, telephone;
   //********************************************************************
   //  Actions : アクション
   //********************************************************************
   
   
   public WOActionResults goBackToMainAction() {
+    
+    System.err.println(username());
+    
     return goToMySelfAction();
   }
 
