@@ -31,9 +31,14 @@ public class Login extends TBComponent {
     //********************************************************************
     public WOActionResults doSubmitAction() {
 
-    if(loginname.equals("seiya") && loginpass.equals("pass"))
+    if("seiya".equals(loginname) && "pass".equals(loginpass))
       { 
       MyHome nextPage = pageWithName(MyHome.class);
+      
+      
+      nextPage.setUsername(loginname);
+      
+      
       return nextPage;
       }     else     { 
       return goToMySelfAction(); 
