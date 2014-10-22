@@ -31,9 +31,6 @@ public class Session extends TBSession {
 		if(navController() == null) {
 			setNavController(new NavigationController(this));
 		}
-
-		// Menu Handler メニュー・ハンドラー
-		TBNavigationHandler.setRoot(this);
 	
 		// set the default Look
 		setCurrentD2WLook(TBFKnownLookNames.GUMBY);
