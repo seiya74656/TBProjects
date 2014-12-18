@@ -1,6 +1,6 @@
 package org.treasureboat.app.migration;
 
-import org.treasureboat.webcore.migration.TBWModelVersion;
+import org.treasureboat.enterprise.migration.TBWModelVersion;
 
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
