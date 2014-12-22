@@ -27,7 +27,7 @@ public class Login extends TBComponent {
     public String loginname,loginpass;
 
     //********************************************************************
-    //  Actions : アクション
+    //  Action : アクション
     //********************************************************************
     public WOActionResults doSubmitAction() {
 

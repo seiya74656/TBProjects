@@ -1,51 +1,40 @@
 package org.treasureboat.app.components;
 
-import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
 import org.treasureboat.webcore.components.TBComponent;
 
 
-public class MyHome extends TBComponent {
+public class Gumbytext extends TBComponent {
   /**
    * Do I need to update serialVersionUID?
    * See section 5.6 <cite>Type Changes Affecting Serialization</cite> on page 51 of the 
    * <a href="http://java.sun.com/j2se/1.4/pdf/serial-spec.pdf">Java Object Serialization Spec</a>
    */
-  private static final long serialVersionUID = 1L;
 
-  public MyHome(WOContext context) {
+  private static final long serialVersionUID = 1L;
+  
+  //********************************************************************
+  //  Constructor : コンストラクタ
+  //********************************************************************
+  public Gumbytext(WOContext context) {
         super(context);
     }
-  
+
   //********************************************************************
   //  Methods : メソッド
   //********************************************************************
-  
-  public void setUsername(String username) {
-    _username = "Mr. " + username;
-  }
-  public String username() {
-    return _username;
-  }
-  private String _username;
-  
-  public String test() { 
-    test = "Hallo";
-    return test;
-  }
-
-public String hotelkosten, autokosten,datum, uhrzeit, telephone, test;
+private String _day;
   //********************************************************************
   //  Actions : アクション
   //********************************************************************
-  
-  public WOActionResults goBackToMainAction() {
-    
-    System.err.println(username());
-    
-    return goToMySelfAction();
-  }
 
+public String Day() {
+  return _day;
+}
 
+public void setDay(String day) {
+  _day = day;
+}
 
+   
 }

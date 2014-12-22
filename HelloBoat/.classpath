@@ -10,6 +10,8 @@
 	<classpathentry kind="con" path="WOFramework/TBExtensions"/>
 	<classpathentry kind="con" path="WOFramework/TBSkinGumby"/>
 	<classpathentry kind="con" path="WOFramework/TBDeprecated"/>
+	<classpathentry exported="true" kind="con" path="WOFramework/TBPrototypes"/>
+	<classpathentry exported="true" kind="con" path="WOFramework/TBDB_MySQL"/>
 	<classpathentry kind="con" path="WOFramework/JavaFoundation"/>
 	<classpathentry kind="con" path="WOFramework/JavaXML"/>
 	<classpathentry kind="con" path="WOFramework/JavaWebObjects"/>

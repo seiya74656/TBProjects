@@ -32,7 +32,9 @@
 				Username: 
 				<wo:TBTextField  value = "$username" /><br />
 				Password:
-				<wo:TBPasswordField  value = "$passwords" />
+				<wo:TBPasswordField class="normal" disableEnterKey="true"  value = "$passwords" />
+				
+				<wo:TBHiddenField name="samplename" value="$username" />
 				
 				Notes:
 				<wo:TBTextField value="$sampleText" /><br />
@@ -46,7 +48,7 @@
 				woff = "static://TBContentsDelivery:font/calligraffiti/Calligraffiti-webfont.woff"
 				ttf = "static://TBContentsDelivery:font/calligraffiti/Calligraffiti-webfont.ttf"
 				fontFamily = "Calligraffiti"
-				selector = "h2, h4"
+				selector = "h2, h3, h4"
 				svg = "static://TBContentsDelivery:font/calligraffiti/Calligraffiti-webfont.svg" />
 
 

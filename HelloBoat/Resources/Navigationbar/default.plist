@@ -8,7 +8,9 @@
 			"Welcome", 
 			"Dashboard",
 			"Login",
-			"Formatierungen"
+			"Formatierungen",
+			"Gumbytext",
+			"Calendar"
 		);
 	},
 	{
@@ -22,7 +24,16 @@
 	{
 		name = "Formatierungen";
 		action = "session.handlers.formatierungen.customFormatierungenAction";
+	},
+	{
+		name = "Gumbytext";
+		action = "session.handlers.gumbytext.customGumbytextAction";
+	},
+	{
+		name = "Calendar";
+		action = "session.handlers.calendar.customCalendarAction";
 	}
+	
 	
 	/* 
 		Navigation Root Level 2
