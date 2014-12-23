@@ -1,0 +1,14 @@
+{
+    attributes = (
+        {columnName = dueDate; name = dueDate; prototypeName = dateTime; }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {columnName = task; name = task; prototypeName = varchar100; }
+    ); 
+    attributesUsedForLocking = (dueDate, id, task); 
+    className = "org.treasureboat.app.eo.ToDo"; 
+    classProperties = (dueDate, task); 
+    externalName = ToDo; 
+    fetchSpecificationDictionary = {}; 
+    name = ToDo; 
+    primaryKeyAttributes = (id); 
+}

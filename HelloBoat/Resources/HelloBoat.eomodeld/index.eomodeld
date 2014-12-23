@@ -1,1 +1,10 @@
-{EOModelVersion = "2.1"; adaptorName = JDBC; connectionDictionary = {}; }
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:MySQL://e23523-mysql.services.easyname.eu/u20199db24"; 
+        password = testdb; 
+        username = u20199db24; 
+    }; 
+    entities = ({className = "org.treasureboat.app.eo.ToDo"; name = ToDo; }); 
+}
