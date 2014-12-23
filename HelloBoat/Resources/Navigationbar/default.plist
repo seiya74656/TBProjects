@@ -10,7 +10,8 @@
 			"Login",
 			"Formatierungen",
 			"Gumbytext",
-			"Calendar"
+			"Calendar",
+			"Aninite"
 		);
 	},
 	{
@@ -32,7 +33,12 @@
 	{
 		name = "Calendar";
 		action = "session.handlers.calendar.customCalendarAction";
+	},
+	{
+		name = "Aninite";
+		action = "session.handlers.aninite.customAniniteAction";
 	}
+	
 	
 	
 	/* 
