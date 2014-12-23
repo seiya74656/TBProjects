@@ -7,5 +7,4 @@
         username = u20199db24; 
     }; 
     entities = ({className = "org.treasureboat.app.eo.ToDo"; name = ToDo; }); 
-    internalInfo = {"_deletedEntityNamesInObjectStore" = (ToDo); }; 
 }
