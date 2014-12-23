@@ -1,11 +1,14 @@
 package org.treasureboat.app.components;
 
+import org.treasureboat.app.eo.ToDo;
+import org.treasureboat.foundation.date.TBFTimestamp;
 import org.treasureboat.foundation.image.TBFImage;
 import org.treasureboat.webcore.annotations.TBNonSynchronizing;
 import org.treasureboat.webcore.annotations.TBPageAccess;
 import org.treasureboat.webcore.appserver.location.TBWStaticResource;
 import org.treasureboat.webcore.components.TBComponent;
 
+import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSTimestamp;
 
@@ -78,6 +81,20 @@ public String sampleMarkdownImage(){
   return sb.toString();
   
 }
+
+public WOActionResults doDBTestaction(){
+  
+  ToDo todo = ToDo.createAndInsertInstance(editingContext());
+  
+  todo.setTask("my first task");
+  todo.setDueDate(new TBFTimestamp()); 
+  editingContext().saveChanges();
+  
+  System.err.println("--> we are here!");
+  return goToMySelfAction();
+}
+
+
 public TBWStaticResource sampleimage(){
 TBWStaticResource sr = new TBWStaticResource("static://images/tb.jpg");
  return sr;

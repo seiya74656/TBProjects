@@ -1,6 +1,6 @@
 {
     attributes = (
-        {columnName = dueDate; name = dueDate; prototypeName = dateTime; }, 
+        {columnName = dueDate; name = dueDate; prototypeName = tbDateTime; }, 
         {allowsNull = N; name = id; prototypeName = id; }, 
         {columnName = task; name = task; prototypeName = varchar100; }
     ); 

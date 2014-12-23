@@ -213,7 +213,7 @@ public abstract class _ToDo extends  TBEOGenericRecord {
   //********************************************************************
 
   // Attribute Keys
-  public static final ERXKey<NSTimestamp> DUE_DATE = new ERXKey<NSTimestamp>("dueDate");
+  public static final ERXKey<org.treasureboat.foundation.date.TBFTimestamp> DUE_DATE = new ERXKey<org.treasureboat.foundation.date.TBFTimestamp>("dueDate");
   public static final ERXKey<String> TASK = new ERXKey<String>("task");
 
   // Attributes
@@ -244,11 +244,11 @@ public abstract class _ToDo extends  TBEOGenericRecord {
   //  Attribute Accessor : アトリビュート・アクセス
   //********************************************************************
 
-  public NSTimestamp dueDate() {
-    return (NSTimestamp) storedValueForKey(DUE_DATE_KEY);
+  public org.treasureboat.foundation.date.TBFTimestamp dueDate() {
+    return (org.treasureboat.foundation.date.TBFTimestamp) storedValueForKey(DUE_DATE_KEY);
   }
 
-  public void setDueDate(NSTimestamp value) {
+  public void setDueDate(org.treasureboat.foundation.date.TBFTimestamp value) {
     if (_ToDo.log.isDebugEnabled()) {
       _ToDo.log.debug("updating dueDate from {} to {}", dueDate(), value);
     }
@@ -302,7 +302,7 @@ public abstract class _ToDo extends  TBEOGenericRecord {
   //********************************************************************
 
   public static ToDo createToDo(EOEditingContext editingContext
-   , NSTimestamp dueDate
+   , org.treasureboat.foundation.date.TBFTimestamp dueDate
    , String task
     )
   {
@@ -314,7 +314,7 @@ public abstract class _ToDo extends  TBEOGenericRecord {
   
   /* EO creation with Stamped EO Support */
   public static ToDo createToDoWithStampedSupport(EOEditingContext editingContext
-   , NSTimestamp dueDate
+   , org.treasureboat.foundation.date.TBFTimestamp dueDate
    , String task
     )
   {

@@ -24,11 +24,11 @@ public class HelloBoat0 extends ERXMigrationDatabase.Migration {
 	public void upgrade(EOEditingContext editingContext, ERXMigrationDatabase database) throws Throwable {
 	  
 	  ERXMigrationTable toDoTable = database.newTableNamed("ToDo");
-    toDoTable.newTimestampColumn("dueDate", false);
     toDoTable.newIntegerColumn("id", false);
-    toDoTable.newStringColumn("task", 100, false);
     toDoTable.create();
     toDoTable.setPrimaryKey("id");
+    toDoTable.newTimestampColumn("dueDate", false);
+    toDoTable.newStringColumn("task", 100, false);
 	  
 	}
 	
