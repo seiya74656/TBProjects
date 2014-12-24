@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.treasureboat.app.navigation.NavigationController;
 import org.treasureboat.foundation.constants.TBFKnownLookNames;
 import org.treasureboat.webcore.appserver.TBSession;
-import org.treasureboat.webcore.appserver.navbar.handler.TBNavigationHandler;
 
 public class Session extends TBSession {
 	/**
