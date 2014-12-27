@@ -16,13 +16,10 @@ public class Aninite extends TBComponent {
     }
 
 
-    public NSArray<String> arraytest() {
+    public NSArray<String> monate = new NSArray<>(new String[] { "januar", "februar", "märz", "april", "mai", "juni", "juli", "august",
+        "september", "oktober", "november", "dezember" });
 
-      for (int i = '1'; i < 10; i++) {
-      arraytest().add("Lala $i");
-      }
-      
-      return arraytest();
-  }
+
+
 
 }
