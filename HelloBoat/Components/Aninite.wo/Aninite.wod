@@ -1,2 +1,10 @@
 PageWrapper : TBEDefaultPageWrapper {
 }
+
+vorName : WOString {
+	value = personenloop.vorName;
+}
+
+nachName : WOString {
+	value = personenloop.nachName;
+}
