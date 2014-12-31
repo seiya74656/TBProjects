@@ -21,8 +21,10 @@ public class Aninite extends TBComponent {
 // fill array
     
     persons = new NSMutableArray<Personen>();
-    persons.add(new Personen("Hello", "World"));
-    persons.add(new Personen("Rene", "Fuerst"));
+    persons.add(new Personen("Ken", "Ishimoto"));
+    persons.add(new Personen("David", "Giestheuer"));
+    persons.add(new Personen("Renate", "Fürst"));
+    persons.add(new Personen("Rene", "Fürst"));
 
     public NSMutableArray<Personen> persons() {
       return persons;
