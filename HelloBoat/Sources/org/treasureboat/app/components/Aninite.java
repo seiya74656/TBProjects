@@ -13,13 +13,12 @@ public class Aninite extends TBComponent {
   private static final long serialVersionUID = 1L;
   private NSMutableArray<Personen> persons;
   private Personen personenloop;
-  
+
   public Aninite(WOContext context) {
     super(context);
 
+    // fill array
 
-// fill array
-    
     persons = new NSMutableArray<Personen>();
     persons.add(new Personen("Ken", "Ishimoto"));
     persons.add(new Personen("David", "Giestheuer"));
@@ -29,15 +28,15 @@ public class Aninite extends TBComponent {
     public NSMutableArray<Personen> persons() {
       return persons;
     }
-    
-// Personen loop
+
+    // Personen loop
     public Personen personenloop() {
-    return personenloop;  
+      return personenloop;  
     }
-    
-    public void setpersonenloop(Person persons) {
+
+    public void setpersonenloop(Personen personenloop) {
       this.personenloop = personenloop;      
     }
-    
-    
+
+
   }    
