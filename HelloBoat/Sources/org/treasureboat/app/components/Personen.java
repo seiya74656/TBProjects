@@ -5,6 +5,7 @@ public class Personen {
   private String nachName;
 
   public Personen(String vorName, String nachName){
+    super(); //WHY SUPER
     this.vorName = vorName;
     this.nachName = nachName;        
   }
