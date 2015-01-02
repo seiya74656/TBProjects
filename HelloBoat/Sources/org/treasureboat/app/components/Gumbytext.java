@@ -2,6 +2,7 @@ package org.treasureboat.app.components;
 
 import com.webobjects.appserver.WOContext;
 import org.treasureboat.webcore.components.TBComponent;
+import com.webobjects.appserver.WOActionResults;
 
 
 public class Gumbytext extends TBComponent {
@@ -30,6 +31,14 @@ public String Day() {
 public void setDay(String day) {
   _day = day;
 }
+
+
+  public String myText;
+
+  public WOActionResults doSendAction() {
+    System.err.println(myText);
+    return null;
+  }
 
    
 }

@@ -1,0 +1,6 @@
+PageWrapper : TBEDefaultPageWrapper {
+}
+
+MyText : WOTextField {
+	value = myText;
+}

@@ -2,10 +2,10 @@ PageWrapper : TBEDefaultPageWrapper {
 }
 
 personsList : WORepetition {
-	list = application.persons;
+	list = persons;
 	item = personenloop;
 }
-vorName : WOString {
+vorName : TBString {
 	value = personenloop.vorName;
 }
 

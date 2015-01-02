@@ -32,7 +32,7 @@
 	},
 	{
 		name = "Calendar";
-		action = "session.handlers.calendar.customCalendarAction";
+		action = "session.handlers.calendar.customMyCalendarAction";
 	},
 	{
 		name = "Aninite";

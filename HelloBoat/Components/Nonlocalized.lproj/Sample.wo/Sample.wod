@@ -1,0 +1,3 @@
+TEST : TBString {
+	value = message;
+}

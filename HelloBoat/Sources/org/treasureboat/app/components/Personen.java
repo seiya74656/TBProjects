@@ -1,29 +1,28 @@
 package org.treasureboat.app.components;
 
 public class Personen {
-  private String vorName;
-  private String nachName;
-
+  
   public Personen(String vorName, String nachName){
     super(); //WHY SUPER
-    this.vorName = vorName;
+    
+    _vorName = vorName;
     this.nachName = nachName;        
   }
 
+  public void setNachName(String nachName) {
+    this.nachName = nachName;
+  }
   public String nachName(){
     return nachName;
   }
+  private String nachName;
 
-  public void setnachName(String nachName) {
-    this.nachName = nachName;
+  public void setVorName(String vorName) {
+    _vorName = vorName;
   }
-
   public String vorName(){
-    return vorName;
+    return _vorName;
   }
-
-  public void setvorName(String vorName) {
-    this.vorName = vorName;
-  }
+  private String _vorName;
 
 }

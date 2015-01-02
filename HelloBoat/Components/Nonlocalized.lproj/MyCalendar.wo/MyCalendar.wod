@@ -1,0 +1,6 @@
+PageWrapper : TBEDefaultPageWrapper {
+}
+
+Sample : Sample {
+	message = "Hallo X!!!";
+}

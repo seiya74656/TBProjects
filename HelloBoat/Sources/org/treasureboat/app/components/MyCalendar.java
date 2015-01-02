@@ -8,8 +8,7 @@ import com.webobjects.appserver.WOContext;
 @TBPageAccess (
     navigationState = "Calendar"
     )
-
-public class Calendar extends TBComponent {
+public class MyCalendar extends TBComponent {
 
   private static final long serialVersionUID = 1L;
 
@@ -17,12 +16,7 @@ public class Calendar extends TBComponent {
   //  Constructor : コンストラクタ
   //********************************************************************
 
-    public Calendar(WOContext context) {
+    public MyCalendar(WOContext context) {
         super(context);
     }
-    
-    
-        
-    
-    
 }
