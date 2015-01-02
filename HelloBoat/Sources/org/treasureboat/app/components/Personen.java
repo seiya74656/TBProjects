@@ -3,7 +3,7 @@ package org.treasureboat.app.components;
 public class Personen {
   
   public Personen(String vorName, String nachName){
-    super(); //WHY SUPER
+    super();
     
     _vorName = vorName;
     this.nachName = nachName;        
