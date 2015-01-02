@@ -4,3 +4,15 @@ PageWrapper : TBEDefaultPageWrapper {
 Sample : Sample {
 	message = "Hallo X!!!";
 }
+
+Frage : TBString {
+	value = adventkalendarloop.frage;
+}
+
+Tage : TBString {
+	value = adventkalendarloop.tag;
+}
+adventkalendarloop : WORepetition {
+	item = adventkalendarloop;
+	list = adventkalendar;
+}
