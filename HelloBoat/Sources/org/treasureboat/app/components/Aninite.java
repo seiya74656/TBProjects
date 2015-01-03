@@ -9,8 +9,6 @@ public class Aninite extends TBComponent {
 
   private static final long serialVersionUID = 1L;
   
-  
-  
   public Aninite(WOContext context) {
     super(context);
   }
@@ -27,7 +25,7 @@ public class Aninite extends TBComponent {
   private NSMutableArray<Personen> persons;
   public Personen personenloop;
 
-  
+
 
 
 }    

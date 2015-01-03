@@ -3,14 +3,14 @@ package org.treasureboat.app.components;
 public class Adventkalendar {
 
   public Adventkalendar (String tag, String code, String frage) {
-  super();
-  
-  _tag = tag;
-  _code = code;
-  _frage = frage;
-  
+    super();
+
+    _tag = tag;
+    _code = code;
+    _frage = frage;
+
   }
-  
+
 
   public void setTag(String tag) {
     _tag = tag;
@@ -30,7 +30,7 @@ public class Adventkalendar {
 
   private String _code;
 
-  
+
   public String frage() {
     return _frage;
   }
@@ -38,7 +38,7 @@ public class Adventkalendar {
   public void setFrage(String frage) {
     _frage = frage;
   }
-  
+
   private String _frage;
-  
+
 }
