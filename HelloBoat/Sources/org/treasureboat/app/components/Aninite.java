@@ -28,7 +28,7 @@ public class Aninite extends TBComponent {
   
   //TEST
 
-  public NSArray<Personen> Test() {
+  public NSArray<Personen> test() {
     return test;
   }
 
