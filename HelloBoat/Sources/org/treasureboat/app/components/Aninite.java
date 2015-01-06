@@ -39,4 +39,12 @@ public class Aninite extends TBComponent {
   }
   private NSArray<Personen> test;
   
+  public Personen secondPerson() {
+    if (test() == null || test().count() < 2) { 
+      return null;
+    }
+    return test().objectAtIndex(1);
+  }
+  
+  
 }    
