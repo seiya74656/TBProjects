@@ -13,6 +13,6 @@ nachName : TBString {
 }
 
 testarray : TBString {
-	value = secondPerson;
+	value = secondPerson.vorName;
 }
 

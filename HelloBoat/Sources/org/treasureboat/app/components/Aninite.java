@@ -3,7 +3,6 @@ package org.treasureboat.app.components;
 import org.treasureboat.webcore.components.TBComponent;
 
 import com.webobjects.appserver.WOContext;
-import com.webobjects.foundation.NSArray;
 import com.webobjects.foundation.NSMutableArray;
 
 public class Aninite extends TBComponent {
@@ -30,7 +29,7 @@ public class Aninite extends TBComponent {
     if (persons() == null || persons().count() < 2) { 
       return null;
     }
-    return persons().objectAtIndex(1);
+    return persons().objectAtIndex((int)Math.random()*persons().count());
   }
   
   
