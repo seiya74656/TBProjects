@@ -25,25 +25,12 @@ public class Aninite extends TBComponent {
   }
   private NSMutableArray<Personen> persons;
   public Personen personenloop;
-  
-  //TEST
-
-  public void setTest(NSArray<Personen> test) {
-    this.test = test;
-  }
-  public NSArray<Personen> test() {
-    if (test == null) {
-      test = persons();
-    }
-    return test;
-  }
-  private NSArray<Personen> test;
-  
+    
   public Personen secondPerson() {
-    if (test() == null || test().count() < 2) { 
+    if (persons() == null || persons().count() < 2) { 
       return null;
     }
-    return test().objectAtIndex(1);
+    return persons().objectAtIndex(1);
   }
   
   
