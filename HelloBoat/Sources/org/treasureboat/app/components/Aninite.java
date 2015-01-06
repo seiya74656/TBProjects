@@ -3,6 +3,7 @@ package org.treasureboat.app.components;
 import org.treasureboat.webcore.components.TBComponent;
 
 import com.webobjects.appserver.WOContext;
+import com.webobjects.foundation.NSArray;
 import com.webobjects.foundation.NSMutableArray;
 
 public class Aninite extends TBComponent {
@@ -24,8 +25,18 @@ public class Aninite extends TBComponent {
   }
   private NSMutableArray<Personen> persons;
   public Personen personenloop;
+  
+  //TEST
 
+  public NSArray<Personen> Test() {
+    return test;
+  }
 
-
-
+  public void setTest(NSArray<Personen> test) {
+    test = persons();
+    this.test = test;
+  }
+  
+  private NSArray<Personen> test;
+  
 }    

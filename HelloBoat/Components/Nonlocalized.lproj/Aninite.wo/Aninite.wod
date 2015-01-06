@@ -1,6 +1,5 @@
 PageWrapper : TBEDefaultPageWrapper {
 }
-
 personsList : WORepetition {
 	list = persons;
 	item = personenloop;
@@ -9,6 +8,11 @@ vorName : TBString {
 	value = personenloop.vorName;
 }
 
-nachName : WOString {
+nachName : TBString {
 	value = personenloop.nachName;
 }
+
+testarray : TBString {
+	value = test.lastObject;
+}
+
