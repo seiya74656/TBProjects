@@ -10,9 +10,12 @@ vorName : TBString {
 
 nachName : TBString {
 	value = personenloop.nachName;
+	
 }
 
 testarray : TBString {
-	value = secondPerson.vorName;
+	value = secondPerson.vorName.toUpperCase;
 }
-
+testarray2 : TBString {
+	value = secondPerson.nachName;
+}
