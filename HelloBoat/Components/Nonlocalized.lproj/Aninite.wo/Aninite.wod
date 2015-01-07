@@ -12,7 +12,9 @@ nachName : TBString {
 	value = personenloop.nachName;
 	
 }
-
+nummer : TBString {
+	value = nummer;
+}
 testarray : TBString {
 	value = secondPerson.vorName.toUpperCase;
 }

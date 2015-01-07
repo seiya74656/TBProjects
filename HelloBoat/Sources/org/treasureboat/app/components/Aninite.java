@@ -16,12 +16,19 @@ public class Aninite extends TBComponent {
   public NSMutableArray<Personen> persons() {
     if (persons == null) {
       persons = new NSMutableArray<Personen>();
-      persons.add(new Personen("Ken", "Ishimoto"));
-      persons.add(new Personen("Renate", "Fürst"));
-      persons.add(new Personen("Rene", "Fürst"));
-      persons.add(new Personen("Bettina", "Lebiu"));
-      persons.add(new Personen("Jenny", "Lebiu"));
-      persons.add(new Personen("Pietro", "Lebiu"));
+      persons.add(new Personen("William", "Hartnell"));
+      persons.add(new Personen("Patrick", "Troughton"));
+      persons.add(new Personen("John", "Pertwee"));
+      persons.add(new Personen("Tom", "Baker"));
+      persons.add(new Personen("Peter", "Davison"));
+      persons.add(new Personen("Colin", "Baker"));
+      persons.add(new Personen("Sylvester", "McCoy"));
+      persons.add(new Personen("Paul", "McGann"));
+      persons.add(new Personen("John", "Hurt"));
+      persons.add(new Personen("Christopher", "Eccleston"));
+      persons.add(new Personen("David", "Tennant"));
+      persons.add(new Personen("Matt", "Smith"));
+      persons.add(new Personen("Peter", "Capaldi"));
     }
     return persons;
   }
@@ -36,6 +43,10 @@ public class Aninite extends TBComponent {
     System.err.println(zufallszahl);
     return persons().objectAtIndex(zufallszahl);
   }
-
+  
+  public int nummer() {
+    return persons().indexOf(personenloop) + 1;
+  }
+  
 
 }    
