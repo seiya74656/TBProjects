@@ -14,12 +14,9 @@ PopUp : WOPopUpButton {
 	displayString = oneConvention.convention;
 }
 
-
-
-
 MyAltert : TBJSAlertPanel {
-	alertMessage = "$selectedTab.convention";
+	alertMessage = selectedTab.convention;
 	string = "Testalert 4 (Error)";
-	action = "$doSampleAction";
-	automatic="true";
+	action = doSampleAction;
+	automatic = "true";
 }
