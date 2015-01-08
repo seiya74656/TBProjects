@@ -12,6 +12,7 @@ PopUp : WOPopUpButton {
 	item = oneConvention;
 	selection = selectedPopUp;
 	displayString = oneConvention.convention;
+	noSelectionString = "--Con-Auswahl--";
 }
 
 MyAltert : TBJSAlertPanel {
