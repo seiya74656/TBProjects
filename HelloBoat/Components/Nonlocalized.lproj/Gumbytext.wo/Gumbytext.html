@@ -1,37 +1,51 @@
 <webobject name="PageWrapper">
 
-<ul class="four_up tiles">
- <li>1</li>
- <li>2</li>
- <li>3</li>
- <li>4</li>
- <li>5</li>
- <li>6</li>
- <li>7</li>
- <li>8</li>
- <li>9</li>
- <li>10</li>
- <li>11</li>
- <li>12</li>
- <li>13</li>
- <li>14</li>
- <li>15</li>
- <li>16</li>
- <li>17</li>
- <li>18</li>
- <li>19</li>
- <li>20</li>
- <li>21</li>
- <li>22</li>
- <li>23</li>
- <li>24</li>
-</ul>
+<wo:TBForm>
+		<table style="width:100%">
+			<tr>
+				<td style="width:100%" align="center">
+					<h3>Convention Manager <wo:TBString value="$currentTime" dateformat="%d.%m.%y - %H:%M:%S" /></h3>
+				</td>
+			</tr>
+			<tr>
+				<td>
+		 	<wo:TBETabPanel tabs="$tabes" selectedTab="$selectedTab" tabNameKey="convention" submitActionName="doTabAction">
+		 		[<wo:TBString value = "$selectedTab.convention" /> mit <wo:TBString value = "$selectedTab.besucherzahlen" /> Besucher] 
+		 	</wo:TBETabPanel>
+				</td>
+			</tr>
+			<tr>
+				<td>			
+					<webobject name="MyText" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<select name="Auflistung">
+						<option value="AniNite">AniNite</option>
+						<option value="AkiCon">AkiCon</option>
+						<option value="MangaWorld">MangaWorld</option>
+					</select><br />
+		 		<wo:TBJSAlertPanel alertMessage="$selectedTab.convention" string="Testalert" action="$doSampleAction" automatic="true"/><br />
+		 		<wo:TBJSAlertPanel alertMessage="$selectedTab.besucherzahlen" string="Testalert 2" action="$doSampleAction" automatic="true"/><br />
+		 		<wo:TBJSAlertPanel alertMessage="Convention + Besucherzahlen = Error" string="Testalert 3 (Error)" action="$doSampleAction" automatic="true"/><br />
+				<webobject name="MyAltert" />
+				</td>
+			</tr>			
+			
+			<tr>
+				<td>
+				<wo:submit value="Senden" action="$doSendAction" />
+				</td>
+			</tr>
+		</table>
+		
+</wo:TBForm>
 
-
-<wo:WOForm>
-	<webobject name="MyText"></webobject>
-	<wo:submit value="Senden" action="$doSendAction"></wo:submit>
-</wo:WOForm>
 
 
 </webobject>

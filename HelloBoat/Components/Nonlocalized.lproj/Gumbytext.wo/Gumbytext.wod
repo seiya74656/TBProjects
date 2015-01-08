@@ -1,6 +1,15 @@
 PageWrapper : TBEDefaultPageWrapper {
 }
 
-MyText : WOTextField {
+MyText : TBTextField {
+	placeholder = "Beispiel Test Textfield";
 	value = myText;
+	automatic = "true";
+}
+
+MyAltert : TBJSAlertPanel {
+	alertMessage = "$selectedTab.convention";
+	string = "Testalert 4 (Error)";
+	action = "$doSampleAction";
+	automatic="true";
 }
