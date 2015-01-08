@@ -25,7 +25,7 @@ public class Gumbytext extends TBComponent {
   private NSArray<Convention> _tabs;
 
   public Convention selectedTab;
-  public String Auflistung;
+  public String auflistung;
 
   /* TAB */
   public NSArray<Convention> tabes() {
@@ -53,7 +53,7 @@ public class Gumbytext extends TBComponent {
   public String myText;
 
   public WOActionResults doSendAction() {
-    System.err.println("// MyText: " + myText +" // Auflistung: "+ Auflistung + "//");
+    System.err.println("// MyText: " + myText +" // Auflistung: "+ auflistung + "//");
     return goToMySelfAction();
   }
 
