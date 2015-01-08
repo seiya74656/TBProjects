@@ -7,6 +7,16 @@ MyText : TBTextField {
 	automatic = "true";
 }
 
+PopUp : WOPopUpButton {
+	list = tabes;
+	item = oneConvention;
+	selection = selectedPopUp;
+	displayString = oneConvention.convention;
+}
+
+
+
+
 MyAltert : TBJSAlertPanel {
 	alertMessage = "$selectedTab.convention";
 	string = "Testalert 4 (Error)";

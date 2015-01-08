@@ -24,8 +24,8 @@ public class Gumbytext extends TBComponent {
   private String _day;
   private NSArray<Convention> _tabs;
 
+  public Convention selectedPopUp;
   public Convention selectedTab;
-  public String auflistung;
 
   /* TAB */
   public NSArray<Convention> tabes() {
@@ -37,7 +37,8 @@ public class Gumbytext extends TBComponent {
     }
     return _tabs;
   }
-
+  public Convention oneConvention; // für Repetition's
+  
   //********************************************************************
   //  Actions : アクション
   //********************************************************************
@@ -53,7 +54,8 @@ public class Gumbytext extends TBComponent {
   public String myText;
 
   public WOActionResults doSendAction() {
-    System.err.println("// MyText: " + myText +" // Auflistung: "+ auflistung + "//");
+    String s = selectedPopUp == null ? "[null]" : selectedPopUp.convention();
+    System.err.println("// MyText: " + myText +" // Auflistung: "+ s + "//");
     return goToMySelfAction();
   }
 
