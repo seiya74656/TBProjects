@@ -60,7 +60,13 @@ public class Gumbytext extends TBComponent {
       Aninite nextPage = pageWithName(Aninite.class);
       nextPage.setConvention(s, myText);
       return nextPage;      
+    } else if (s == "AkiCon") {
+      Akicon nextPage = pageWithName(Akicon.class);
+      nextPage.setConvention(s);
+      nextPage.setRandomtext(myText);
+      return nextPage;
     }
+
     return goToMySelfAction();
   }
 
