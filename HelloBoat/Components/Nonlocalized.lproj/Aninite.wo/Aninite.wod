@@ -21,3 +21,7 @@ testarray : TBString {
 testarray2 : TBString {
 	value = secondPerson.nachName;
 }
+fromGubytext : TBString {
+	value = convention;
+	escapeHTML = false;
+}

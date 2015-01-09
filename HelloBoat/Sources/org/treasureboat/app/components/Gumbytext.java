@@ -38,7 +38,7 @@ public class Gumbytext extends TBComponent {
     return _tabs;
   }
   public Convention oneConvention; // für Repetition's
-  
+
   //********************************************************************
   //  Actions : アクション
   //********************************************************************
@@ -56,6 +56,11 @@ public class Gumbytext extends TBComponent {
   public WOActionResults doSendAction() {
     String s = selectedPopUp == null ? "[null]" : selectedPopUp.convention();
     System.err.println("// MyText: " + myText +" // Auflistung: "+ s + "//");
+    if (s == "AniNite") {
+      Aninite nextPage = pageWithName(Aninite.class);
+      nextPage.setConvention(s, myText);
+      return nextPage;      
+    }
     return goToMySelfAction();
   }
 
