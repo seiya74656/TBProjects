@@ -1,0 +1,10 @@
+PageWrapper : TBEDefaultPageWrapper {
+	
+}
+
+convention : TBString {
+	value = convention;
+}
+besucherzahlen : TBString {
+	value = randomtext;
+}
