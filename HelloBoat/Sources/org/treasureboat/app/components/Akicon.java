@@ -9,7 +9,5 @@ public class Akicon extends Convention {
     public Akicon(WOContext context) {
         super(context);
     }
-
-    
     
 }

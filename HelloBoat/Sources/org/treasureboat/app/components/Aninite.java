@@ -1,11 +1,10 @@
 package org.treasureboat.app.components;
 
-import org.treasureboat.webcore.components.TBComponent;
 
 import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSMutableArray;
 
-public class Aninite extends TBComponent {
+public class Aninite extends Convention {
 
   private static final long serialVersionUID = 1L;
 
@@ -48,13 +47,4 @@ public class Aninite extends TBComponent {
     return persons().indexOf(personenloop) + 1;
   }
 
-// Recieve Data from Gumbytext
-  public void setConvention(String convention, String beschreibung) {
-    _convention = "<h2>Convention: <b>" + convention + " </h2> " + beschreibung + "</b><br/>";
-  }
-  public String convention() {
-    return _convention;
-  }
-  private String _convention;
-  
 }    

@@ -29,7 +29,10 @@ public class Convention extends TBComponent {
   public void setConvention(String convention) {
     _convention = convention;
   }
-
+ 
+  public void setConvention(String convention, String beschreibung) {
+    _convention = "<h2>Convention: <b>" + convention + " </h2> " + beschreibung + "</b><br/>";
+  }
   private String _convention;
 
   public String getRandomtext() {
