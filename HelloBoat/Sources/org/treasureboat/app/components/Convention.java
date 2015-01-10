@@ -8,29 +8,39 @@ public class Convention extends TBComponent {
 
   private static final long serialVersionUID = 1L;
 
-    public Convention(WOContext context) {
-        super(context);
-    }
- 
-    public String getConvention() {
-      return _convention;
-    }
+  //********************************************************************
+  //  Constructor : コンストラクタ
+  //********************************************************************
 
-    public void setConvention(String convention) {
-      _convention = convention;
-    }
 
-    private String _convention;
+  public Convention(WOContext context) {
+    super(context);
+  }
 
-    public String getRandomtext() {
-      return _randomtext;
-    }
+  //********************************************************************
+  //  Actions : アクション
+  //********************************************************************
+  
+  
+  public String getConvention() {
+    return _convention;
+  }
 
-    public void setRandomtext(String Randomtext) {
-      _randomtext = Randomtext;
-    }
+  public void setConvention(String convention) {
+    _convention = convention;
+  }
 
-    private String _randomtext;
-    
-    
+  private String _convention;
+
+  public String getRandomtext() {
+    return _randomtext;
+  }
+
+  public void setRandomtext(String Randomtext) {
+    _randomtext = Randomtext;
+  }
+
+  private String _randomtext;
+
+
 }
