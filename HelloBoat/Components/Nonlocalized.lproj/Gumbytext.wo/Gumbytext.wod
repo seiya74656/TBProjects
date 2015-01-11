@@ -21,3 +21,8 @@ MyAltert : TBJSAlertPanel {
 	action = doSampleAction;
 	automatic = "true";
 }
+
+Counter : TBString {
+	escapeHTML = false;
+	value = getCounter;
+}

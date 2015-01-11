@@ -43,6 +43,21 @@ public class Gumbytext extends TBComponent {
   //  Actions : アクション
   //********************************************************************
 
+  public String getCounter() {
+
+    StringBuilder sb = new StringBuilder();
+
+    for (int  i = 0; i < g; i++) {
+      counter++;
+      sb.append(counter + "<br />");  
+    }
+    g = g+10;
+
+    return sb.toString();
+  }
+  public static int g = 10;
+  public int counter = 0;
+
   public String Day() {
     return _day;
   }
