@@ -22,7 +22,12 @@ MyAltert : TBJSAlertPanel {
 	automatic = "true";
 }
 
-Counter : TBString {
+MyCounter : TBString {
 	escapeHTML = false;
-	value = getCounter;
+	value = Counter;
+}
+
+BMI : TBString {
+	value = bmi;
+
 }

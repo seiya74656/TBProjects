@@ -1,9 +1,8 @@
 package org.treasureboat.app.components;
 
-import com.webobjects.appserver.WOContext;
-
 import org.treasureboat.webcore.components.TBComponent;
 
+import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.foundation.NSArray;
 
@@ -39,11 +38,17 @@ public class Gumbytext extends TBComponent {
   }
   public Convention oneConvention; // für Repetition's
 
+  public double bmi() {
+    Bmi_Rechner bmi = new Bmi_Rechner();
+    bmi.bmi_berechnung(1, 185, 120);
+    System.err.println("BMI: "+ bmi.getBmi());
+    return bmi.getBmi();
+  }
   //********************************************************************
   //  Actions : アクション
-  //********************************************************************
+  //********************************************************************  
 
-  public String getCounter() {
+  public String Counter() {
 
     StringBuilder sb = new StringBuilder();
 
@@ -86,6 +91,7 @@ public class Gumbytext extends TBComponent {
   }
 
   public WOActionResults doSampleAction() {
+
     return goToMySelfAction();
   }
 
