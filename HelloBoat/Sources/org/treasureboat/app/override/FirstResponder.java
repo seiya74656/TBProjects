@@ -19,8 +19,7 @@ public class FirstResponder extends TBWFirstResponder {
 	//  Methods : メソッド
 	//********************************************************************
 
-	@SuppressWarnings("deprecation")
-  @Override
+	@Override
 	public WOActionResults createFirstResponseAction(String loginUri) {
 		WOActionResults result = super.createFirstResponseAction(loginUri);
 		if (result != null) {
