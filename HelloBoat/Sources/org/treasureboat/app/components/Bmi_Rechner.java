@@ -13,22 +13,7 @@ public class Bmi_Rechner  {
   public void bmi_berechnung(int geschlecht, int groesse, int gewicht) {
     bmi =  (gewicht * 10000 / (groesse * groesse));
     
-    if (geschlecht == 1){ if ( bmi < 19 ){
-      System.err.println( "Untergewicht"); } else {
-      if ( bmi < 29 ){
-        System.err.println( "Normalgewicht" );
-      } else {
-        System.err.println( "Uebergewicht" ); }
-      } }else {
-      if ( bmi < 20 ){
-        System.err.println( "Untergewicht" );
-      } else {
-      if ( bmi < 28 ){
-        System.err.println( "Normalgewicht"); } else {
-          System.err.println( "Uebergewicht" ); }
-      } }
-      if ( bmi > 30 ){
-        System.err.println( "Dieses Gewicht ist behandlungsbeduerftig!" ); }
+    setWert(geschlecht, bmi);
   }
   private float bmi;
 
@@ -36,10 +21,28 @@ public class Bmi_Rechner  {
     return wert;
   }
 
-  public void setWert(String wert) {
-    this.wert = wert;
+  public void setWert(int geschlecht, float bmi) {
+    if (geschlecht == 1){ if ( bmi < 19 ){
+      wert = "Untergewicht"; } else {
+        if ( bmi < 29 ){
+          wert = "Normalgewicht";
+        } else {
+          wert = "Uebergewicht"; }
+      } }else {
+        if ( bmi < 20 ){
+          wert = "Untergewicht";
+        } else {
+          if ( bmi < 28 ){
+            wert = "Normalgewicht"; } else {
+              wert = "Uebergewicht"; }
+        } }
+    if ( bmi > 30 ){
+      wert = "Dieses Gewicht ist behandlungsbeduerftig!"; }
+ 
+    
+    System.err.print(wert);
   }
 
-  
+
   private String wert;
 }

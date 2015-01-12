@@ -38,11 +38,21 @@ public class Gumbytext extends TBComponent {
   }
   public Convention oneConvention; // für Repetition's
 
-  public double bmi() {
+  public StringBuilder bmi() {
     Bmi_Rechner bmi = new Bmi_Rechner();
+    Bmi_Rechner bmi2 = new Bmi_Rechner();
     bmi.bmi_berechnung(1, 185, 120);
-    System.err.println("BMI: "+ bmi.getBmi());
-    return bmi.getBmi();
+    bmi2.bmi_berechnung(0, 120, 40);
+    System.err.println("BMI: "+ bmi.getBmi() + " Wert: " + bmi.getWert());
+    StringBuilder sb = new StringBuilder();
+    sb.append(bmi.getBmi());
+    sb.append("<br /> Wert:");
+    sb.append(bmi.getWert());
+    sb.append("<br /> BMI2: " + bmi2.getBmi());
+    sb.append("<br /> Wert:");
+    sb.append(bmi2.getWert());
+    sb.append("<br />Ende vom BMI Stringbuilder");
+    return sb;
   }
   //********************************************************************
   //  Actions : アクション

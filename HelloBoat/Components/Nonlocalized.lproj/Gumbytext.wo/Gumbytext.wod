@@ -29,5 +29,6 @@ MyCounter : TBString {
 
 BMI : TBString {
 	value = bmi;
+	escapeHTML = false;
 
 }
