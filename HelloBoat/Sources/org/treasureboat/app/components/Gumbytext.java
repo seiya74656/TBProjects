@@ -38,6 +38,12 @@ public class Gumbytext extends TBComponent {
   }
   public Convention oneConvention; // für Repetition's
 
+  public String schaltjahrberechnung() {
+    Schaltjahr schalt = new Schaltjahr();
+    schalt.setJahreszahl(2012);
+    return schalt.Jahreswert();
+  }
+
   public StringBuilder bmi() {
     Bmi_Rechner bmi = new Bmi_Rechner();
     Bmi_Rechner bmi2 = new Bmi_Rechner();
