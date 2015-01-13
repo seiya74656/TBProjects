@@ -1,9 +1,12 @@
 package org.treasureboat.app.components;
 
+import org.treasureboat.app.businesslogic.Schaltjahr;
+import org.treasureboat.foundation.TBFString;
+import org.treasureboat.foundation.TBFV;
 import org.treasureboat.webcore.components.TBComponent;
 
-import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOActionResults;
+import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSArray;
 
 public class Gumbytext extends TBComponent {
@@ -48,22 +51,22 @@ public class Gumbytext extends TBComponent {
   //BEGIN BMI_Rechner.java
 
   public StringBuilder bmi() {
-    Bmi_Rechner bmi = new Bmi_Rechner();
-    Bmi_Rechner bmi2 = new Bmi_Rechner();
-    bmi.bmi_berechnung(1, 185, 120);
-    bmi2.bmi_berechnung(1, 120, 111);
-    System.err.println("BMI: "+ bmi.getBmi() + " Wert: " + bmi.getWert());
+//    Bmi_Rechner bmi = new Bmi_Rechner();
+//    Bmi_Rechner bmi2 = new Bmi_Rechner();
+//    bmi.bmi_berechnung(1, 185, 120);
+//    bmi2.bmi_berechnung(1, 120, 111);
+//    System.err.println("BMI: "+ bmi.getBmi() + " Wert: " + bmi.getWert());
     StringBuilder sb = new StringBuilder();
-    sb.append(bmi.getBmi());
-    sb.append("<br /> Wert:");
-    sb.append(bmi.getWert());
-    sb.append("<br /> BMI2: " + bmi2.getBmi());
-    sb.append("<br /> Wert:");
-    sb.append(bmi2.getWert());
-    sb.append("<br />Ende vom BMI Stringbuilder");
+//    sb.append(bmi.getBmi());
+//    sb.append("<br /> Wert:");
+//    sb.append(bmi.getWert());
+//    sb.append("<br /> BMI2: " + bmi2.getBmi());
+//    sb.append("<br /> Wert:");
+//    sb.append(bmi2.getWert());
+//    sb.append("<br />Ende vom BMI Stringbuilder");
     return sb;
   }
-  
+
   //END BMI_Rechner.java
 
   //********************************************************************
@@ -111,16 +114,32 @@ public class Gumbytext extends TBComponent {
   // BMI Berechnung BEGIN
 
   public WOActionResults doBMIAction() {
-    log.info("doBMIAction wurde aufgerufen." + getGeschlecht() + getGroesse() + gewicht);
-    Gumbytext nextPage = pageWithName(Gumbytext.class);
-    nextPage.setGewicht(gewicht);
-    nextPage.setGeschlecht(geschlecht);
-    nextPage.setGroesse(groesse);
-    
-    Bmi_Rechner bmi4 = new Bmi_Rechner();
-    bmi4.bmi_berechnung(Integer.parseInt(geschlecht), Integer.parseInt(groesse), Integer.parseInt(gewicht));
-    return nextPage;
+
+    if (TBFString.stringIsNullOrEmpty(geschlecht) || TBFString.stringIsNullOrEmpty(groesse) || TBFString.stringIsNullOrEmpty(gewicht)) {
+      // no data do Nothing
+    } else {
+      log.info("doBMIAction wurde aufgerufen. {}, {}, {}", geschlecht, groesse, gewicht);
+
+      myBMIRechner = new Bmi_Rechner(TBFV.intValue(geschlecht), TBFV.intValue(groesse), TBFV.intValue(gewicht));
+      
+//      Bmi_Rechner bmi5 = new Bmi_Rechner();
+//      bmi5.bmi_berechnung(TBFV.intValue(geschlecht), TBFV.intValue(groesse), TBFV.intValue(gewicht));
+    }
+
+//        Gumbytext nextPage = pageWithName(Gumbytext.class);
+//        nextPage.setGewicht(gewicht);
+//        nextPage.setGeschlecht(geschlecht);
+//        nextPage.setGroesse(groesse);
+
+    return goToMySelfAction();
   }
+  
+  public Bmi_Rechner myBMIRechner;
+  
+  
+  
+  
+  
   //BMI Berechnung END
 
   public WOActionResults doSampleAction() {
@@ -167,34 +186,9 @@ public class Gumbytext extends TBComponent {
   }
 
   // GET & SET FOR BMI
-  
-  public String getGewicht() {
-    return gewicht;
-  }
 
-  public void setGewicht(String gewicht) {
-    this.gewicht = gewicht;
-  }
-
-  private String gewicht;
-
-  public String getGeschlecht() {
-    return geschlecht;
-  }
-
-  public void setGeschlecht(String geschlecht) {
-    this.geschlecht = geschlecht;
-  }
-
-  private String geschlecht;
-
-  public String getGroesse() {
-    return groesse;
-  }
-
-  public void setGroesse(String groesse) {
-    this.groesse = groesse;
-  }  
-  private String groesse;
+  public String gewicht;
+  public String geschlecht;
+  public String groesse;
 
 }

@@ -33,12 +33,13 @@
 		 			<wo:TBJSAlertPanel alertMessage="$bmi" string="BMI TEST" action="$doSampleAction" automatic="true"/><br />
 					
 			<wo:TBString value = "---" markdown = "true" />	
-			<h4>BMI Class:</h4>
+			<h4>BMI Class: [<wo:TBString value = "$myBMIRechner.wert" />] </h4>
 					Geschlecht: <webobject name="Geschlecht" />
 					Gewicht: <webobject name="Gewicht" />
 					Grösse: <webobject name="Groesse" /><br />
 					BMI: <webobject name="BMI" /><br />
 					<wo:submit value="BMI Berechnen" action="$doBMIAction" />
+					
 					
 			<wo:TBString value = "---" markdown = "true" />	
 			<h4>Schaltjahr Berechnung Class:</h4>

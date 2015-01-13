@@ -1,4 +1,4 @@
-package org.treasureboat.app.components;
+package org.treasureboat.app.businesslogic;
 
 
 public class Schaltjahr {  
