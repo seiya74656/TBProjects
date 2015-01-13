@@ -12,7 +12,7 @@ public class Bmi_Rechner  {
 
   public void bmi_berechnung(int geschlecht, int groesse, int gewicht) {
     bmi =  (gewicht * 10000 / (groesse * groesse));
-    
+
     setWert(geschlecht, bmi);
   }
   private float bmi;
@@ -38,9 +38,6 @@ public class Bmi_Rechner  {
         } }
     if ( bmi > 30 ){
       wert = "Dieses Gewicht ist behandlungsbeduerftig!"; }
- 
-    
-    System.err.print(wert);
   }
 
 

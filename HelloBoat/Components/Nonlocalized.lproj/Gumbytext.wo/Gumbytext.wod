@@ -43,6 +43,7 @@ Geschlecht : TBTextField {
 
 Gewicht : TBTextField {
 	value = gewicht;
+	
 }
 
 Groesse : TBTextField {

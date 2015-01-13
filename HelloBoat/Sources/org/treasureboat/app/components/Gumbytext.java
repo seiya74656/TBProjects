@@ -63,7 +63,7 @@ public class Gumbytext extends TBComponent {
     sb.append("<br />Ende vom BMI Stringbuilder");
     return sb;
   }
-
+  
   //END BMI_Rechner.java
 
   //********************************************************************
@@ -116,6 +116,9 @@ public class Gumbytext extends TBComponent {
     nextPage.setGewicht(gewicht);
     nextPage.setGeschlecht(geschlecht);
     nextPage.setGroesse(groesse);
+    
+    Bmi_Rechner bmi4 = new Bmi_Rechner();
+    bmi4.bmi_berechnung(Integer.parseInt(geschlecht), Integer.parseInt(groesse), Integer.parseInt(gewicht));
     return nextPage;
   }
   //BMI Berechnung END
@@ -164,6 +167,7 @@ public class Gumbytext extends TBComponent {
   }
 
   // GET & SET FOR BMI
+  
   public String getGewicht() {
     return gewicht;
   }
