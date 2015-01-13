@@ -41,7 +41,7 @@ Geschlecht : TBTextField {
 	value = geschlecht;
 }
 
-Gewicht : TBTextField {
+Gewicht : TBNumberField {
 	value = gewicht;
 	
 }
