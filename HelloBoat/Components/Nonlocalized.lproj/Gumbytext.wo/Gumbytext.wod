@@ -24,7 +24,7 @@ MyAltert : TBJSAlertPanel {
 
 MyCounter : TBString {
 	escapeHTML = false;
-	value = Counter;
+	value = counter;
 }
 
 BMI : TBString {

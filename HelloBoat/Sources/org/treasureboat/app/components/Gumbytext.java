@@ -72,23 +72,32 @@ public class Gumbytext extends TBComponent {
   //********************************************************************
   //  Actions : アクション
   //********************************************************************  
+  
   //BEGIN Counter
-  public String Counter() {
-
+  
+  public String counter() {
+    return counter(10);
+  }
+  
+  public String counter(int max) {
+    int counter = 0;
+    
     StringBuilder sb = new StringBuilder();
 
-    for (int  i = 0; i < g; i++) {
+    for (int  i = 0; i < max; i++) {
       counter++;
       sb.append(counter + "<br />");  
     }
-    g = g+5;
+    max = max + 5;
 
     return sb.toString();
   }
-  public static int g = 10;
-  public int counter = 0;
+ 
   //END Counter
 
+  
+  
+  
   //MyText : TBTextField = Beispiel Text Field 
   public String myText;
 
