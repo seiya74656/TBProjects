@@ -36,7 +36,7 @@ public class Gumbytext extends TBComponent {
     return _tabs;
   }
   public Convention oneConvention; // für Repetition's
-  
+
   // BEGIN Schaltjahrberechnung - Schaltjahr.java
   public String schaltjahrberechnung() {
     Schaltjahr schalt = new Schaltjahr();
@@ -63,6 +63,7 @@ public class Gumbytext extends TBComponent {
     sb.append("<br />Ende vom BMI Stringbuilder");
     return sb;
   }
+
   //END BMI_Rechner.java
 
   //********************************************************************
@@ -108,12 +109,13 @@ public class Gumbytext extends TBComponent {
   //END Dropdown Menu Result after click Send
 
   // BMI Berechnung BEGIN
-  public String gewicht, groesse, geschlecht;
 
   public WOActionResults doBMIAction() {
-    log.info("doBMIAction wurde aufgerufen." + geschlecht + groesse + gewicht);
+    log.info("doBMIAction wurde aufgerufen." + getGeschlecht() + getGroesse() + gewicht);
     Gumbytext nextPage = pageWithName(Gumbytext.class);
-    nextPage.bmi();
+    nextPage.setGewicht(gewicht);
+    nextPage.setGeschlecht(geschlecht);
+    nextPage.setGroesse(groesse);
     return nextPage;
   }
   //BMI Berechnung END
@@ -161,5 +163,34 @@ public class Gumbytext extends TBComponent {
 
   }
 
+  // GET & SET FOR BMI
+  public String getGewicht() {
+    return gewicht;
+  }
+
+  public void setGewicht(String gewicht) {
+    this.gewicht = gewicht;
+  }
+
+  private String gewicht;
+
+  public String getGeschlecht() {
+    return geschlecht;
+  }
+
+  public void setGeschlecht(String geschlecht) {
+    this.geschlecht = geschlecht;
+  }
+
+  private String geschlecht;
+
+  public String getGroesse() {
+    return groesse;
+  }
+
+  public void setGroesse(String groesse) {
+    this.groesse = groesse;
+  }  
+  private String groesse;
 
 }
