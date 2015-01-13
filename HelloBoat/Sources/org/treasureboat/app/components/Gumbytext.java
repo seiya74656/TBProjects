@@ -20,7 +20,6 @@ public class Gumbytext extends TBComponent {
   //********************************************************************
   //  Methods : メソッド
   //********************************************************************
-  private String _day;
   private NSArray<Convention> _tabs;
 
   public Convention selectedPopUp;
@@ -37,12 +36,16 @@ public class Gumbytext extends TBComponent {
     return _tabs;
   }
   public Convention oneConvention; // für Repetition's
-
+  
+  // BEGIN Schaltjahrberechnung - Schaltjahr.java
   public String schaltjahrberechnung() {
     Schaltjahr schalt = new Schaltjahr();
     schalt.setJahreszahl(2012);
     return schalt.Jahreswert();
   }
+  //END Schaltjahrberechnung - Schaltjahr.java
+
+  //BEGIN BMI_Rechner.java
 
   public StringBuilder bmi() {
     Bmi_Rechner bmi = new Bmi_Rechner();
@@ -60,10 +63,12 @@ public class Gumbytext extends TBComponent {
     sb.append("<br />Ende vom BMI Stringbuilder");
     return sb;
   }
+  //END BMI_Rechner.java
+
   //********************************************************************
   //  Actions : アクション
   //********************************************************************  
-
+  //BEGIN Counter
   public String Counter() {
 
     StringBuilder sb = new StringBuilder();
@@ -78,17 +83,12 @@ public class Gumbytext extends TBComponent {
   }
   public static int g = 10;
   public int counter = 0;
+  //END Counter
 
-  public String Day() {
-    return _day;
-  }
-
-  public void setDay(String day) {
-    _day = day;
-  }
-
+  //MyText : TBTextField = Beispiel Text Field 
   public String myText;
 
+  //BEGIN Dropdown Menu Result after click Send
   public WOActionResults doSendAction() {
     String s = selectedPopUp == null ? "[null]" : selectedPopUp.convention();
     System.err.println("// MyText: " + myText +" // Auflistung: "+ s + "//");
@@ -105,19 +105,19 @@ public class Gumbytext extends TBComponent {
 
     return goToMySelfAction();
   }
-  
-// BMI Berechnung BEGIN
-  public String gewicht, groesse, geschlecht,resultbmi = "1";
+  //END Dropdown Menu Result after click Send
+
+  // BMI Berechnung BEGIN
+  public String gewicht, groesse, geschlecht;
 
   public WOActionResults doBMIAction() {
     log.info("doBMIAction wurde aufgerufen." + geschlecht + groesse + gewicht);
-    Bmi_Rechner bmi3 = new Bmi_Rechner();
-    bmi3.bmi_berechnung(Integer.parseInt(geschlecht),Integer.parseInt(groesse), Integer.parseInt(gewicht));
-    String resultbmi = Float.toString(bmi3.getBmi());
-    return goToMySelfAction();
+    Gumbytext nextPage = pageWithName(Gumbytext.class);
+    nextPage.bmi();
+    return nextPage;
   }
-//BMI Berechnung END
-  
+  //BMI Berechnung END
+
   public WOActionResults doSampleAction() {
 
     return goToMySelfAction();

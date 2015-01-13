@@ -21,16 +21,14 @@
 			</tr>
 			<tr>
 				<td>
-				</td>
-			</tr>
-			<tr>
-				<td>
 					<webobject name="PopUp" />
 					<br />
 		 			<wo:TBJSAlertPanel alertMessage="$selectedTab.convention" string="Testalert" action="$doSampleAction" automatic="true"/><br />
 		 			<wo:TBJSAlertPanel alertMessage="$selectedTab.besucherzahlen" string="Testalert 2" action="$doSampleAction" automatic="true"/><br />
 		 			<wo:TBJSAlertPanel alertMessage="Convention + Besucherzahlen = Error" string="Testalert 3 (Error)" action="$doSampleAction" automatic="true"/><br />
 					<webobject name="MyAltert" /><br />
+					<wo:submit value="Senden" action="$doSendAction" /><br />
+					
 			<wo:TBString value = "---" markdown = "true" />	
 			<h4>BMI Class:</h4>
 					Geschlecht: <webobject name="Geschlecht" />
@@ -48,16 +46,6 @@
 			<wo:TBString value = "---" markdown = "true" />	
 				</td>
 			</tr>			
-			
-			<tr>
-				<td>
-				<wo:submit value="Senden" action="$doSendAction" />
-				</td>
-			</tr>
-		</table>
-		
+			</table>
 </wo:TBForm>
-
-
-
 </webobject>
