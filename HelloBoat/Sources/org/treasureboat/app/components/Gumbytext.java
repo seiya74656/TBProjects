@@ -48,7 +48,7 @@ public class Gumbytext extends TBComponent {
     Bmi_Rechner bmi = new Bmi_Rechner();
     Bmi_Rechner bmi2 = new Bmi_Rechner();
     bmi.bmi_berechnung(1, 185, 120);
-    bmi2.bmi_berechnung(0, 120, 40);
+    bmi2.bmi_berechnung(1, 120, 111);
     System.err.println("BMI: "+ bmi.getBmi() + " Wert: " + bmi.getWert());
     StringBuilder sb = new StringBuilder();
     sb.append(bmi.getBmi());
@@ -72,7 +72,7 @@ public class Gumbytext extends TBComponent {
       counter++;
       sb.append(counter + "<br />");  
     }
-    g = g+10;
+    g = g+5;
 
     return sb.toString();
   }
@@ -95,7 +95,7 @@ public class Gumbytext extends TBComponent {
     if (s == "AniNite") {
       Aninite nextPage = pageWithName(Aninite.class);
       nextPage.setConvention(s, myText);
-      return nextPage;      
+      return nextPage;
     } else if (s == "AkiCon") {
       Akicon nextPage = pageWithName(Akicon.class);
       nextPage.setConvention(s);
@@ -105,7 +105,19 @@ public class Gumbytext extends TBComponent {
 
     return goToMySelfAction();
   }
+  
+// BMI Berechnung BEGIN
+  public String gewicht, groesse, geschlecht,resultbmi = "1";
 
+  public WOActionResults doBMIAction() {
+    log.info("doBMIAction wurde aufgerufen." + geschlecht + groesse + gewicht);
+    Bmi_Rechner bmi3 = new Bmi_Rechner();
+    bmi3.bmi_berechnung(Integer.parseInt(geschlecht),Integer.parseInt(groesse), Integer.parseInt(gewicht));
+    String resultbmi = Float.toString(bmi3.getBmi());
+    return goToMySelfAction();
+  }
+//BMI Berechnung END
+  
   public WOActionResults doSampleAction() {
 
     return goToMySelfAction();

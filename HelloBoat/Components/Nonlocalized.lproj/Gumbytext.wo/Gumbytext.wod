@@ -36,3 +36,15 @@ BMI : TBString {
 Schaltjahr : TBString {
 	value = schaltjahrberechnung;
 }
+
+Geschlecht : TBTextField {
+	value = geschlecht;
+}
+
+Gewicht : TBTextField {
+	value = gewicht;
+}
+
+Groesse : TBTextField {
+	value = groesse;
+}
