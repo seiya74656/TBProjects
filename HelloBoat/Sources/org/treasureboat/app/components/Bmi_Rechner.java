@@ -9,7 +9,8 @@ public class Bmi_Rechner  {
   }
 
   public Bmi_Rechner(int geschlecht, int groesse, int gewicht) {
-    this();
+    // this(); Ruft den Main Constructor auf , und führt dann den Code unterhalb aus. Da super() schon im Main Constructor inizialisiert wird.
+    this(); 
 
     bmi_berechnung(geschlecht, groesse, gewicht);
   }
