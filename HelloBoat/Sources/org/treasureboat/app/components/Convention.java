@@ -41,9 +41,26 @@ public class Convention extends TBComponent {
 
   public void setRandomtext(String Randomtext) {
     _randomtext = Randomtext;
+    caesar(Randomtext, 1);
+
   }
 
   private String _randomtext;
 
+  
+  public void caesar(String str, int key) {
+    for(int i = 0; i < str.length();i++) {
+      str = str.toUpperCase();
+      char c = (char) (str.charAt(i) + key);
+ 
+ 
+      while (c > 'Z') {
+        c = (char) (c - 'Z' +'A' - 1);
+      }
+ 
+      System.out.print(c);
+    }
+    log.info("String LAenger: {}", str.length());
+  }
 
 }
