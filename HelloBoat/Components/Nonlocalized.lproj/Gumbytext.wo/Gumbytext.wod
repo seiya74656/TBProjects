@@ -37,7 +37,7 @@ Schaltjahr : TBString {
 	value = schaltjahrberechnung;
 }
 
-Geschlecht : TBTextField {
+Geschlecht : TBNumberField {
 	value = geschlecht;
 }
 
@@ -46,6 +46,10 @@ Gewicht : TBNumberField {
 	
 }
 
-Groesse : TBTextField {
+Groesse : TBNumberField {
 	value = groesse;
+}
+
+Verschluesselungsstring : TBTextField {
+	value = verschluesselungsstring;
 }

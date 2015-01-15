@@ -33,6 +33,10 @@
 		 			<wo:TBJSAlertPanel alertMessage="$bmi" string="BMI TEST" action="$doSampleAction" automatic="true"/><br />
 					
 			<wo:TBString value = "---" markdown = "true" />	
+			<webobject name="Verschluesselungsstring" /><br />
+			<h4><wo:TBString value="$caesarAus.verschluesseln" /></h4>
+			<wo:submit value="Verschluesseln" action="$doCaesarAction"></wo:submit>
+			<wo:TBString value = "---" markdown = "true" />	
 			<h4>BMI Class: [<wo:TBString value = "$myBMIRechner.wert" />] </h4>
 					Geschlecht: <webobject name="Geschlecht" />
 					Gewicht: <webobject name="Gewicht" />

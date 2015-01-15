@@ -121,6 +121,12 @@ public class Gumbytext extends TBComponent {
   }
   //END Dropdown Menu Result after click Send
 
+  public WOActionResults doCaesarAction() {
+    caesarAus = new Caesar(verschluesselungsstring, 1);
+    return goToMySelfAction();
+  }
+  public Caesar caesarAus;
+
   // BMI Berechnung BEGIN
 
   public WOActionResults doBMIAction() {
@@ -136,7 +142,6 @@ public class Gumbytext extends TBComponent {
 //    mit TBFV.intValue() können werte umgewandeltwerden, die Methode führt dabei gleich mehrere Checks durch.
 //    Browser übermitteln die Daten als String, weshalb Sie für die Berechnung zu einem anderen Value umgewandelt werden müssen. (Beispiel int)
       myBMIRechner = new Bmi_Rechner(TBFV.intValue(geschlecht), TBFV.intValue(groesse), TBFV.intValue(gewicht));
-      
 //      Weitere Möglichkeit den BMI_Rechner zu benutzen, mit getrennten Constructor, Methoden.
 //      Bmi_Rechner bmi5 = new Bmi_Rechner();
 //      bmi5.bmi_berechnung(TBFV.intValue(geschlecht), TBFV.intValue(groesse), TBFV.intValue(gewicht));
@@ -152,8 +157,7 @@ public class Gumbytext extends TBComponent {
   }
   // Wird als Getter benutzt, womit man dann auf die Get Methoden über das HTML zugreiffen kann. Beispiel: $myBMIRechner.wert
   public Bmi_Rechner myBMIRechner;
-  
-  
+
   
   
   
@@ -208,5 +212,6 @@ public class Gumbytext extends TBComponent {
   public String gewicht;
   public String geschlecht;
   public String groesse;
+  public String verschluesselungsstring;
 
 }
