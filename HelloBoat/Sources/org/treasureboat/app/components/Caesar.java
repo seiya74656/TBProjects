@@ -3,7 +3,6 @@ package org.treasureboat.app.components;
 import org.treasureboat.foundation.TBFConstants;
 import org.treasureboat.foundation.TBFString;
 
-
 public class Caesar  {
 
   public Caesar() {
@@ -13,6 +12,7 @@ public class Caesar  {
   public Caesar (String str, int key) {
     this();
     verschluesselung(str, key); 
+    entschluesselung(verschluesseln, key);
   }
 
   public void verschluesselung(String str, int key) {
@@ -55,10 +55,36 @@ public class Caesar  {
     }
   }
 
+  public void entschluesselung(String str, int key) {
+
+    if(TBFString.stringIsNullOrEmpty(str) || key == TBFConstants.NOT_FOUND) {
+      // do nothing
+    } else {
+
+      StringBuilder sb = new StringBuilder();
+
+      for(int i = 0; i < str.length();i++) {
+        char c =  (char) (str.charAt(i) - key);
+
+        while (c > 'Z') {
+          c = (char) (c + 'Z' - 'A' - 1);
+        }
+        sb.append(c);
+
+      }
+      entschluesseln = sb.toString();
+    }
+  }
+  
   public String verschluesseln() {
     if(TBFString.stringIsNullOrEmpty(verschluesseln)) return "HOPPALA";
     return verschluesseln;
   }
 
-  private String verschluesseln;
+  public String entschluesseln() {
+    if(TBFString.stringIsNullOrEmpty(entschluesseln)) return "HOPPALA";
+    return entschluesseln;
+  }
+
+  private String verschluesseln, entschluesseln;
 }
