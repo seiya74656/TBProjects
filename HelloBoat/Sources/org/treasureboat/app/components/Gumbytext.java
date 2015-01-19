@@ -9,7 +9,7 @@ import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSArray;
 
-public class Gumbytext extends TBComponent {
+public class Gumbytext extends TBComponent implements SampleInterface {
 
   private static final long serialVersionUID = 1L;
 
@@ -18,6 +18,7 @@ public class Gumbytext extends TBComponent {
   //********************************************************************
   public Gumbytext(WOContext context) {
     super(context);
+    Zeitungsabo("Java Magazin", "Jahresabo");
   }
 
   //********************************************************************
@@ -213,5 +214,11 @@ public class Gumbytext extends TBComponent {
   public String geschlecht;
   public String groesse;
   public String verschluesselungsstring;
+
+  @Override
+  public void Zeitungsabo(String Zeitung, String Abo) {
+    log.info("Zeitungsabo:" + Abo + Zeitung);
+    
+  }
 
 }
