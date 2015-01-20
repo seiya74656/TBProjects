@@ -16,11 +16,11 @@ public class Gumbytext extends TBComponent implements SampleInterface {
   //********************************************************************
   //  Constructor : コンストラクタ
   //********************************************************************
-  public Gumbytext(WOContext context) {
+  public Gumbytext(WOContext context) throws Exception {
     super(context);
     Zeitungsabo("Java Magazin", "Jahresabo");
+    Program();
   }
-
   //********************************************************************
   //  Methods : メソッド
   //********************************************************************
@@ -40,7 +40,6 @@ public class Gumbytext extends TBComponent implements SampleInterface {
     return _tabs;
   }
   public Convention oneConvention; // für Repetition's
-
   // BEGIN Schaltjahrberechnung - Schaltjahr.java
   public String schaltjahrberechnung() {
     Schaltjahr schalt = new Schaltjahr();
@@ -174,6 +173,7 @@ public class Gumbytext extends TBComponent implements SampleInterface {
     return goToMySelfAction();
   }
 
+  
   //********************************************************************
   //  Convention Class
   //********************************************************************
@@ -220,5 +220,41 @@ public class Gumbytext extends TBComponent implements SampleInterface {
     log.info("Zeitungsabo:" + Abo + Zeitung);
     
   }
+  
+// Geschwindigkeitsvergleich zwischen Interface und direkt Aufruf.
+  class Perl implements Tester {
+    public void test(int value) throws Exception {
+  // Some useless logic.
+  if (value < 0) {
+      throw new Exception();
+  }
+    }
+  }
 
+    public void Program() throws Exception {
+
+  Tester test = new Perl();
+  Perl perl = (Perl) test;
+
+  long t1 = System.currentTimeMillis();
+
+  // ... Version 1: Aufruf über das Interface.
+  for (int i = 0; i < 10000000; i++) {
+      test.test(i);
+  }
+
+  long t2 = System.currentTimeMillis();
+
+  // ... Version 2: direkter Aufruf der Perl Klasse.
+  for (int i = 0; i < 10000000; i++) {
+      perl.test(i);
+  }
+
+  long t3 = System.currentTimeMillis();
+
+  // ... Times.
+  System.out.println(t2 - t1 + " ms (Interface Method)");
+  System.out.println(t3 - t2 + " ms (Direkter Aufruf)");
+    }
 }
+
