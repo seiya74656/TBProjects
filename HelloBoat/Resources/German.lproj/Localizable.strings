@@ -5,4 +5,6 @@
 	"DisplayDTS" = "%d-%m-%Y %H:%M:%S";
 	
 	"Hello World" = "Hallo Welt";
+	
+	"MyFirstTest" = "Das ist mein erster Test.";
 }

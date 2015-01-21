@@ -8,3 +8,16 @@ convention : TBString {
 besucherzahlen : TBString {
 	value = randomtext;
 }
+
+Language : TBString {
+	value = localizer;
+}
+
+LOC_1 : TBString {
+	value = localizer.MyFirstTest;
+}
+
+LOC_2 : TBWLocalizedString {
+	value = "MyFirstTest";
+}
+

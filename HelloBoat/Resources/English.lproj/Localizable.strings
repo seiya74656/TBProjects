@@ -7,4 +7,7 @@
 	
 	"PropertyKey.oldClob" = "Old Values";
 	"PropertyKey.newClob" = "New Values";
+	
+	"MyFirstTest" = "my first test.";
+	
 }
