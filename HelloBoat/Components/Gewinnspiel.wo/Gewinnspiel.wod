@@ -1,0 +1,7 @@
+Pagewrapper : TBEDefaultPageWrapper {
+	
+}
+
+Gewinnfrage : TBWLocalizedString {
+	value = "Gewinnfrage";
+}
