@@ -1,14 +1,80 @@
 <webobject name="Pagewrapper">
+<style>
+	#Gewinnspiel .column, #Gewinnspiel .columns, #Gewinnspiel .tiles > li {
+		background: #ddd;
+		border: 1px solid #d0d0d0;
+		-webkit-transition-duration: .3s;
+		-moz-transition-duration: .3s;
+		-o-transition-duration: .3s;
+		-ms-transition-duration: .3s;
+		transition-duration: .3s;
+	}
 
-	<webobject name="Gewinnfrage"></webobject>
-			<wo:TBForm>
+	#Gewinnspiel .row {
+		margin-bottom: 5px;
+		text-align: center;
+	}
 
-			<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
-				<wo:submit value = "Englisch"  action = "$doEnglishAction" />
-			</wo:TBGenericContainer>
+	#Gewinnspiel .column:hover p, #Gewinnspiel .columns:hover p {
+		font-size: 20px;
+		font-weight: bold;
+		-webkit-transition-duration: .2s;
+		-moz-transition-duration: .2s;
+		-o-transition-duration: .2s;
+		-ms-transition-duration: .2s;
+		transition-duration: .2s;
+	}
 
-			<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
-				<wo:submit value = "Deutsch" action = "$doGermanAction"  />
-			</wo:TBGenericContainer>	
-			</wo:TBForm>
-			</webobject>
+</style>
+
+<div id="Gewinnspiel">
+	<div class="row">	
+		<div class="ttip" data-tooltip="Ks Room everywhere">
+			<wo:TBHyperlink pageName="Main">
+				<wo:TBImage src="logo.png" />
+			</wo:TBHyperlink>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="twelve columns">
+    	<p><webobject name="Gewinnfrage"></webobject></p>
+    	</div>
+    </div>
+
+	<div class="row">
+    	<div class="six columns">
+    		<p>PHP</p>
+		</div>
+	    <div class="six columns">
+    		<p>Treasureboat</p>
+	    </div>
+	</div>
+
+	<div class="row">
+		<div class="six columns">
+    		<p>Swift</p>
+		</div>
+		<div class="six columns rounded" >
+    		<p>Java</p>
+    	</div>
+    </div>
+</div>
+
+<div class="row"><br />
+	Set Language:
+	<wo:TBForm>
+		<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
+			<wo:submit value = "Englisch"  action = "$doEnglishAction" />
+		</wo:TBGenericContainer>
+
+		<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
+			<wo:submit value = "Deutsch" action = "$doGermanAction"  />
+		</wo:TBGenericContainer>	
+
+		<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
+			<wo:submit value = "Japanisch" action = "$doJapaneseAction"  />
+		</wo:TBGenericContainer>	
+	</wo:TBForm>
+</div>			
+</webobject>

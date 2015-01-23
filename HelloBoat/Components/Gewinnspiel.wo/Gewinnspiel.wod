@@ -1,5 +1,5 @@
 Pagewrapper : TBEDefaultPageWrapper {
-	
+	dynamicPageName = "Gewinnspiel";	
 }
 
 Gewinnfrage : TBWLocalizedString {
