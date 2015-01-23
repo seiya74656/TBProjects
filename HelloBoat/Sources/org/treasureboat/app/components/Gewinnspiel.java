@@ -3,6 +3,7 @@ package org.treasureboat.app.components;
 import org.treasureboat.webcore.appserver.TBSession;
 import org.treasureboat.webcore.components.TBComponent;
 import org.treasureboat.webcore.enums.ETBWLanguage;
+import org.treasureboat.webcore.localization.TBWLocalizer;
 
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
@@ -22,20 +23,24 @@ public class Gewinnspiel extends TBComponent {
   }
   
   public WOActionResults doGermanAction() {
-    log.info(sprache);
     TBSession.session().setLanguage(ETBWLanguage.German.name());
-
-/*    if ("German".equals(sprache)){
-      TBSession.session().setLanguage(ETBWLanguage.German.name());
-    } else {
-      TBSession.session().setLanguage(ETBWLanguage.English.name());     
-    }
-*/  
     return goToMySelfAction();
 
   }
   
-  public String sprache;
+  public WOActionResults doJapaneseAction() {
+    TBSession.session().setLanguage(ETBWLanguage.Japanese.name());
+    return goToMySelfAction();
+
+  }
+  
+  public TBWLocalizer localizer() {
+    
+    TBWLocalizer localizer = super.localizer();
+    
+    return localizer;
+  }
+
 
   
 }
