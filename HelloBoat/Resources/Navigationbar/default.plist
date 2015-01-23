@@ -11,7 +11,9 @@
 			"Formatierungen",
 			"Gumbytext",
 			"Calendar",
-			"Aninite"
+			"Aninite",
+			"Akicon",
+			"Gewinnspiel"
 		);
 	},
 	{
@@ -37,9 +39,15 @@
 	{
 		name = "Aninite";
 		action = "session.handlers.aninite.customAniniteAction";
-	}
-	
-	
+	},
+	{
+		name = "Akicon";
+		action = "session.handlers.akicon.customAkiconAction";
+	},	
+	{
+		name = "Gewinnspiel";
+		action = "session.handlers.gewinnspiel.customGewinnspielAction";
+	}	
 	
 	/* 
 		Navigation Root Level 2
