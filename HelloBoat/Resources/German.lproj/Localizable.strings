@@ -8,4 +8,6 @@
 	
 	"MyFirstTest" = "Das ist mein erster Test.";
 	"Gewinnfrage" = "Was ist die nächste Generation von wonder?";
+	"AGB" = "Teilnahmebedingungen gelesen und akzeptiert";
+	"Gewinnueberschrift" = "Teilnehmen und Gewinnen";
 }

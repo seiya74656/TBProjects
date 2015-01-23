@@ -1,7 +1,16 @@
 Pagewrapper : TBEDefaultPageWrapper {
-	dynamicPageName = "Gewinnspiel";	
+	dynamicPageName = "Gewinnspiel";
+}
+
+AGB : TBWLocalizedString {
+	value = "AGB";
 }
 
 Gewinnfrage : TBWLocalizedString {
 	value = "Gewinnfrage";
 }
+
+Gewinnueberschrift : TBWLocalizedString {
+	value = "Gewinnueberschrift";
+}
+

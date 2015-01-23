@@ -60,10 +60,20 @@
     	</div>
     </div>
 </div>
-
-<div class="row"><br />
-	Set Language:
+<br />
 	<wo:TBForm>
+		<div id="Gewinnspiel">
+			<div class="row"><h4><wo name="Gewinnueberschrift"></wo></h4><br />
+	 		<wo:TBTextField value="$deinname" class="normal" placeholder="Dein Name" autofocus="true" automatic="true" /><br /><br />
+	 		<wo:TBEmailField value="$email" placeholder="Email Adresse" automatic="true"  class="normal" showButton="false" /><br /><br />
+	 		<wo:WOCheckBox selection="treu" value="$agb" ></wo:WOCheckBox><wo name="AGB" /><br /><br />
+	 		<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
+			<wo:submit value = "Teilnehmen" action = "$doMitmachenAction"  />
+		</wo:TBGenericContainer><br />	
+		 	</div>
+		 </div>
+<div class="row">
+		Set Language:<br />
 		<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
 			<wo:submit value = "Englisch"  action = "$doEnglishAction" />
 		</wo:TBGenericContainer>
@@ -74,7 +84,7 @@
 
 		<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
 			<wo:submit value = "Japanisch" action = "$doJapaneseAction"  />
-		</wo:TBGenericContainer>	
-	</wo:TBForm>
+		</wo:TBGenericContainer><br />		
 </div>			
+	</wo:TBForm>
 </webobject>
