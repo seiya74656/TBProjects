@@ -2,6 +2,11 @@ PageWrapper : TBEDefaultPageWrapper {
 	
 }
 
+GetfromAPI : APITest {
+	message = "API Testbutton";
+	messaged = "API 3rd Test";
+}
+
 convention : TBString {
 	value = convention;
 }

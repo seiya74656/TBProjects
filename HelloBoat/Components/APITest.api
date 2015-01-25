@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="APITest" wocomponentcontent="true">    <binding name="message"/>
+        <validation message="'message' is a required binding.">
+            <unbound name="message"/>
+        </validation>
+    
+    <binding name="messaged"/>
+    </wo>
+</wodefinitions>

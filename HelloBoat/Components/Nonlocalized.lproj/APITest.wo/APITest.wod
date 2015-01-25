@@ -1,0 +1,7 @@
+APITest : TBString {
+	value = message;
+}
+
+APITest2 : TBString {
+	value = messaged;
+}
