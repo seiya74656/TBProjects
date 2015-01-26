@@ -5,5 +5,8 @@
 	"DisplayDTS" = "%Y年%m月%d日 %H:%M:%S";
 	
 	"Hello World" = "世界、こんにちは";
-	"MyFirstTest" = "世界、こんにちは";
+	"MyFirstTest" = "テスト";
+	"Gewinnfrage" = "ワンダーを超えたネクストジェネレーションは何じゃ?";
+	"AGB" = "全ての情報を読んで、許可します。";
+	"Gewinnueberschrift" = "勝ち取れ!";
 }
