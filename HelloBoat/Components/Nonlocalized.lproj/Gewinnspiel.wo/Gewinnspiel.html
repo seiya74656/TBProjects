@@ -68,7 +68,8 @@
 				<br />
 		 		<wo:TBTextField value="$deinname" class="normal" placeholder="Dein Name" autofocus="true" automatic="true" /><br /><br />
 		 		<wo:TBEmailField value="$email" placeholder="Email Adresse" automatic="true"  class="normal" showButton="false" /><br /><br />
-	
+				<wo:WOCheckBox checked="$agb" /><webobject name="AGB" /><br /><br />
+				
 	 			<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
 					<wo:submit value = "$localizer.Teilnehmen" action = "$doMitmachenAction"  />
 				</wo:TBGenericContainer><br />	
