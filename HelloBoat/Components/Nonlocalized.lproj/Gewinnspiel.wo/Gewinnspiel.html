@@ -64,27 +64,29 @@
 	<wo:TBForm>
 		<div id="Gewinnspiel">
 			<div class="row">
-				<h4><wo name="Gewinnueberschrift"></wo></h4>  <!-- WRONG -->
-				<h4><webobject name="Gewinnueberschrift" /></h4> <!-- CORRECT -->
+				<h4><webobject name="Gewinnueberschrift" /></h4>
 				<br />
+		 		<wo:TBTextField value="$deinname" class="normal" placeholder="Dein Name" autofocus="true" automatic="true" /><br /><br />
+		 		<wo:TBEmailField value="$email" placeholder="Email Adresse" automatic="true"  class="normal" showButton="false" /><br /><br />
 	
 	
 	
 			</div>
 		</div>
 	
+		<div class="row">
+			Set Language:<br />
+			<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
+				<wo:submit value = "Englisch"  action = "$doEnglishAction" />
+			</wo:TBGenericContainer>
 	
+			<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
+				<wo:submit value = "Deutsch" action = "$doGermanAction"  />
+			</wo:TBGenericContainer>	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+			<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
+				<wo:submit value = "Japanisch" action = "$doJapaneseAction"  />
+			</wo:TBGenericContainer><br />		
+		</div>
 	</wo:TBForm>
 </webobject>
