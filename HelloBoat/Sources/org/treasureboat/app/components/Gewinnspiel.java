@@ -48,9 +48,9 @@ public class Gewinnspiel extends TBComponent {
 
   public WOActionResults doMitmachenAction() {
     if (TBFString.stringIsNullOrEmpty(agb) || TBFString.stringIsNullOrEmpty(deinname) || TBFString.stringIsNullOrEmpty(email)) {
-      log.info("Mitmachen fehlgeschlagen!!! {}, {}, {}", agb, deinname, email);
+      log.info("Mitmachen fehlgeschlagen!!! AGB: {}, Name: {}, Email: {}", agb, deinname, email);
     } else {
-      log.info("Mitmachen wurde aufgerufen. {}, {}, {}", agb, deinname, email);
+      log.info("Mitmachen wurde aufgerufen. AGB: {}, Name: {}, Email: {}", agb, deinname, email);
     }
     return goToMySelfAction();
   }

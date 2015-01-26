@@ -14,3 +14,8 @@ Gewinnueberschrift : TBWLocalizedString {
 	value = "Gewinnueberschrift";
 }
 
+Hiddenfield : TBHiddenField {
+	value = "agb22";
+	name = "agb";
+	disabled = false;
+}
