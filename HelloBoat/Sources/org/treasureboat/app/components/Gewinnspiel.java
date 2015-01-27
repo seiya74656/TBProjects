@@ -1,12 +1,21 @@
 package org.treasureboat.app.components;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
+
+import org.treasureboat.ERJavaMail;
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.webcore.appserver.TBSession;
 import org.treasureboat.webcore.components.TBComponent;
+import org.treasureboat.webcore.components.TBMailTo;
+import org.treasureboat.webcore.dynamicelement.TBJavaScript;
 import org.treasureboat.webcore.enums.ETBWLanguage;
 
+import com.sun.xml.internal.ws.server.sei.EndpointResponseMessageBuilder;
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
+
+import er.javamail.ERMailDeliveryHTML;
 
 public class Gewinnspiel extends TBComponent {
 
@@ -53,11 +62,33 @@ public class Gewinnspiel extends TBComponent {
     return goToMySelfAction();
   }
 
-  public WOActionResults doMitmachenAction() {
+  public WOActionResults doMitmachenAction() throws AddressException, MessagingException {
     if (!agb || TBFString.stringIsNullOrEmpty(deinname) || TBFString.stringIsNullOrEmpty(email) || !isValidEmailAddress(email)) {
       log.info("Mitmachen fehlgeschlagen!!! AGB: {}, Name: {}, Email: {}", agb, deinname, email);
     } else {
       log.info("Mitmachen wurde aufgerufen. AGB: {}, Name: {}, Email: {}", agb, deinname, email);
+
+/*    
+ *    ERJavaMail sendmail = new ERJavaMail();
+ *    sendmail.isValidEmail(email); 
+*/
+
+      /*
+      ERMailDeliveryHTML mail = new ERMailDeliveryHTML();
+      mail.setComponent(null);
+
+      try {
+        mail.newMail();
+        mail.setFromAddress("seiya@me.com");
+        mail.setReplyToAddress("seiya@me.com");
+        mail.setSubject("Test ueberschrift");
+        mail.setToAddress("seiya74656@gmail.com");
+        mail.sendMail();
+      } catch (Exception e) {
+        System.err.println("Mailsenden fehlgeschlagen");
+      }
+*/
+      
     }
     return goToMySelfAction();
   }
