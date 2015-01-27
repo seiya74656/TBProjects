@@ -1,6 +1,36 @@
 <webobject name="Pagewrapper">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+ $('label.big input[type="radio"]').click(function(){
+    $('label.big').removeClass('highlight');
+    $(this).parent('label.big:first').addClass('highlight');
+   });
+});
+</script>
+
 <style>
-	#Gewinnspiel .column, #Gewinnspiel .columns, #Gewinnspiel .tiles > li {
+	.highlight {
+	background-color:yellow;
+	font-weight: bold;
+	
+	}
+	.big:hover {
+		font-size: 20px;
+		font-weight: bold;
+		-webkit-transition-duration: .2s;
+		-moz-transition-duration: .2s;
+		-o-transition-duration: .2s;
+		-ms-transition-duration: .2s;
+		transition-duration: .2s;		
+	}
+
+	#radio {
+	display: none;
+	}
+
+	#Gewinnspiel .column, #Gewinnspiel .columns {
 		background: #ddd;
 		border: 1px solid #d0d0d0;
 		-webkit-transition-duration: .3s;
@@ -16,7 +46,6 @@
 	}
 
 	#Gewinnspiel .column:hover p, #Gewinnspiel .columns:hover p {
-		font-size: 20px;
 		font-weight: bold;
 		-webkit-transition-duration: .2s;
 		-moz-transition-duration: .2s;
@@ -44,19 +73,27 @@
 
 	<div class="row">
     	<div class="six columns">
-    		<p>PHP</p>
+                <label class="big"> 
+                    <input id="radio" type='radio' name='answer_id' value='313'> PHP
+                </label> 
 		</div>
 	    <div class="six columns">
-    		<p>Treasureboat</p>
+                <label class="big"> 
+                    <input id="radio" type='radio' name='answer_id' value='314'> Treasureboat
+                </label> 
 	    </div>
 	</div>
 
 	<div class="row">
 		<div class="six columns">
-    		<p>Swift</p>
+                <label class="big"> 
+                    <input id="radio" type='radio' name='answer_id' value='314'> Swift
+                </label> 
 		</div>
-		<div class="six columns rounded" >
-    		<p>Java</p>
+		<div class="six columns rounded">
+                <label class="big"> 
+                    <input id="radio" type='radio' name='answer_id' value='314'> Java
+                </label> 
     	</div>
     </div>
 </div>
