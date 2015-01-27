@@ -27,12 +27,19 @@ public class Gewinnspiel extends TBComponent {
   public String deinname = "";
   public boolean agb = false;
 
+
   //********************************************************************
   //  Actions : アクション
   //********************************************************************
-
+  public boolean isValidEmailAddress(String emailadress) {
+    String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+    java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+    java.util.regex.Matcher m = p.matcher(emailadress);
+    return m.matches();
+}
+  
   public WOActionResults doEnglishAction() {
-    TBSession.session().setLanguage(ETBWLanguage.English.name());     
+    TBSession.session().setLanguage(ETBWLanguage.English.name());
     return goToMySelfAction();
   }
 
@@ -47,14 +54,13 @@ public class Gewinnspiel extends TBComponent {
   }
 
   public WOActionResults doMitmachenAction() {
-    if (!agb || TBFString.stringIsNullOrEmpty(deinname) || TBFString.stringIsNullOrEmpty(email)) {
+    if (!agb || TBFString.stringIsNullOrEmpty(deinname) || TBFString.stringIsNullOrEmpty(email) || !isValidEmailAddress(email)) {
       log.info("Mitmachen fehlgeschlagen!!! AGB: {}, Name: {}, Email: {}", agb, deinname, email);
     } else {
       log.info("Mitmachen wurde aufgerufen. AGB: {}, Name: {}, Email: {}", agb, deinname, email);
     }
     return goToMySelfAction();
   }
-
 
 
 }
