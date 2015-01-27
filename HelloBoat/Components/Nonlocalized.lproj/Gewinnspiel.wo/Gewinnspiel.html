@@ -3,7 +3,7 @@
 
 <script>
 $(document).ready(function(){
- $('label.big input[type="radio"]').click(function(){
+ $('label.big input[type="radio"][name="antwort"]').click(function(){
     $('label.big').removeClass('highlight');
     $(this).parent('label.big:first').addClass('highlight');
    });
@@ -13,6 +13,8 @@ $(document).ready(function(){
 <style>
 	.highlight {
 	background-color:yellow;
+    border-radius: 25px;	
+    box-shadow: 10px 10px 5px #888888;
 	font-weight: bold;
 	
 	}
@@ -33,6 +35,9 @@ $(document).ready(function(){
 	#Gewinnspiel .column, #Gewinnspiel .columns {
 		background: #ddd;
 		border: 1px solid #d0d0d0;
+	    border-radius: 25px;	
+	    box-shadow: 5px 5px 5px #888888;
+	    vertical-align: text-bottom;
 		-webkit-transition-duration: .3s;
 		-moz-transition-duration: .3s;
 		-o-transition-duration: .3s;
@@ -41,7 +46,7 @@ $(document).ready(function(){
 	}
 
 	#Gewinnspiel .row {
-		margin-bottom: 5px;
+		margin-bottom: 20px;
 		text-align: center;
 	}
 
@@ -52,6 +57,10 @@ $(document).ready(function(){
 		-o-transition-duration: .2s;
 		-ms-transition-duration: .2s;
 		transition-duration: .2s;
+	}
+	.columns p{
+	margin: 15px;
+	font-size: 20px;
 	}
 
 </style>
@@ -74,12 +83,12 @@ $(document).ready(function(){
 	<div class="row">
     	<div class="six columns">
                 <label class="big"> 
-                    <input id="radio" type='radio' name='answer_id' value='313'> PHP
+                    <input id="radio" type="radio" name="antwort" value="1"> PHP
                 </label> 
 		</div>
 	    <div class="six columns">
                 <label class="big"> 
-                    <input id="radio" type='radio' name='answer_id' value='314'> Treasureboat
+                    <input id="radio" type="radio" name="antwort" value="2"> Treasureboat
                 </label> 
 	    </div>
 	</div>
@@ -87,12 +96,12 @@ $(document).ready(function(){
 	<div class="row">
 		<div class="six columns">
                 <label class="big"> 
-                    <input id="radio" type='radio' name='answer_id' value='314'> Swift
+                    <input id="radio" type="radio" name="antwort" value="3"> Swift
                 </label> 
 		</div>
 		<div class="six columns rounded">
                 <label class="big"> 
-                    <input id="radio" type='radio' name='answer_id' value='314'> Java
+                    <input id="radio" type="radio" name="antwort" value="4"> Java
                 </label> 
     	</div>
     </div>
@@ -104,7 +113,7 @@ $(document).ready(function(){
 				<h4><webobject name="Gewinnueberschrift" /></h4>
 				<br />
 		 		<wo:TBTextField value="$deinname" class="normal" placeholder="Dein Name" autofocus="true" automatic="true" /><br /><br />
-		 		<wo:TBEmailField value="$email" placeholder="Email Adresse" automatic="true"  class="normal" showButton="false" /><br /><br />
+		 		<wo:TBEmailField value="$email" placeholder="Email Adresse" automatic="true"  class="normal" showButton="false"  /><br /><br />
 				<wo:WOCheckBox checked="$agb" /><webobject name="AGB" /><br /><br />
 				
 	 			<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
