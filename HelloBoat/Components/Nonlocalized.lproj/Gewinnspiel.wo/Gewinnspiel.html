@@ -1,86 +1,77 @@
 <webobject name="Pagewrapper">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-<script>
-$(document).ready(function(){
- $('label.big input[type="radio"][name="antwort"]').click(function(){
-    $('label.big').removeClass('highlight');
-    $(this).parent('label.big:first').addClass('highlight');
-   });
-});
-</script>
-<wo:TBStyleSheet filename="gewinnspiel.css"></wo:TBStyleSheet>
-
-<div id="Gewinnspiel">
-	<div class="row">	
-		<div class="ttip" data-tooltip="Ks Room everywhere">
-			<wo:TBHyperlink pageName="Main">
-				<wo:TBImage src="logo.png" />
-			</wo:TBHyperlink>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="twelve columns">
-    	<p><webobject name="Gewinnfrage"></webobject></p>
-    	</div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+  </script>
+  <script>
+    $(document).ready(function(){
+     $('label.big input[type="radio"][name="antwort"]').click(function(){
+        $('label.big').removeClass('highlight');
+        $(this).parent('label.big:first').addClass('highlight');
+       });
+    });
+  </script>
+  <wo:TBStyleSheet filename="gewinnspiel.css" />
+  <div id="Gewinnspiel">
+    <div class="row">
+      <div class="ttip" data-tooltip="Ks Room everywhere">
+        <wo:TBHyperlink pageName="Main"> <wo:TBImage src="logo.png" /> </wo:TBHyperlink>
+      </div>
     </div>
-
-	<div class="row">
-    	<div class="six columns">
-                <label class="big"> 
-                    <input id="radio" type="radio" name="antwort" value="1"> PHP
-                </label> 
-		</div>
-	    <div class="six columns">
-                <label class="big"> 
-                    <input id="radio" type="radio" name="antwort" value="2"> Treasureboat
-                </label> 
-	    </div>
-	</div>
-
-	<div class="row">
-		<div class="six columns">
-                <label class="big"> 
-                    <input id="radio" type="radio" name="antwort" value="3"> Swift
-                </label> 
-		</div>
-		<div class="six columns rounded">
-                <label class="big"> 
-                    <input id="radio" type="radio" name="antwort" value="4"> Java
-                </label> 
-    	</div>
+    <div class="row">
+      <div class="twelve columns">
+        <p><webobject name="Gewinnfrage" /></p>
+      </div>
     </div>
-</div>
-<br />
-	<wo:TBForm>
-		<div id="Gewinnspiel">
-			<div class="row">
-				<h4><webobject name="Gewinnueberschrift" /></h4>
-				<br />
-		 		<wo:TBTextField value="$deinname" class="normal" placeholder="Dein Name" autofocus="true" automatic="true" /><br /><br />
-		 		<wo:TBEmailField value="$email" placeholder="Email Adresse" automatic="true"  class="normal" showButton="false"  /><br /><br />
-				<wo:WOCheckBox checked="$agb" /><webobject name="AGB" /><br /><br />
-				
-	 			<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
-					<wo:submit value = "$localizer.Teilnehmen" action = "$doMitmachenAction"  />
-				</wo:TBGenericContainer><br />	
-			</div>
-		</div>
-	
-		<div class="row">
-			Set Language:<br />
-			<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
-				<wo:submit value = "Englisch"  action = "$doEnglishAction" />
-			</wo:TBGenericContainer>
-	
-			<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
-				<wo:submit value = "Deutsch" action = "$doGermanAction"  />
-			</wo:TBGenericContainer>	
-	
-			<wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass">
-				<wo:submit value = "Japanisch" action = "$doJapaneseAction"  />
-			</wo:TBGenericContainer><br />		
-		</div>
-	</wo:TBForm>
+    <div class="row">
+      <div class="six columns">
+        <label class="big"> <input id="radio" type="radio" name="antwort" value="1" /> PHP </label>
+      </div>
+      <div class="six columns">
+        <label class="big"> <input id="radio" type="radio" name="antwort" value="2" /> Treasureboat </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="six columns">
+        <label class="big"> <input id="radio" type="radio" name="antwort" value="3" /> Swift </label>
+      </div>
+      <div class="six columns rounded">
+        <label class="big"> <input id="radio" type="radio" name="antwort" value="4" /> Java </label>
+      </div>
+    </div>
+  </div>
+  <br />
+  <wo:TBForm>
+    <div id="Gewinnspiel">
+      <div class="row">
+        <h4><webobject name="Gewinnueberschrift" /></h4>
+        <br />
+        <wo:TBTextField value="$deinname" class="normal" placeholder="Dein Name" autofocus="true" automatic="true" />
+        <br />
+        <br />
+        <wo:TBEmailField value="$email" placeholder="Email Adresse" automatic="true" class="normal" showButton="false" />
+        <br />
+        <br />
+        <wo:WOCheckBox checked="$agb" />
+        <webobject name="AGB" />
+        <br />
+        <br />
+        (<webobject name="RadioButton" />
+        - 
+        <webobject name="RadioButton2" />
+        - 
+        <webobject name="RadioButton3" />
+        - 
+        <webobject name="RadioButton4" />) Test WORadioButton<br />
+        <br />
+        <wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass"> <wo:submit value="$localizer.Teilnehmen" action="$doMitmachenAction" /> </wo:TBGenericContainer>
+        <br />
+      </div>
+    </div>
+    <div class="row">
+      Set Language:<br />
+      <wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass"> <wo:submit value="Englisch" action="$doEnglishAction" /> </wo:TBGenericContainer>
+      <wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass"> <wo:submit value="Deutsch" action="$doGermanAction" /> </wo:TBGenericContainer>
+      <wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass"> <wo:submit value="Japanisch" action="$doJapaneseAction" /> </wo:TBGenericContainer>
+      <br />
+    </div>
+  </wo:TBForm>
 </webobject>
