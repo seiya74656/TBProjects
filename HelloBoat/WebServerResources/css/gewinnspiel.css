@@ -1,0 +1,68 @@
+	.highlight {
+	background-color:yellow;
+    border-radius: 25px;	
+    box-shadow: 10px 10px 5px #888888;
+	font-weight: bold;
+	
+	}
+	.big:hover {
+		background-color: #F3F781;
+	    border-radius: 25px;	
+		font-size: 20px;
+		font-weight: bold;
+		-webkit-transition-duration: .2s;
+		-moz-transition-duration: .2s;
+		-o-transition-duration: .2s;
+		-ms-transition-duration: .2s;
+		transition-duration: .2s;		
+	}
+
+	#radio {
+	display: none;
+	}
+
+	#Gewinnspiel .column, #Gewinnspiel .columns {
+		background: #ddd;
+		border: 1px solid #d0d0d0;
+	    border-radius: 25px;	
+	    box-shadow: 5px 5px 5px #888888;
+	    vertical-align: text-bottom;
+		-webkit-transition-duration: .3s;
+		-moz-transition-duration: .3s;
+		-o-transition-duration: .3s;
+		-ms-transition-duration: .3s;
+		transition-duration: .3s;
+	}
+
+	#Gewinnspiel .row {
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	#Gewinnspiel .column:hover p, #Gewinnspiel .columns:hover p {
+		font-weight: bold;
+		-webkit-transition-duration: .2s;
+		-moz-transition-duration: .2s;
+		-o-transition-duration: .2s;
+		-ms-transition-duration: .2s;
+		transition-duration: .2s;
+	}
+	.columns p{
+	margin: 15px;
+	font-size: 20px;
+	text-align: center;
+
+	}
+@media (max-width: 767px) {
+	#Gewinnspiel .column, #Gewinnspiel .columns {
+	margin: 20px;
+	}
+	
+	#Gewinnspiel .row {
+	margin-bottom: 0px;
+	}
+	
+	span {
+	font-size: 10px;
+	 }
+ }
