@@ -3,50 +3,46 @@ package org.treasureboat.app.components;
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 
-import org.treasureboat.ERJavaMail;
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.webcore.appserver.TBSession;
 import org.treasureboat.webcore.components.TBComponent;
-import org.treasureboat.webcore.components.TBMailTo;
-import org.treasureboat.webcore.dynamicelement.TBJavaScript;
 import org.treasureboat.webcore.enums.ETBWLanguage;
 
-import com.sun.xml.internal.ws.server.sei.EndpointResponseMessageBuilder;
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
-
-import er.javamail.ERMailDeliveryHTML;
 
 public class Gewinnspiel extends TBComponent {
 
   private static final long serialVersionUID = 1L;
 
-  //********************************************************************
-  //  Constructor : コンストラクタ
-  //********************************************************************
+  // ********************************************************************
+  // Constructor : コンストラクタ
+  // ********************************************************************
   public Gewinnspiel(WOContext context) {
     super(context);
 
   }
-  //********************************************************************
-  //  Methods : メソッド
-  //********************************************************************
+
+  // ********************************************************************
+  // Methods : メソッド
+  // ********************************************************************
 
   public String email = "";
   public String deinname = "";
+  public String antwort = "";
+
   public boolean agb = false;
 
-
-  //********************************************************************
-  //  Actions : アクション
-  //********************************************************************
+  // ********************************************************************
+  // Actions : アクション
+  // ********************************************************************
   public boolean isValidEmailAddress(String emailadress) {
     String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
     java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
     java.util.regex.Matcher m = p.matcher(emailadress);
     return m.matches();
-}
-  
+  }
+
   public WOActionResults doEnglishAction() {
     TBSession.session().setLanguage(ETBWLanguage.English.name());
     return goToMySelfAction();
@@ -63,35 +59,35 @@ public class Gewinnspiel extends TBComponent {
   }
 
   public WOActionResults doMitmachenAction() throws AddressException, MessagingException {
-    if (!agb || TBFString.stringIsNullOrEmpty(deinname) || TBFString.stringIsNullOrEmpty(email) || !isValidEmailAddress(email)) {
-      log.info("Mitmachen fehlgeschlagen!!! AGB: {}, Name: {}, Email: {}", agb, deinname, email);
-    } else {
-      log.info("Mitmachen wurde aufgerufen. AGB: {}, Name: {}, Email: {}", agb, deinname, email);
-
-/*    
- *    ERJavaMail sendmail = new ERJavaMail();
- *    sendmail.isValidEmail(email); 
-*/
+    if (!agb || TBFString.stringIsNullOrEmpty(deinname) || TBFString.stringIsNullOrEmpty(email) || TBFString.stringIsNullOrEmpty(antwort) || !isValidEmailAddress(email)) {
+      log.info("Mitmachen fehlgeschlagen!!! AGB: {}, Name: {}, Email: {}, Antwort: {}", agb, deinname, email, antwort);
+    }
+    else {
+      log.info("Mitmachen wurde aufgerufen. AGB: {}, Name: {}, Email: {}, Antwort: {}", agb, deinname, email, antwort);
 
       /*
-      ERMailDeliveryHTML mail = new ERMailDeliveryHTML();
-      mail.setComponent(null);
+       * ERJavaMail sendmail = new ERJavaMail();
+       * sendmail.isValidEmail(email);
+       */
 
-      try {
-        mail.newMail();
-        mail.setFromAddress("seiya@me.com");
-        mail.setReplyToAddress("seiya@me.com");
-        mail.setSubject("Test ueberschrift");
-        mail.setToAddress("seiya74656@gmail.com");
-        mail.sendMail();
-      } catch (Exception e) {
-        System.err.println("Mailsenden fehlgeschlagen");
-      }
-*/
-      
+      /*
+       * ERMailDeliveryHTML mail = new ERMailDeliveryHTML();
+       * mail.setComponent(null);
+       * 
+       * try {
+       * mail.newMail();
+       * mail.setFromAddress("seiya@me.com");
+       * mail.setReplyToAddress("seiya@me.com");
+       * mail.setSubject("Test ueberschrift");
+       * mail.setToAddress("seiya74656@gmail.com");
+       * mail.sendMail();
+       * } catch (Exception e) {
+       * System.err.println("Mailsenden fehlgeschlagen");
+       * }
+       */
+
     }
     return goToMySelfAction();
   }
-
 
 }

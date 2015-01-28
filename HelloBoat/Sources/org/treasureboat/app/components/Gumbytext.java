@@ -24,11 +24,11 @@ public class Gumbytext extends TBComponent implements SampleInterface {
   //********************************************************************
   //  Methods : メソッド
   //********************************************************************
-  private NSArray<Convention> _tabs;
 
   public Convention selectedPopUp;
   public Convention selectedTab;
 
+  private NSArray<Convention> _tabs;
   /* TAB */
   public NSArray<Convention> tabes() {
     if (_tabs == null) {
