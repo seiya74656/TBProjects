@@ -3,15 +3,15 @@
   </script>
   <script>
     $(document).ready(function(){
-     $('label.big input[type="radio"][name="antwortX"]').click(function(){
+     $('label.big input[type="radio"][name="antwort"]').click(function(){
         $('label.big').removeClass('highlight');
         $(this).parent('label.big:first').addClass('highlight');
        });
     });
   </script>
-  <wo:TBStyleSheet filename="gewinnspiel.css" />
   
 	<wo:TBForm>
+  <wo:TBStyleSheet filename="gewinnspiel.css" />
   
   <div id="Gewinnspiel">
     <div class="row">
@@ -26,18 +26,18 @@
     </div>
     <div class="row">
       <div class="six columns">
-        <label class="big"> <input id="radio" type="radio" name="antwortX" value="1" /> PHP </label>
+        <label class="big"> <webobject name="RadioButton" /> PHP </label>
       </div>
       <div class="six columns">
-        <label class="big"> <input id="radio" type="radio" name="antwortX" value="2" /> Treasureboat </label>
+        <label class="big"> <webobject name="RadioButton2" /> Treasureboat </label>
       </div>
     </div>
     <div class="row">
       <div class="six columns">
-        <label class="big"> <input id="radio" type="radio" name="antwortX" value="3" /> Swift </label>
+        <label class="big"> <webobject name="RadioButton3" /> Swift </label>
       </div>
       <div class="six columns rounded">
-        <label class="big"> <input id="radio" type="radio" name="antwortX" value="4" /> Java </label>
+        <label class="big"> <webobject name="RadioButton4" /> Java </label>
       </div>
     </div>
   </div>
@@ -56,15 +56,7 @@
         <webobject name="AGB" />
         <br />
         <br />
-        (<webobject name="RadioButton" />
-        - 
-        <webobject name="RadioButton2" />
-        - 
-        <webobject name="RadioButton3" />
-        - 
-        <webobject name="RadioButton4" />        
-        ) Test WORadioButton<br />
-        <br />
+
         <wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass"> <wo:submit value="$localizer.Teilnehmen" action="$doMitmachenAction" /> </wo:TBGenericContainer>
         <br />
       </div>

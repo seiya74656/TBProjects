@@ -16,11 +16,13 @@ Gewinnueberschrift : TBWLocalizedString {
 
 RadioButton : WORadioButton {
 	value = "1";
+	id = "radio";
 	selection = antwort;
 	name = "antwort";
 }
 RadioButton2 : WORadioButton {
 	value = "2";
+	id = "radio";
 	selection = antwort;
 	name = "antwort";
 }
@@ -28,12 +30,14 @@ RadioButton2 : WORadioButton {
 RadioButton3 : WORadioButton {
 	value = "3";
 	selection = antwort;
+	id = "radio";
 	name = "antwort";
 
 }
 RadioButton4 : WORadioButton {
 	value = "4";
 	selection = antwort;
+	id = "radio";
 	name = "antwort";
 
 }
