@@ -3,13 +3,16 @@
   </script>
   <script>
     $(document).ready(function(){
-     $('label.big input[type="radio"][name="antwort"]').click(function(){
+     $('label.big input[type="radio"][name="antwortX"]').click(function(){
         $('label.big').removeClass('highlight');
         $(this).parent('label.big:first').addClass('highlight');
        });
     });
   </script>
   <wo:TBStyleSheet filename="gewinnspiel.css" />
+  
+	<wo:TBForm>
+  
   <div id="Gewinnspiel">
     <div class="row">
       <div class="ttip" data-tooltip="Ks Room everywhere">
@@ -23,23 +26,22 @@
     </div>
     <div class="row">
       <div class="six columns">
-        <label class="big"> <input id="radio" type="radio" name="antwort" value="1" /> PHP </label>
+        <label class="big"> <input id="radio" type="radio" name="antwortX" value="1" /> PHP </label>
       </div>
       <div class="six columns">
-        <label class="big"> <input id="radio" type="radio" name="antwort" value="2" /> Treasureboat </label>
+        <label class="big"> <input id="radio" type="radio" name="antwortX" value="2" /> Treasureboat </label>
       </div>
     </div>
     <div class="row">
       <div class="six columns">
-        <label class="big"> <input id="radio" type="radio" name="antwort" value="3" /> Swift </label>
+        <label class="big"> <input id="radio" type="radio" name="antwortX" value="3" /> Swift </label>
       </div>
       <div class="six columns rounded">
-        <label class="big"> <input id="radio" type="radio" name="antwort" value="4" /> Java </label>
+        <label class="big"> <input id="radio" type="radio" name="antwortX" value="4" /> Java </label>
       </div>
     </div>
   </div>
   <br />
-  <wo:TBForm>
     <div id="Gewinnspiel">
       <div class="row">
         <h4><webobject name="Gewinnueberschrift" /></h4>
@@ -60,7 +62,8 @@
         - 
         <webobject name="RadioButton3" />
         - 
-        <webobject name="RadioButton4" />) Test WORadioButton<br />
+        <webobject name="RadioButton4" />        
+        ) Test WORadioButton<br />
         <br />
         <wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass"> <wo:submit value="$localizer.Teilnehmen" action="$doMitmachenAction" /> </wo:TBGenericContainer>
         <br />

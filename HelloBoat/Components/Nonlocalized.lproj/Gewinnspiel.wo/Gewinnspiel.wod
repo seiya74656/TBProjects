@@ -18,14 +18,13 @@ RadioButton : WORadioButton {
 	value = "1";
 	selection = antwort;
 	name = "antwort";
-
 }
 RadioButton2 : WORadioButton {
 	value = "2";
 	selection = antwort;
 	name = "antwort";
-
 }
+
 RadioButton3 : WORadioButton {
 	value = "3";
 	selection = antwort;
