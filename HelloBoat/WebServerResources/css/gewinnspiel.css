@@ -3,12 +3,15 @@
     border-radius: 25px;	
     box-shadow: 10px 10px 5px #888888;
 	font-weight: bold;
-	
+	margin-bottom: 0px;
+	line-height: normal;	
 	}
+
 	.big:hover {
+		line-height: normal;
 		background-color: #F3F781;
 	    border-radius: 25px;	
-		font-size: 20px;
+		font-size: 110%;
 		font-weight: bold;
 		-webkit-transition-duration: .2s;
 		-moz-transition-duration: .2s;
@@ -19,6 +22,12 @@
 
 	#radio {
 	display: none;
+	}
+	
+	form label {
+		margin-bottom: 0px;
+		line-height: normal;
+	
 	}
 
 	#Gewinnspiel .column, #Gewinnspiel .columns {
