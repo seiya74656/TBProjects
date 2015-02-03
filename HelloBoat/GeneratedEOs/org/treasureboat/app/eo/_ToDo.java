@@ -25,7 +25,9 @@
   "Pages.EditEmbeddedToDo" = "Edit Embedded ToDo";
   "Pages.CreateEmbeddedToDo" = "Create Embedded ToDo";
 
+  "PropertyKey.done" = "done";
   "PropertyKey.dueDate" = "dueDate";
+  "PropertyKey.priority" = "priority";
   "PropertyKey.task" = "task";
 
  * ----------------------------------------
@@ -43,22 +45,22 @@
   105 : pageConfiguration = 'CreateToDo' => navigationState = "XX.xx.createToDo" [com.webobjects.directtoweb.Assignment]
   105 : pageConfiguration = 'QueryToDo' => navigationState = "XX.xx.queryToDo" [com.webobjects.directtoweb.Assignment]
   
-  401 : pageConfiguration = 'QueryToDo' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "dueDate" , "task"  ) [com.webobjects.directtoweb.Assignment] 
-  402 : pageConfiguration = 'ListToDo' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "dueDate" , "task"  ) [com.webobjects.directtoweb.Assignment] 
-  403 : pageConfiguration = 'InspectToDo' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "dueDate" , "task"  ) [com.webobjects.directtoweb.Assignment] 
-  404 : pageConfiguration = 'EditToDo' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "dueDate" , "task"  ) [com.webobjects.directtoweb.Assignment] 
-  405 : pageConfiguration = 'CreateToDo' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "dueDate" , "task"  ) [com.webobjects.directtoweb.Assignment] 
+  401 : pageConfiguration = 'QueryToDo' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "done" , "dueDate" , "priority" , "task"  ) [com.webobjects.directtoweb.Assignment] 
+  402 : pageConfiguration = 'ListToDo' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "done" , "dueDate" , "priority" , "task"  ) [com.webobjects.directtoweb.Assignment] 
+  403 : pageConfiguration = 'InspectToDo' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "done" , "dueDate" , "priority" , "task"  ) [com.webobjects.directtoweb.Assignment] 
+  404 : pageConfiguration = 'EditToDo' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "done" , "dueDate" , "priority" , "task"  ) [com.webobjects.directtoweb.Assignment] 
+  405 : pageConfiguration = 'CreateToDo' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "done" , "dueDate" , "priority" , "task"  ) [com.webobjects.directtoweb.Assignment] 
    
   // D3W
 
   200 : EN = '#' => crud = "0100" [com.webobjects.directtoweb.Assignment]
   600 : PC = 'EditRelationshipEmbedded#' => cruds = "00001" [com.webobjects.directtoweb.Assignment]
   
-  401 : PC = 'Query#' => DPK = ("[MainTab]", "(MainSection)", "dueDate", "task") [com.webobjects.directtoweb.Assignment] 
-  402 : PC = 'List#' => DPK = ("[MainTab]", "(MainSection)", "dueDate", "task") [com.webobjects.directtoweb.Assignment] 
-  403 : PC = 'Inspect#' => DPK = ("[MainTab]", "(MainSection)", "dueDate", "task") [com.webobjects.directtoweb.Assignment] 
-  404 : PC = 'Edit#' => DPK = ("[MainTab]", "(MainSection)", "dueDate", "task") [com.webobjects.directtoweb.Assignment] 
-  405 : PC = 'Create#' => DPK = ("[MainTab]", "(MainSection)", "dueDate", "task") [com.webobjects.directtoweb.Assignment] 
+  401 : PC = 'Query#' => DPK = ("[MainTab]", "(MainSection)", "done", "dueDate", "priority", "task") [com.webobjects.directtoweb.Assignment] 
+  402 : PC = 'List#' => DPK = ("[MainTab]", "(MainSection)", "done", "dueDate", "priority", "task") [com.webobjects.directtoweb.Assignment] 
+  403 : PC = 'Inspect#' => DPK = ("[MainTab]", "(MainSection)", "done", "dueDate", "priority", "task") [com.webobjects.directtoweb.Assignment] 
+  404 : PC = 'Edit#' => DPK = ("[MainTab]", "(MainSection)", "done", "dueDate", "priority", "task") [com.webobjects.directtoweb.Assignment] 
+  405 : PC = 'Create#' => DPK = ("[MainTab]", "(MainSection)", "done", "dueDate", "priority", "task") [com.webobjects.directtoweb.Assignment] 
 
  * ----------------------------------------
  */
@@ -213,11 +215,15 @@ public abstract class _ToDo extends  TBEOGenericRecord {
   //********************************************************************
 
   // Attribute Keys
+  public static final ERXKey<Boolean> DONE = new ERXKey<Boolean>("done");
   public static final ERXKey<org.treasureboat.foundation.date.TBFTimestamp> DUE_DATE = new ERXKey<org.treasureboat.foundation.date.TBFTimestamp>("dueDate");
+  public static final ERXKey<String> PRIORITY = new ERXKey<String>("priority");
   public static final ERXKey<String> TASK = new ERXKey<String>("task");
 
   // Attributes
+  public static final String DONE_KEY = DONE.key();
   public static final String DUE_DATE_KEY = DUE_DATE.key();
+  public static final String PRIORITY_KEY = PRIORITY.key();
   public static final String TASK_KEY = TASK.key();
 
   //********************************************************************
@@ -244,6 +250,22 @@ public abstract class _ToDo extends  TBEOGenericRecord {
   //  Attribute Accessor : アトリビュート・アクセス
   //********************************************************************
 
+  public Boolean done() {
+    return (Boolean) storedValueForKey(DONE_KEY);
+  }
+
+  public void setDone(Boolean value) {
+    if (_ToDo.log.isDebugEnabled()) {
+      _ToDo.log.debug("updating done from {} to {}", done(), value);
+    }
+    takeStoredValueForKey(value, DONE_KEY);
+  }
+
+  public Object validateDone(Object value) throws NSValidation.ValidationException {
+    _ToDo.log.debug("validate done");
+    return ERXValidationException.validateForUserInfo(this, DONE_KEY, value);
+  }
+
   public org.treasureboat.foundation.date.TBFTimestamp dueDate() {
     return (org.treasureboat.foundation.date.TBFTimestamp) storedValueForKey(DUE_DATE_KEY);
   }
@@ -258,6 +280,22 @@ public abstract class _ToDo extends  TBEOGenericRecord {
   public Object validateDueDate(Object value) throws NSValidation.ValidationException {
     _ToDo.log.debug("validate dueDate");
     return ERXValidationException.validateForUserInfo(this, DUE_DATE_KEY, value);
+  }
+
+  public String priority() {
+    return (String) storedValueForKey(PRIORITY_KEY);
+  }
+
+  public void setPriority(String value) {
+    if (_ToDo.log.isDebugEnabled()) {
+      _ToDo.log.debug("updating priority from {} to {}", priority(), value);
+    }
+    takeStoredValueForKey(value, PRIORITY_KEY);
+  }
+
+  public Object validatePriority(Object value) throws NSValidation.ValidationException {
+    _ToDo.log.debug("validate priority");
+    return ERXValidationException.validateForUserInfo(this, PRIORITY_KEY, value);
   }
 
   public String task() {

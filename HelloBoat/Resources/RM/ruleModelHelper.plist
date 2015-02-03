@@ -1,1 +1,1 @@
-{ToDo = ("A:false:dueDate:tbDateTime", "A:false:task:varchar100"); }
+{ToDo = ("A:true:done:boolean", "A:false:dueDate:tbDateTime", "A:true:priority:varchar10", "A:false:task:varchar100"); }

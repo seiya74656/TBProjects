@@ -1,13 +1,10 @@
 package org.treasureboat.app.components;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-import org.treasureboat.foundation.TBFFile;
-import org.treasureboat.foundation.TBFFileUtilities;
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.foundation.date.TBFTimestamp;
 import org.treasureboat.webcore.appserver.TBSession;

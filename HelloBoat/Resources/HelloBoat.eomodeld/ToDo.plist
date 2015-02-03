@@ -1,12 +1,19 @@
 {
     attributes = (
+        {allowsNull = Y; columnName = done; name = done; prototypeName = boolean; }, 
         {columnName = dueDate; name = dueDate; prototypeName = tbDateTime; }, 
         {allowsNull = N; name = id; prototypeName = id; }, 
+        {
+            allowsNull = Y; 
+            columnName = priority; 
+            name = priority; 
+            prototypeName = varchar10; 
+        }, 
         {columnName = task; name = task; prototypeName = varchar100; }
     ); 
     attributesUsedForLocking = (dueDate, id, task); 
     className = "org.treasureboat.app.eo.ToDo"; 
-    classProperties = (dueDate, task); 
+    classProperties = (done, dueDate, priority, task); 
     externalName = ToDo; 
     fetchSpecificationDictionary = {}; 
     name = ToDo; 
