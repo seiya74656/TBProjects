@@ -1,8 +1,8 @@
 //
-// _Gewinnspiel.java
+// _GewinnspielTBL.java
 //
 // DO NOT EDIT. 
-// Make changes to Gewinnspiel.java instead.
+// Make changes to GewinnspielTBL.java instead.
 //
 // version 7.1.3
 //
@@ -13,17 +13,17 @@
  * The following List is for Localization :
  * ----------------------------------------
 
-  "Pages.QueryGewinnspiel" = "Query Gewinnspiel";
-  "Pages.ListGewinnspiel" = "List Gewinnspiel";
-  "Pages.InspectGewinnspiel" = "Inspect Gewinnspiel";
-  "Pages.EditGewinnspiel" = "Edit Gewinnspiel";
-  "Pages.CreateGewinnspiel" = "Create Gewinnspiel";
+  "Pages.QueryGewinnspielTBL" = "Query GewinnspielTBL";
+  "Pages.ListGewinnspielTBL" = "List GewinnspielTBL";
+  "Pages.InspectGewinnspielTBL" = "Inspect GewinnspielTBL";
+  "Pages.EditGewinnspielTBL" = "Edit GewinnspielTBL";
+  "Pages.CreateGewinnspielTBL" = "Create GewinnspielTBL";
   
-  "Pages.QueryEmbeddedGewinnspiel" = "Query Embedded Gewinnspiel";
-  "Pages.ListEmbeddedGewinnspiel" = "List Embedded Gewinnspiel";
-  "Pages.InspectEmbeddedGewinnspiel" = "Inspect Embedded Gewinnspiel";
-  "Pages.EditEmbeddedGewinnspiel" = "Edit Embedded Gewinnspiel";
-  "Pages.CreateEmbeddedGewinnspiel" = "Create Embedded Gewinnspiel";
+  "Pages.QueryEmbeddedGewinnspielTBL" = "Query Embedded GewinnspielTBL";
+  "Pages.ListEmbeddedGewinnspielTBL" = "List Embedded GewinnspielTBL";
+  "Pages.InspectEmbeddedGewinnspielTBL" = "Inspect Embedded GewinnspielTBL";
+  "Pages.EditEmbeddedGewinnspielTBL" = "Edit Embedded GewinnspielTBL";
+  "Pages.CreateEmbeddedGewinnspielTBL" = "Create Embedded GewinnspielTBL";
 
   "PropertyKey.agb" = "agb";
   "PropertyKey.antwort" = "antwort";
@@ -40,17 +40,17 @@
 
   // D2W
 
-  300 : entity.name = 'Gewinnspiel' => isEntityEditable = "true" [com.webobjects.directtoweb.BooleanAssignment]
+  300 : entity.name = 'GewinnspielTBL' => isEntityEditable = "true" [com.webobjects.directtoweb.BooleanAssignment]
 
-  100 : pageConfiguration like '*Gewinnspiel' => navigationState = "XX.xx" [com.webobjects.directtoweb.Assignment]
-  105 : pageConfiguration = 'CreateGewinnspiel' => navigationState = "XX.xx.createGewinnspiel" [com.webobjects.directtoweb.Assignment]
-  105 : pageConfiguration = 'QueryGewinnspiel' => navigationState = "XX.xx.queryGewinnspiel" [com.webobjects.directtoweb.Assignment]
+  100 : pageConfiguration like '*GewinnspielTBL' => navigationState = "XX.xx" [com.webobjects.directtoweb.Assignment]
+  105 : pageConfiguration = 'CreateGewinnspielTBL' => navigationState = "XX.xx.createGewinnspielTBL" [com.webobjects.directtoweb.Assignment]
+  105 : pageConfiguration = 'QueryGewinnspielTBL' => navigationState = "XX.xx.queryGewinnspielTBL" [com.webobjects.directtoweb.Assignment]
   
-  401 : pageConfiguration = 'QueryGewinnspiel' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "agb" , "antwort" , "datum" , "email" , "name"  ) [com.webobjects.directtoweb.Assignment] 
-  402 : pageConfiguration = 'ListGewinnspiel' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "agb" , "antwort" , "datum" , "email" , "name"  ) [com.webobjects.directtoweb.Assignment] 
-  403 : pageConfiguration = 'InspectGewinnspiel' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "agb" , "antwort" , "datum" , "email" , "name"  ) [com.webobjects.directtoweb.Assignment] 
-  404 : pageConfiguration = 'EditGewinnspiel' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "agb" , "antwort" , "datum" , "email" , "name"  ) [com.webobjects.directtoweb.Assignment] 
-  405 : pageConfiguration = 'CreateGewinnspiel' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "agb" , "antwort" , "datum" , "email" , "name"  ) [com.webobjects.directtoweb.Assignment] 
+  401 : pageConfiguration = 'QueryGewinnspielTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "agb" , "antwort" , "datum" , "email" , "name"  ) [com.webobjects.directtoweb.Assignment] 
+  402 : pageConfiguration = 'ListGewinnspielTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "agb" , "antwort" , "datum" , "email" , "name"  ) [com.webobjects.directtoweb.Assignment] 
+  403 : pageConfiguration = 'InspectGewinnspielTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "agb" , "antwort" , "datum" , "email" , "name"  ) [com.webobjects.directtoweb.Assignment] 
+  404 : pageConfiguration = 'EditGewinnspielTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "agb" , "antwort" , "datum" , "email" , "name"  ) [com.webobjects.directtoweb.Assignment] 
+  405 : pageConfiguration = 'CreateGewinnspielTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "agb" , "antwort" , "datum" , "email" , "name"  ) [com.webobjects.directtoweb.Assignment] 
    
   // D3W
 
@@ -68,7 +68,7 @@
 
 package org.treasureboat.app.eo;
 
-import org.treasureboat.app.eo.Gewinnspiel;
+import org.treasureboat.app.eo.GewinnspielTBL;
 
 import java.util.*;
 
@@ -99,20 +99,20 @@ import er.extensions.qualifiers.ERXAndQualifier;
 import er.extensions.validation.ERXValidationException;
 
 @SuppressWarnings("all")
-public abstract class _Gewinnspiel extends  TBEOGenericRecord {
+public abstract class _GewinnspielTBL extends  TBEOGenericRecord {
 
   private static final long serialVersionUID = 1L;
 
   /** 
    * <a href="http://wiki.wocommunity.org/display/documentation/Wonder+Logging">new org.slf4j.Logger</a> 
    */
-  static final Logger log = LoggerFactory.getLogger(Gewinnspiel.class);
+  static final Logger log = LoggerFactory.getLogger(GewinnspielTBL.class);
 
   //********************************************************************
   //  Constructor : コンストラクター
   //********************************************************************
 
-  public _Gewinnspiel() {
+  public _GewinnspielTBL() {
     super();
     
     addFetchSpecificationToEntity();
@@ -149,17 +149,17 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
   //  Entity : エンティティ
   //********************************************************************
   
-  /** Entity Name = Gewinnspiel */
-  public static final String ENTITY_NAME = "Gewinnspiel";
+  /** Entity Name = GewinnspielTBL */
+  public static final String ENTITY_NAME = "GewinnspielTBL";
 
   //********************************************************************
   //  Access Properties : アクセス・プロパティ
   //********************************************************************
   
-  protected static String ACCSESS_CREATE = "Gewinnspiel.create";
-  protected static String ACCSESS_READ = "Gewinnspiel.read";
-  protected static String ACCSESS_UPDATE = "Gewinnspiel.update";
-  protected static String ACCSESS_DELETE = "Gewinnspiel.delete";
+  protected static String ACCSESS_CREATE = "GewinnspielTBL.create";
+  protected static String ACCSESS_READ = "GewinnspielTBL.read";
+  protected static String ACCSESS_UPDATE = "GewinnspielTBL.update";
+  protected static String ACCSESS_DELETE = "GewinnspielTBL.delete";
 
   /**
    * you can override, TBWGrantAccess or use the role system
@@ -241,12 +241,12 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
   //  clazz methods : クラス・メソッド
   //********************************************************************
 
-  public static class _GewinnspielClazz<T extends Gewinnspiel> extends ERXGenericRecord.ERXGenericRecordClazz<T> {
+  public static class _GewinnspielTBLClazz<T extends GewinnspielTBL> extends ERXGenericRecord.ERXGenericRecordClazz<T> {
     /* more clazz methods here */
   }
 
-	public Gewinnspiel.GewinnspielClazz clazz() {
-    return Gewinnspiel.clazz;
+	public GewinnspielTBL.GewinnspielTBLClazz clazz() {
+    return GewinnspielTBL.clazz;
   }
 
   //********************************************************************
@@ -258,14 +258,14 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
   }
 
   public void setAgb(Boolean value) {
-    if (_Gewinnspiel.log.isDebugEnabled()) {
-      _Gewinnspiel.log.debug("updating agb from {} to {}", agb(), value);
+    if (_GewinnspielTBL.log.isDebugEnabled()) {
+      _GewinnspielTBL.log.debug("updating agb from {} to {}", agb(), value);
     }
     takeStoredValueForKey(value, AGB_KEY);
   }
 
   public Object validateAgb(Object value) throws NSValidation.ValidationException {
-    _Gewinnspiel.log.debug("validate agb");
+    _GewinnspielTBL.log.debug("validate agb");
     return ERXValidationException.validateForUserInfo(this, AGB_KEY, value);
   }
 
@@ -274,14 +274,14 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
   }
 
   public void setAntwort(String value) {
-    if (_Gewinnspiel.log.isDebugEnabled()) {
-      _Gewinnspiel.log.debug("updating antwort from {} to {}", antwort(), value);
+    if (_GewinnspielTBL.log.isDebugEnabled()) {
+      _GewinnspielTBL.log.debug("updating antwort from {} to {}", antwort(), value);
     }
     takeStoredValueForKey(value, ANTWORT_KEY);
   }
 
   public Object validateAntwort(Object value) throws NSValidation.ValidationException {
-    _Gewinnspiel.log.debug("validate antwort");
+    _GewinnspielTBL.log.debug("validate antwort");
     return ERXValidationException.validateForUserInfo(this, ANTWORT_KEY, value);
   }
 
@@ -290,14 +290,14 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
   }
 
   public void setDatum(NSTimestamp value) {
-    if (_Gewinnspiel.log.isDebugEnabled()) {
-      _Gewinnspiel.log.debug("updating datum from {} to {}", datum(), value);
+    if (_GewinnspielTBL.log.isDebugEnabled()) {
+      _GewinnspielTBL.log.debug("updating datum from {} to {}", datum(), value);
     }
     takeStoredValueForKey(value, DATUM_KEY);
   }
 
   public Object validateDatum(Object value) throws NSValidation.ValidationException {
-    _Gewinnspiel.log.debug("validate datum");
+    _GewinnspielTBL.log.debug("validate datum");
     return ERXValidationException.validateForUserInfo(this, DATUM_KEY, value);
   }
 
@@ -306,14 +306,14 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
   }
 
   public void setEmail(String value) {
-    if (_Gewinnspiel.log.isDebugEnabled()) {
-      _Gewinnspiel.log.debug("updating email from {} to {}", email(), value);
+    if (_GewinnspielTBL.log.isDebugEnabled()) {
+      _GewinnspielTBL.log.debug("updating email from {} to {}", email(), value);
     }
     takeStoredValueForKey(value, EMAIL_KEY);
   }
 
   public Object validateEmail(Object value) throws NSValidation.ValidationException {
-    _Gewinnspiel.log.debug("validate email");
+    _GewinnspielTBL.log.debug("validate email");
     return ERXValidationException.validateForUserInfo(this, EMAIL_KEY, value);
   }
 
@@ -322,14 +322,14 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
   }
 
   public void setName(String value) {
-    if (_Gewinnspiel.log.isDebugEnabled()) {
-      _Gewinnspiel.log.debug("updating name from {} to {}", name(), value);
+    if (_GewinnspielTBL.log.isDebugEnabled()) {
+      _GewinnspielTBL.log.debug("updating name from {} to {}", name(), value);
     }
     takeStoredValueForKey(value, NAME_KEY);
   }
 
   public Object validateName(Object value) throws NSValidation.ValidationException {
-    _Gewinnspiel.log.debug("validate name");
+    _GewinnspielTBL.log.debug("validate name");
     return ERXValidationException.validateForUserInfo(this, NAME_KEY, value);
   }
 
@@ -342,8 +342,8 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
   //********************************************************************
 
   @Override
-  public Gewinnspiel localInstanceIn(EOEditingContext editingContext) {
-    Gewinnspiel localInstance = (Gewinnspiel)EOUtilities.localInstanceOfObject(editingContext, this);
+  public GewinnspielTBL localInstanceIn(EOEditingContext editingContext) {
+    GewinnspielTBL localInstance = (GewinnspielTBL)EOUtilities.localInstanceOfObject(editingContext, this);
       if (localInstance == null) {
         throw new IllegalStateException("You attempted to localInstance " + this + ", which has not yet committed.");
       }
@@ -358,7 +358,7 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
   //  Instance : インスタンス化
   //********************************************************************
 
-  public static Gewinnspiel createGewinnspiel(EOEditingContext editingContext
+  public static GewinnspielTBL createGewinnspielTBL(EOEditingContext editingContext
    , Boolean agb
    , String antwort
    , NSTimestamp datum
@@ -366,7 +366,7 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
    , String name
     )
   {
-    Gewinnspiel eo = (Gewinnspiel) EOUtilities.createAndInsertInstance(editingContext, _Gewinnspiel.ENTITY_NAME);
+    GewinnspielTBL eo = (GewinnspielTBL) EOUtilities.createAndInsertInstance(editingContext, _GewinnspielTBL.ENTITY_NAME);
     eo.setAgb(agb);
     eo.setAntwort(antwort);
     eo.setDatum(datum);
@@ -376,7 +376,7 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
   }
   
   /* EO creation with Stamped EO Support */
-  public static Gewinnspiel createGewinnspielWithStampedSupport(EOEditingContext editingContext
+  public static GewinnspielTBL createGewinnspielTBLWithStampedSupport(EOEditingContext editingContext
    , Boolean agb
    , String antwort
    , NSTimestamp datum
@@ -384,7 +384,7 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
    , String name
     )
   {
-    Gewinnspiel eo = (Gewinnspiel) EOUtilities.createAndInsertInstance(editingContext, _Gewinnspiel.ENTITY_NAME);
+    GewinnspielTBL eo = (GewinnspielTBL) EOUtilities.createAndInsertInstance(editingContext, _GewinnspielTBL.ENTITY_NAME);
     eo.setAgb(agb);
     eo.setAntwort(antwort);
     eo.setDatum(datum);
@@ -393,10 +393,10 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
     return eo;
   }
 
-  public static Gewinnspiel createAndInsertInstance(EOEditingContext context) {
+  public static GewinnspielTBL createAndInsertInstance(EOEditingContext context) {
     log.debug("{} : createAndInsertInstance", ENTITY_NAME);
     
-    return (Gewinnspiel)EOUtilities.createAndInsertInstance(context, ENTITY_NAME);
+    return (GewinnspielTBL)EOUtilities.createAndInsertInstance(context, ENTITY_NAME);
   }
 
   // ========== [検索関連] ==========
@@ -404,99 +404,99 @@ public abstract class _Gewinnspiel extends  TBEOGenericRecord {
   //  Fetch (NSArray) : フェッチ (NSArray)
   //********************************************************************
 
-  public static ERXFetchSpecification<Gewinnspiel> fetchSpec() {
-    return new ERXFetchSpecification<Gewinnspiel>(_Gewinnspiel.ENTITY_NAME, null, null, false, true, null);
+  public static ERXFetchSpecification<GewinnspielTBL> fetchSpec() {
+    return new ERXFetchSpecification<GewinnspielTBL>(_GewinnspielTBL.ENTITY_NAME, null, null, false, true, null);
   }
 
   /* 
    * standard fetch 
    */
-  public static NSArray<Gewinnspiel> fetchAllGewinnspiels(EOEditingContext editingContext) {
-    return _Gewinnspiel.fetchAllGewinnspiels(editingContext, null);
+  public static NSArray<GewinnspielTBL> fetchAllGewinnspielTBLs(EOEditingContext editingContext) {
+    return _GewinnspielTBL.fetchAllGewinnspielTBLs(editingContext, null);
   }
 
-  public static NSArray<Gewinnspiel> fetchAllGewinnspiels(EOEditingContext editingContext, NSArray<EOSortOrdering> sortOrderings) {
-    return _Gewinnspiel.fetchGewinnspiels(editingContext, null, sortOrderings);
+  public static NSArray<GewinnspielTBL> fetchAllGewinnspielTBLs(EOEditingContext editingContext, NSArray<EOSortOrdering> sortOrderings) {
+    return _GewinnspielTBL.fetchGewinnspielTBLs(editingContext, null, sortOrderings);
   }
  
-  public static NSArray<Gewinnspiel> fetchGewinnspiels(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
-    EOFetchSpecification fetchSpec = new EOFetchSpecification(_Gewinnspiel.ENTITY_NAME, qualifier, sortOrderings);
+  public static NSArray<GewinnspielTBL> fetchGewinnspielTBLs(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
+    EOFetchSpecification fetchSpec = new EOFetchSpecification(_GewinnspielTBL.ENTITY_NAME, qualifier, sortOrderings);
     fetchSpec.setIsDeep(true);
-    NSArray<Gewinnspiel> eoObjects = (NSArray<Gewinnspiel>)editingContext.objectsWithFetchSpecification(fetchSpec);
+    NSArray<GewinnspielTBL> eoObjects = (NSArray<GewinnspielTBL>)editingContext.objectsWithFetchSpecification(fetchSpec);
     return eoObjects;
   }
 
   /* 
    * coreQualifier fetch 
    */  
-  public static NSArray<Gewinnspiel> fetchAllGewinnspielsWithCoreQualifier(EOEditingContext editingContext, ITBWDomain domain) {
-    return _Gewinnspiel.fetchAllGewinnspielsWithCoreQualifier(editingContext, domain, null);
+  public static NSArray<GewinnspielTBL> fetchAllGewinnspielTBLsWithCoreQualifier(EOEditingContext editingContext, ITBWDomain domain) {
+    return _GewinnspielTBL.fetchAllGewinnspielTBLsWithCoreQualifier(editingContext, domain, null);
   }
   
-  public static NSArray<Gewinnspiel> fetchAllGewinnspielsWithCoreQualifier(EOEditingContext editingContext, ITBWDomain domain, NSArray<EOSortOrdering> sortOrderings) {
-    EOEntity entity = ERXEOAccessUtilities.entityNamed(editingContext, _Gewinnspiel.ENTITY_NAME);
-    return _Gewinnspiel.fetchGewinnspiels(editingContext, TBWCoreQualifierBase.delegate().qualifier(entity, domain), sortOrderings);
+  public static NSArray<GewinnspielTBL> fetchAllGewinnspielTBLsWithCoreQualifier(EOEditingContext editingContext, ITBWDomain domain, NSArray<EOSortOrdering> sortOrderings) {
+    EOEntity entity = ERXEOAccessUtilities.entityNamed(editingContext, _GewinnspielTBL.ENTITY_NAME);
+    return _GewinnspielTBL.fetchGewinnspielTBLs(editingContext, TBWCoreQualifierBase.delegate().qualifier(entity, domain), sortOrderings);
   }
   
-  public static NSArray<Gewinnspiel> fetchGewinnspielsWithCoreQualifier(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
-    EOEntity entity = ERXEOAccessUtilities.entityNamed(editingContext, _Gewinnspiel.ENTITY_NAME);
+  public static NSArray<GewinnspielTBL> fetchGewinnspielTBLsWithCoreQualifier(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
+    EOEntity entity = ERXEOAccessUtilities.entityNamed(editingContext, _GewinnspielTBL.ENTITY_NAME);
 
     TBWMultiDomainSupport multiDomainSupport = (TBWMultiDomainSupport) TBSession.session().multiDomain();
     ITBWDomain domain = multiDomainSupport.currentDomain();
 
     ERXAndQualifier andQualifier = new ERXAndQualifier(TBWCoreQualifierBase.delegate().qualifier(entity, domain), qualifier);
 
-    EOFetchSpecification fetchSpec = new EOFetchSpecification(_Gewinnspiel.ENTITY_NAME, andQualifier, sortOrderings);
+    EOFetchSpecification fetchSpec = new EOFetchSpecification(_GewinnspielTBL.ENTITY_NAME, andQualifier, sortOrderings);
     fetchSpec.setIsDeep(true);
-    NSArray<Gewinnspiel> eoObjects = (NSArray<Gewinnspiel>)editingContext.objectsWithFetchSpecification(fetchSpec);
+    NSArray<GewinnspielTBL> eoObjects = (NSArray<GewinnspielTBL>)editingContext.objectsWithFetchSpecification(fetchSpec);
     return eoObjects;
   }  
   
   //********************************************************************
-  //  Fetch (Gewinnspiel) :  フェッチ (Gewinnspiel)
+  //  Fetch (GewinnspielTBL) :  フェッチ (GewinnspielTBL)
   //********************************************************************
   
-  public static Gewinnspiel fetchGewinnspiel(EOEditingContext editingContext, String keyName, Object value) {
-    return _Gewinnspiel.fetchGewinnspiel(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+  public static GewinnspielTBL fetchGewinnspielTBL(EOEditingContext editingContext, String keyName, Object value) {
+    return _GewinnspielTBL.fetchGewinnspielTBL(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
   }
 
-  public static Gewinnspiel fetchGewinnspiel(EOEditingContext editingContext, EOQualifier qualifier) {
-    NSArray<Gewinnspiel> eoObjects = _Gewinnspiel.fetchGewinnspiels(editingContext, qualifier, null);
-    Gewinnspiel eoObject;
+  public static GewinnspielTBL fetchGewinnspielTBL(EOEditingContext editingContext, EOQualifier qualifier) {
+    NSArray<GewinnspielTBL> eoObjects = _GewinnspielTBL.fetchGewinnspielTBLs(editingContext, qualifier, null);
+    GewinnspielTBL eoObject;
     int count = eoObjects.count();
     if (count == 0) {
       eoObject = null;
     } else if (count == 1) {
-      eoObject = (Gewinnspiel)eoObjects.objectAtIndex(0);
+      eoObject = (GewinnspielTBL)eoObjects.objectAtIndex(0);
     } else {
-      throw new IllegalStateException("There was more than one Gewinnspiel that matched the qualifier '" + qualifier + "'.");
+      throw new IllegalStateException("There was more than one GewinnspielTBL that matched the qualifier '" + qualifier + "'.");
     }
     return eoObject;
   }
 
-  public static Gewinnspiel fetchRequiredGewinnspiel(EOEditingContext editingContext, String keyName, Object value) {
-    return _Gewinnspiel.fetchRequiredGewinnspiel(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+  public static GewinnspielTBL fetchRequiredGewinnspielTBL(EOEditingContext editingContext, String keyName, Object value) {
+    return _GewinnspielTBL.fetchRequiredGewinnspielTBL(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
   }
 
-  public static Gewinnspiel fetchRequiredGewinnspiel(EOEditingContext editingContext, EOQualifier qualifier) {
-    Gewinnspiel eoObject = _Gewinnspiel.fetchGewinnspiel(editingContext, qualifier);
+  public static GewinnspielTBL fetchRequiredGewinnspielTBL(EOEditingContext editingContext, EOQualifier qualifier) {
+    GewinnspielTBL eoObject = _GewinnspielTBL.fetchGewinnspielTBL(editingContext, qualifier);
     if (eoObject == null) {
-      throw new NoSuchElementException("There was no Gewinnspiel that matched the qualifier '" + qualifier + "'.");
+      throw new NoSuchElementException("There was no GewinnspielTBL that matched the qualifier '" + qualifier + "'.");
     }
     return eoObject;
   }
 
-  public static Gewinnspiel fetchGewinnspielByPrimaryKey(EOEditingContext context, Object value) {
+  public static GewinnspielTBL fetchGewinnspielTBLByPrimaryKey(EOEditingContext context, Object value) {
     EOEnterpriseObject eo = TBEOExternalPrimaryKeyHelper.objectWithPrimaryKeyValue(context, ENTITY_NAME, value);
-    return (Gewinnspiel) eo;
+    return (GewinnspielTBL) eo;
   }
 
-  public static Gewinnspiel fetchGewinnspielByEncryptedPrimaryKey(EOEditingContext context, String value) {
-    return Gewinnspiel.fetchGewinnspielByPrimaryKey(context, TBFCrypto.crypterForAlgorithm(TBFCrypto.BLOWFISH).decrypt(value));
+  public static GewinnspielTBL fetchGewinnspielTBLByEncryptedPrimaryKey(EOEditingContext context, String value) {
+    return GewinnspielTBL.fetchGewinnspielTBLByPrimaryKey(context, TBFCrypto.crypterForAlgorithm(TBFCrypto.BLOWFISH).decrypt(value));
   }
   
-  public static Gewinnspiel localInstanceIn(EOEditingContext editingContext, Gewinnspiel eo) {
-    Gewinnspiel localInstance = (eo == null) ? null : (Gewinnspiel)EOUtilities.localInstanceOfObject(editingContext, eo);
+  public static GewinnspielTBL localInstanceIn(EOEditingContext editingContext, GewinnspielTBL eo) {
+    GewinnspielTBL localInstance = (eo == null) ? null : (GewinnspielTBL)EOUtilities.localInstanceOfObject(editingContext, eo);
     if (localInstance == null && eo != null) {
       throw new IllegalStateException("You attempted to localInstance " + eo + ", which has not yet committed.");
     }

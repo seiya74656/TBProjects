@@ -8,10 +8,10 @@
         {columnName = name; name = name; prototypeName = varchar100; }
     ); 
     attributesUsedForLocking = (agb, antwort, datum, email, id, name); 
-    className = "org.treasureboat.app.eo.Gewinnspiel"; 
+    className = "org.treasureboat.app.eo.GewinnspielTBL"; 
     classProperties = (agb, antwort, datum, email, name); 
-    externalName = Gewinnspiel; 
+    externalName = GewinnspielTBL; 
     fetchSpecificationDictionary = {}; 
-    name = Gewinnspiel; 
+    name = GewinnspielTBL; 
     primaryKeyAttributes = (id); 
 }

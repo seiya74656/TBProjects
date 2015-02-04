@@ -7,7 +7,8 @@
         username = u20199db24; 
     }; 
     entities = (
-        {className = "org.treasureboat.app.eo.Gewinnspiel"; name = Gewinnspiel; }, 
+        {className = "org.treasureboat.app.eo.GewinnspielTBL"; name = GewinnspielTBL; }, 
         {className = "org.treasureboat.app.eo.ToDo"; name = ToDo; }
     ); 
+    internalInfo = {"_deletedEntityNamesInObjectStore" = (Gewinnspiel); }; 
 }

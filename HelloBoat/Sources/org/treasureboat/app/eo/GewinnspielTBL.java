@@ -1,5 +1,5 @@
 //
-// Gewinnspiel.java
+// GewinnspielTBL.java
 //
 // version 7.1.3
 //
@@ -14,7 +14,7 @@ import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSValidation;
 
 /**
- * This is the EO class for Gewinnspiel
+ * This is the EO class for GewinnspielTBL
  * before using it check all 'TO-DO' items first to improve and make an happy Application
  * wish you happy Developing with WOdka
  * 
@@ -23,7 +23,7 @@ import com.webobjects.foundation.NSValidation;
  * Google +
  *    https://plus.google.com/u/0/b/107993064404748333102/107993064404748333102/about
  */
-public class Gewinnspiel extends _Gewinnspiel
+public class GewinnspielTBL extends _GewinnspielTBL
 /*
 implements 
 ITBEnterpriseStampedEnterpriseObject // TODO StampedEnterpriseObject Support
@@ -35,7 +35,7 @@ ITBEnterpriseStampedEnterpriseObject // TODO StampedEnterpriseObject Support
   /** 
    * <a href="http://wiki.wocommunity.org/display/documentation/Wonder+Logging">new org.slf4j.Logger</a> 
    */
-  static final Logger log = LoggerFactory.getLogger(Gewinnspiel.class);
+  static final Logger log = LoggerFactory.getLogger(GewinnspielTBL.class);
   
   //********************************************************************
   //  Properties : プロパティ
@@ -45,8 +45,8 @@ ITBEnterpriseStampedEnterpriseObject // TODO StampedEnterpriseObject Support
   //  clazz methods
   //********************************************************************
 
-  public static final GewinnspielClazz<Gewinnspiel> clazz = new GewinnspielClazz<Gewinnspiel>();
-  public static class GewinnspielClazz<T extends Gewinnspiel> extends _Gewinnspiel._GewinnspielClazz<T>
+  public static final GewinnspielTBLClazz<GewinnspielTBL> clazz = new GewinnspielTBLClazz<GewinnspielTBL>();
+  public static class GewinnspielTBLClazz<T extends GewinnspielTBL> extends _GewinnspielTBL._GewinnspielTBLClazz<T>
   /*
   implements 
   ITBEnterpriseVirtualDeleteSupport, // TODO Virtual Delete Support

@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-
+import org.treasureboat.app.eo.GewinnspielTBL;
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.foundation.date.TBFTimestamp;
 import org.treasureboat.webcore.appserver.TBSession;
@@ -14,7 +14,11 @@ import org.treasureboat.webcore.enums.ETBWLanguage;
 
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
+import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
+import com.webobjects.foundation.NSTimestamp;
+
+import er.extensions.eof.ERXEC;
 
 public class Gewinnspiel extends TBComponent {
 
@@ -34,7 +38,7 @@ public class Gewinnspiel extends TBComponent {
 
   public String email = "";
   public String deinname = "";
-  public String antwort = "2";
+  public String antwort = "";
 
   public boolean agb = false;
 
@@ -47,14 +51,29 @@ public class Gewinnspiel extends TBComponent {
     java.util.regex.Matcher m = p.matcher(emailadress);
     return m.matches();
   }
-  
-  public NSArray<org.treasureboat.app.eo.Gewinnspiel> allGewinnspiels() {
-    log.info("wir versuchen alle Daten zu bekommen");
-    return org.treasureboat.app.eo.Gewinnspiel.fetchAllGewinnspiels(editingContext());
+
+  public NSArray<GewinnspielTBL> allGewinnspielTBLs() {
+    return GewinnspielTBL.fetchAllGewinnspielTBLs(editingContext());
   }
 
-  public org.treasureboat.app.eo.Gewinnspiel oneGewinnspiel;
-  
+  public GewinnspielTBL oneGewinnspiel;
+
+  public WOActionResults doCreateAction() {
+
+    EOEditingContext ec = ERXEC.newEditingContext();
+
+    GewinnspielTBL newGewinnspielTBL = GewinnspielTBL.createAndInsertInstance(ec);
+    newGewinnspielTBL.setAntwort("1");
+    newGewinnspielTBL.setName("Rene");
+    newGewinnspielTBL.setAgb(agb);
+    newGewinnspielTBL.setEmail("seiya@me.com");
+    newGewinnspielTBL.setDatum(new NSTimestamp());
+    log.info("here------>>>");
+    ec.saveChanges();
+
+    return goToMySelfAction();
+  }
+
   public WOActionResults doEnglishAction() {
     TBSession.session().setLanguage(ETBWLanguage.English.name());
     return goToMySelfAction();
@@ -110,16 +129,14 @@ public class Gewinnspiel extends TBComponent {
     // Datei erstellen und beschreiben
 
     try {
-      
-      
-//      File file = new File("gewinnerliste.txt");
-//      if (!file.exists()) {
-//        file.createNewFile();
-//      }
-//      
-//      FileWriter writerX = new FileWriter(file, true);
-      
-      
+
+      // File file = new File("gewinnerliste.txt");
+      // if (!file.exists()) {
+      // file.createNewFile();
+      // }
+      //
+      // FileWriter writerX = new FileWriter(file, true);
+
       FileWriter writer = new FileWriter("gewinnerliste.txt", true);
       writer.append("Date: " + timestamp() + ", \t Name: " + deinname2 + ", Email: " + email2 + ", Antwort: " + antwort2 + " AGB: " + agb2 + "\n");
       writer.close();
@@ -130,8 +147,8 @@ public class Gewinnspiel extends TBComponent {
       e.printStackTrace();
     }
   }
-  // Datei erstellen und beschreiben
 
+  // Datei erstellen und beschreiben
 
   public WOActionResults doMitmachenAction() throws IOException {
     // WOContext context = context();
@@ -150,13 +167,22 @@ public class Gewinnspiel extends TBComponent {
     // System.err.println(TBFEmailChecker.emailCharFullCheck("rene@yahoo.com"));
     // System.err.println(TBFEmailChecker.emailCharFullCheck("rene@yahoo.c"));
 
-    if (!agb || TBFString.stringIsNullOrEmpty(deinname) || TBFString.stringIsNullOrEmpty(email) || TBFString.stringIsNullOrEmpty(antwort) || !isValidEmailAddress(email)) {
+    if (TBFString.stringIsNullOrEmpty(deinname) || TBFString.stringIsNullOrEmpty(email) || TBFString.stringIsNullOrEmpty(antwort) || !isValidEmailAddress(email)) {
       log.info("Mitmachen fehlgeschlagen!!! AGB: {}, Name: {}, Email: {}, Antwort: {}", agb, deinname, email, antwort);
     }
     else {
       log.info("Mitmachen wurde aufgerufen. AGB: {}, Name: {}, Email: {}, Antwort: {}", agb, deinname, email, antwort);
       writertoFile(deinname, antwort, email, agb);
 
+      EOEditingContext ec = ERXEC.newEditingContext();
+      GewinnspielTBL newGewinnspielTBL = GewinnspielTBL.createAndInsertInstance(ec);
+      newGewinnspielTBL.setAntwort(antwort);
+      newGewinnspielTBL.setName(deinname);
+      newGewinnspielTBL.setAgb(agb);
+      newGewinnspielTBL.setEmail(email);
+      newGewinnspielTBL.setDatum(new NSTimestamp());
+      log.info("gespeichert------>>>");
+      ec.saveChanges();
       /*
        * ERJavaMail sendmail = new ERJavaMail();
        * sendmail.isValidEmail(email);

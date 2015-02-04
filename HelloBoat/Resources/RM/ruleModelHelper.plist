@@ -1,1 +1,1 @@
-{Gewinnspiel = ("A:false:agb:boolean", "A:false:antwort:varchar100", "A:false:datum:dateTime", "A:false:email:varchar100", "A:false:name:varchar100"); ToDo = ("A:true:done:boolean", "A:false:dueDate:tbDateTime", "A:true:priority:varchar10", "A:false:task:varchar100"); }
+{GewinnspielTBL = ("A:false:agb:boolean", "A:false:antwort:varchar100", "A:false:datum:dateTime", "A:false:email:varchar100", "A:false:name:varchar100"); ToDo = ("A:true:done:boolean", "A:false:dueDate:tbDateTime", "A:true:priority:varchar10", "A:false:task:varchar100"); }
