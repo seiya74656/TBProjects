@@ -71,9 +71,10 @@
     </div>
   </wo:TBForm>
 <br />
-<wo:foreach list="$allGewinnspiels" item="$oneGewinnspiel">
+<wo:foreach list="$allGewinnspielTBLs" item="$oneGewinnspiel">
  
 <wo:TBString value="$oneGewinnspiel.name" />
 <br />
 </wo:foreach>
+<br /><wo:TBHyperlink action="$doCreateAction" string="Create value"></wo:TBHyperlink>
 </webobject>
