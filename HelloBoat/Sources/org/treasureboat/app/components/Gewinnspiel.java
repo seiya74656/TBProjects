@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
+
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.foundation.date.TBFTimestamp;
 import org.treasureboat.webcore.appserver.TBSession;
@@ -13,6 +14,7 @@ import org.treasureboat.webcore.enums.ETBWLanguage;
 
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
+import com.webobjects.foundation.NSArray;
 
 public class Gewinnspiel extends TBComponent {
 
@@ -45,7 +47,14 @@ public class Gewinnspiel extends TBComponent {
     java.util.regex.Matcher m = p.matcher(emailadress);
     return m.matches();
   }
+  
+  public NSArray<org.treasureboat.app.eo.Gewinnspiel> allGewinnspiels() {
+    log.info("wir versuchen alle Daten zu bekommen");
+    return org.treasureboat.app.eo.Gewinnspiel.fetchAllGewinnspiels(editingContext());
+  }
 
+  public org.treasureboat.app.eo.Gewinnspiel oneGewinnspiel;
+  
   public WOActionResults doEnglishAction() {
     TBSession.session().setLanguage(ETBWLanguage.English.name());
     return goToMySelfAction();
@@ -97,7 +106,7 @@ public class Gewinnspiel extends TBComponent {
   // super.sleep();
   // }
 
-  private void writertoFile(String name, String antwort, String email, Boolean agb) throws IOException {
+  private void writertoFile(String deinname2, String antwort2, String email2, Boolean agb2) throws IOException {
     // Datei erstellen und beschreiben
 
     try {
@@ -112,7 +121,7 @@ public class Gewinnspiel extends TBComponent {
       
       
       FileWriter writer = new FileWriter("gewinnerliste.txt", true);
-      writer.append("Date: " + timestamp() + ", \t Name: " + deinname + ", Email: " + email + ", Antwort: " + antwort + " AGB: " + agb + "\n");
+      writer.append("Date: " + timestamp() + ", \t Name: " + deinname2 + ", Email: " + email2 + ", Antwort: " + antwort2 + " AGB: " + agb2 + "\n");
       writer.close();
       log.info(">>>> Daten wurden in die Datei geschrieben!! <<<<");
     }
