@@ -1,0 +1,17 @@
+{
+    attributes = (
+        {columnName = agb; name = agb; prototypeName = boolean; }, 
+        {columnName = antwort; name = antwort; prototypeName = varchar100; }, 
+        {columnName = datum; name = datum; prototypeName = dateTime; }, 
+        {columnName = email; name = email; prototypeName = varchar100; }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {columnName = name; name = name; prototypeName = varchar100; }
+    ); 
+    attributesUsedForLocking = (agb, antwort, datum, email, id, name); 
+    className = "org.treasureboat.app.eo.Gewinnspiel"; 
+    classProperties = (agb, antwort, datum, email, name); 
+    externalName = Gewinnspiel; 
+    fetchSpecificationDictionary = {}; 
+    name = Gewinnspiel; 
+    primaryKeyAttributes = (id); 
+}

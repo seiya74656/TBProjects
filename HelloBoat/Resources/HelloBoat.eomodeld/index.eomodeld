@@ -6,5 +6,8 @@
         password = testdb; 
         username = u20199db24; 
     }; 
-    entities = ({className = "org.treasureboat.app.eo.ToDo"; name = ToDo; }); 
+    entities = (
+        {className = "org.treasureboat.app.eo.Gewinnspiel"; name = Gewinnspiel; }, 
+        {className = "org.treasureboat.app.eo.ToDo"; name = ToDo; }
+    ); 
 }
