@@ -1,0 +1,13 @@
+<webobject name="Pagewrapper">
+<h1>Administrations Interface für das Gewinnspiel!</h1>
+<wo:TBForm>
+<wo:foreach item="$oneGewinnspiel" list="$gewinnspielList">
+<wo:TBTextField value="$oneGewinnspiel.name"></wo:TBTextField>
+<wo:TBString value="$oneGewinnspiel.datum" /> - 
+<wo:TBString value="$oneGewinnspiel.name" />
+
+<br />
+</wo:foreach>
+<wo:submitButton value="Save" action="$doSaveAction"></wo:submitButton>
+</wo:TBForm>
+</webobject>
