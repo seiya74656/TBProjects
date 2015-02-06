@@ -1,0 +1,1 @@
+{GewinnspielTeilnehmer = ("A:false:agb:boolean", "A:false:antwort:intNumber", "A:false:datum:dateTime", "A:false:email:varchar100", "A:false:name:varchar100"); }
