@@ -3,7 +3,7 @@
  -java \
  -model Resources/HelloBoat.eomodeld \
  -packagedirs \
- -subclassDestination GeneratedEOs \
+ -subclassDestination Sources \
  -templatedir ../../Tower/TreasureBoat/TemplatesForEO \
  -verbose \
  -loadModelGroup
