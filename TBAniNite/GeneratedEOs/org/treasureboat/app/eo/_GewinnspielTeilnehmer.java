@@ -76,8 +76,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.treasureboat.enterprise.eof.TBEOExternalPrimaryKeyHelper;
 import org.treasureboat.enterprise.eof.TBEOGenericRecord;
+import org.treasureboat.enterprise.eof.delete.ITBEnterpriseVirtualDeleteSupport;
 import org.treasureboat.foundation.crypting.TBFCrypto;
 import org.treasureboat.webcore.appserver.TBSession;
+import org.treasureboat.webcore.concurrency.TBWConcurrencyUtilities;
 import org.treasureboat.webcore.override.core.TBWCoreQualifierBase;
 import org.treasureboat.webcore.security.domain.ITBWDomain;
 import org.treasureboat.webcore.security.domain.TBWMultiDomainSupport;
@@ -420,7 +422,7 @@ public abstract class _GewinnspielTeilnehmer extends  TBEOGenericRecord {
   public static NSArray<GewinnspielTeilnehmer> fetchGewinnspielTeilnehmers(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     EOFetchSpecification fetchSpec = new EOFetchSpecification(_GewinnspielTeilnehmer.ENTITY_NAME, qualifier, sortOrderings);
     fetchSpec.setIsDeep(true);
-    NSArray<GewinnspielTeilnehmer> eoObjects = editingContext.objectsWithFetchSpecification(fetchSpec);
+    NSArray<GewinnspielTeilnehmer> eoObjects = (NSArray<GewinnspielTeilnehmer>)editingContext.objectsWithFetchSpecification(fetchSpec);
     return eoObjects;
   }
 
@@ -446,7 +448,7 @@ public abstract class _GewinnspielTeilnehmer extends  TBEOGenericRecord {
 
     EOFetchSpecification fetchSpec = new EOFetchSpecification(_GewinnspielTeilnehmer.ENTITY_NAME, andQualifier, sortOrderings);
     fetchSpec.setIsDeep(true);
-    NSArray<GewinnspielTeilnehmer> eoObjects = editingContext.objectsWithFetchSpecification(fetchSpec);
+    NSArray<GewinnspielTeilnehmer> eoObjects = (NSArray<GewinnspielTeilnehmer>)editingContext.objectsWithFetchSpecification(fetchSpec);
     return eoObjects;
   }  
   
@@ -465,7 +467,7 @@ public abstract class _GewinnspielTeilnehmer extends  TBEOGenericRecord {
     if (count == 0) {
       eoObject = null;
     } else if (count == 1) {
-      eoObject = eoObjects.objectAtIndex(0);
+      eoObject = (GewinnspielTeilnehmer)eoObjects.objectAtIndex(0);
     } else {
       throw new IllegalStateException("There was more than one GewinnspielTeilnehmer that matched the qualifier '" + qualifier + "'.");
     }
@@ -490,7 +492,7 @@ public abstract class _GewinnspielTeilnehmer extends  TBEOGenericRecord {
   }
 
   public static GewinnspielTeilnehmer fetchGewinnspielTeilnehmerByEncryptedPrimaryKey(EOEditingContext context, String value) {
-    return _GewinnspielTeilnehmer.fetchGewinnspielTeilnehmerByPrimaryKey(context, TBFCrypto.crypterForAlgorithm(TBFCrypto.BLOWFISH).decrypt(value));
+    return GewinnspielTeilnehmer.fetchGewinnspielTeilnehmerByPrimaryKey(context, TBFCrypto.crypterForAlgorithm(TBFCrypto.BLOWFISH).decrypt(value));
   }
   
   public static GewinnspielTeilnehmer localInstanceIn(EOEditingContext editingContext, GewinnspielTeilnehmer eo) {
