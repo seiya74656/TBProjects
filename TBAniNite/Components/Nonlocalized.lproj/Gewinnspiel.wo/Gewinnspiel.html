@@ -1,0 +1,80 @@
+<webobject name="Pagewrapper">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+  </script>
+  <script>
+    $(document).ready(function(){
+     $('label.big input[type="radio"][name="antwort"]').click(function(){
+        $('label.big').removeClass('highlight');
+        $(this).parent('label.big:first').addClass('highlight');
+       });
+    });
+  </script>
+  
+	<wo:TBForm>
+  <wo:TBStyleSheet filename="gewinnspiel.css" />
+  
+  <div id="Gewinnspiel">
+    <div class="row">
+      <div class="ttip" data-tooltip="Ks Room everywhere">
+        <wo:TBHyperlink pageName="Main"> <wo:TBImage src="logo.png" /> </wo:TBHyperlink>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <p><webobject name="Gewinnfrage" /></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="six columns">
+        <label class="big"> <webobject name="RadioButton" /> PHP </label>
+      </div>
+      <div class="six columns">
+        <label class="big"> <webobject name="RadioButton2" /> Treasureboat </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="six columns">
+        <label class="big"> <webobject name="RadioButton3" /> Swift </label>
+      </div>
+      <div class="six columns rounded">
+        <label class="big"> <webobject name="RadioButton4" /> Java </label>
+      </div>
+    </div>
+  </div>
+  <br />
+    <div id="Gewinnspiel">
+      <div class="row">
+        <h4><webobject name="Gewinnueberschrift" /></h4>
+        <br />
+        <wo:TBTextField value="$deinname" class="normal" placeholder="Dein Name" autofocus="true" automatic="true" />
+        <br />
+        <br />
+        <wo:TBEmailField value="$email" placeholder="Email Adresse" automatic="true" class="normal" showButton="false" />
+        <br />
+        <br />
+        <wo:WOCheckBox checked="$agb" />
+        <webobject name="AGB" />
+        <br />
+        <br />
+		<wo:TBJSAlertPanel alertMessage="Wake up" string="alert me" action="$doMitmachenAction" automatic="true"/><br />
+
+        <wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass"> <wo:submit value="$localizer.Teilnehmen" action="$doMitmachenAction" /> </wo:TBGenericContainer>
+        <br />
+      </div>
+    </div>
+    <div class="row">
+      Set Language:<br />
+      <wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass"> <wo:submit value="Englisch" action="$doEnglishAction" /> </wo:TBGenericContainer>
+      <wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass"> <wo:submit value="Deutsch" action="$doGermanAction" /> </wo:TBGenericContainer>
+      <wo:TBGenericContainer elementName="div" class="$submitButton.cssContainerClass"> <wo:submit value="Japanisch" action="$doJapaneseAction" /> </wo:TBGenericContainer>
+      <br />
+    </div>
+  </wo:TBForm>
+<br />
+<wo:foreach list="$allGewinnspielTBLs" item="$oneGewinnspiel">
+ 
+<wo:TBString value="$oneGewinnspiel.name" />
+<br />
+</wo:foreach>
+<br /><wo:TBHyperlink action="$doCreateAction" string="Create value"></wo:TBHyperlink>
+</webobject>
