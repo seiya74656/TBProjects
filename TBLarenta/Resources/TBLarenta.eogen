@@ -1,0 +1,10 @@
+ -destination GeneratedEOs \
+ -extension java \
+ -java \
+ -javaTemplate _Entity.java \
+ -model Resources/TBLarenta.eomodeld \
+ -packagedirs \
+ -subclassDestination Sources \
+ -subclassJavaTemplate Entity.java \
+ -verbose \
+ -loadModelGroup
