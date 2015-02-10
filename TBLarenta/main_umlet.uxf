@@ -15,7 +15,9 @@
 -Beschreibung: varchar1000
 -Name: varchar
 -Preis: doubleNumber
--Sprache: varchar16</panel_attributes>
+-Sprache: varchar16
+-Category
+-Order</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

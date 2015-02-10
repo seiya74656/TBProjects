@@ -2,9 +2,15 @@
 
 	<div class="row">
 		<div class="twelve columns">
-			<h2>Welcome to TreasureBoat</h2>
+			<h2>Neue Speise eintragen:</h2>
 			<wo:TBForm>
-			<wo:submit action="$doMenu" value="Menü" />
+			Name: <wo:TBTextField value="$name2" automatic="true"/><br />
+			Beschreibung: <wo:TBTextField value="$beschreibung"  automatic="true" /><br />
+			Preis: <wo:TBNumberField value="$preis"  automatic="true"/><br />
+			Sprache: <webobject name="PopUp" />
+			
+			<wo:submit action="$doCreateEntry" value="Neue Speisekarte eintragen." />
+			
 			</wo:TBForm>
 		</div>
 	</div>
