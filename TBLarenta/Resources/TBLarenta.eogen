@@ -1,10 +1,9 @@
- -destination GeneratedEOs \
+ -destination Sources \
  -extension java \
  -java \
- -javaTemplate _Entity.java \
  -model Resources/TBLarenta.eomodeld \
  -packagedirs \
- -subclassDestination Sources \
- -subclassJavaTemplate Entity.java \
+ -subclassDestination GeneratedEOs \
+ -templatedir ../../Tower/TreasureBoat/TemplatesForEO \
  -verbose \
  -loadModelGroup

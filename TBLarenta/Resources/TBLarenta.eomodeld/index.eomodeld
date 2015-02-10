@@ -1,1 +1,21 @@
-{EOModelVersion = "2.1"; adaptorName = JDBC; connectionDictionary = {}; }
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {}; 
+    entities = (
+        {className = "org.treasureboat.app.eo.AllergeneTBL"; name = AllergeneTBL; }, 
+        {
+            className = "org.treasureboat.app.eo.AllergenInfoTBL"; 
+            name = AllergenInfoTBL; 
+        }, 
+        {className = "org.treasureboat.app.eo.SpeisekarteTBL"; name = SpeisekarteTBL; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {adaptorName = JDBC; prototypeEntityName = EOJDBCMySQLPrototypes; }; 
+            }; 
+        }; 
+    }; 
+}

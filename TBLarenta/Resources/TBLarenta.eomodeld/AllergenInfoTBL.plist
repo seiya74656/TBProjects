@@ -1,0 +1,19 @@
+{
+    attributes = (
+        {columnName = Allergen; name = Allergen; prototypeName = varchar100; }, 
+        {
+            columnName = AllergenInfocode; 
+            name = AllergenInfocode; 
+            prototypeName = intNumber; 
+        }, 
+        {allowsNull = N; name = id; prototypeName = id; }
+    ); 
+    attributesUsedForLocking = (Allergen, AllergenInfocode, id); 
+    className = "org.treasureboat.app.eo.AllergenInfoTBL"; 
+    classProperties = (Allergen, AllergenInfocode); 
+    externalName = AllergenInfoTBL; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_javaClientClassName" = AllergenInfoTBL; }; 
+    name = AllergenInfoTBL; 
+    primaryKeyAttributes = (id); 
+}

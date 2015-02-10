@@ -1,0 +1,17 @@
+{
+    attributes = (
+        {columnName = Beschreibung; name = Beschreibung; prototypeName = varchar1000; }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {columnName = Name; name = Name; prototypeName = varchar100; }, 
+        {columnName = Preis; name = Preis; prototypeName = doubleNumber; }, 
+        {columnName = Sprache; name = Sprache; prototypeName = varchar16; }
+    ); 
+    attributesUsedForLocking = (Beschreibung, id, Name, Preis, Sprache); 
+    className = "org.treasureboat.app.eo.SpeisekarteTBL"; 
+    classProperties = (Beschreibung, Name, Preis, Sprache); 
+    externalName = SpeisekarteTBL; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_javaClientClassName" = SpeisekarteTBL; }; 
+    name = SpeisekarteTBL; 
+    primaryKeyAttributes = (id); 
+}
