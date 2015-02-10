@@ -6,13 +6,25 @@
 			<wo:TBForm>
 			Name: <wo:TBTextField value="$name2" automatic="true"/><br />
 			Beschreibung: <wo:TBTextField value="$beschreibung"  automatic="true" /><br />
-			Preis: <wo:TBNumberField value="$preis"  automatic="true"/><br />
+			Preis: <wo:TBNumberField  value="$preis"  automatic="true" /><br />
+			Sortorder ID: <wo:TBNumberField  value="$sortorder"  automatic="true" /><br />
 			Sprache: <webobject name="PopUp" />
-			
 			<wo:submit action="$doCreateEntry" value="Neue Speisekarte eintragen." />
-			
 			</wo:TBForm>
 		</div>
-	</div>
-	
+<br />
+
+<wo:TBForm>
+<wo:foreach list="$allSpeisekartesTBLs" item="$einzelAuflistungSpeisekarteTBL">
+ID: <wo:TBString value="$einzelAuflistungSpeisekarteTBL.primaryKey"></wo:TBString> 
+<wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.name" /> 
+<wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.beschreibung" />
+<wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.preis" /> 
+<webobject name="PopUp2" />
+<wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.sortorder" />
+<br />
+</wo:foreach>
+<wo:submit action="$doSaveEntrys" value="Änderungen speichern"></wo:submit>
+</wo:TBForm>
+	</div>	
 </webobject>

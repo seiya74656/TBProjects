@@ -25,10 +25,11 @@
   "Pages.EditEmbeddedSpeisekarteTBL" = "Edit Embedded SpeisekarteTBL";
   "Pages.CreateEmbeddedSpeisekarteTBL" = "Create Embedded SpeisekarteTBL";
 
-  "PropertyKey.Beschreibung" = "Beschreibung";
-  "PropertyKey.Name" = "Name";
-  "PropertyKey.Preis" = "Preis";
-  "PropertyKey.Sprache" = "Sprache";
+  "PropertyKey.beschreibung" = "beschreibung";
+  "PropertyKey.name" = "name";
+  "PropertyKey.preis" = "preis";
+  "PropertyKey.sortorder" = "sortorder";
+  "PropertyKey.sprache" = "sprache";
 
  * ----------------------------------------
  */
@@ -45,22 +46,22 @@
   105 : pageConfiguration = 'CreateSpeisekarteTBL' => navigationState = "XX.xx.createSpeisekarteTBL" [com.webobjects.directtoweb.Assignment]
   105 : pageConfiguration = 'QuerySpeisekarteTBL' => navigationState = "XX.xx.querySpeisekarteTBL" [com.webobjects.directtoweb.Assignment]
   
-  401 : pageConfiguration = 'QuerySpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "Beschreibung" , "Name" , "Preis" , "Sprache"  ) [com.webobjects.directtoweb.Assignment] 
-  402 : pageConfiguration = 'ListSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "Beschreibung" , "Name" , "Preis" , "Sprache"  ) [com.webobjects.directtoweb.Assignment] 
-  403 : pageConfiguration = 'InspectSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "Beschreibung" , "Name" , "Preis" , "Sprache"  ) [com.webobjects.directtoweb.Assignment] 
-  404 : pageConfiguration = 'EditSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "Beschreibung" , "Name" , "Preis" , "Sprache"  ) [com.webobjects.directtoweb.Assignment] 
-  405 : pageConfiguration = 'CreateSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "Beschreibung" , "Name" , "Preis" , "Sprache"  ) [com.webobjects.directtoweb.Assignment] 
+  401 : pageConfiguration = 'QuerySpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  ) [com.webobjects.directtoweb.Assignment] 
+  402 : pageConfiguration = 'ListSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  ) [com.webobjects.directtoweb.Assignment] 
+  403 : pageConfiguration = 'InspectSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  ) [com.webobjects.directtoweb.Assignment] 
+  404 : pageConfiguration = 'EditSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  ) [com.webobjects.directtoweb.Assignment] 
+  405 : pageConfiguration = 'CreateSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  ) [com.webobjects.directtoweb.Assignment] 
    
   // D3W
 
   200 : EN = '#' => crud = "0100" [com.webobjects.directtoweb.Assignment]
   600 : PC = 'EditRelationshipEmbedded#' => cruds = "00001" [com.webobjects.directtoweb.Assignment]
   
-  401 : PC = 'Query#' => DPK = ("[MainTab]", "(MainSection)", "Beschreibung", "Name", "Preis", "Sprache") [com.webobjects.directtoweb.Assignment] 
-  402 : PC = 'List#' => DPK = ("[MainTab]", "(MainSection)", "Beschreibung", "Name", "Preis", "Sprache") [com.webobjects.directtoweb.Assignment] 
-  403 : PC = 'Inspect#' => DPK = ("[MainTab]", "(MainSection)", "Beschreibung", "Name", "Preis", "Sprache") [com.webobjects.directtoweb.Assignment] 
-  404 : PC = 'Edit#' => DPK = ("[MainTab]", "(MainSection)", "Beschreibung", "Name", "Preis", "Sprache") [com.webobjects.directtoweb.Assignment] 
-  405 : PC = 'Create#' => DPK = ("[MainTab]", "(MainSection)", "Beschreibung", "Name", "Preis", "Sprache") [com.webobjects.directtoweb.Assignment] 
+  401 : PC = 'Query#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache") [com.webobjects.directtoweb.Assignment] 
+  402 : PC = 'List#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache") [com.webobjects.directtoweb.Assignment] 
+  403 : PC = 'Inspect#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache") [com.webobjects.directtoweb.Assignment] 
+  404 : PC = 'Edit#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache") [com.webobjects.directtoweb.Assignment] 
+  405 : PC = 'Create#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache") [com.webobjects.directtoweb.Assignment] 
 
  * ----------------------------------------
  */
@@ -215,15 +216,17 @@ public abstract class _SpeisekarteTBL extends  TBEOGenericRecord {
   //********************************************************************
 
   // Attribute Keys
-  public static final ERXKey<String> BESCHREIBUNG = new ERXKey<String>("Beschreibung");
-  public static final ERXKey<String> NAME = new ERXKey<String>("Name");
-  public static final ERXKey<Double> PREIS = new ERXKey<Double>("Preis");
-  public static final ERXKey<String> SPRACHE = new ERXKey<String>("Sprache");
+  public static final ERXKey<String> BESCHREIBUNG = new ERXKey<String>("beschreibung");
+  public static final ERXKey<String> NAME = new ERXKey<String>("name");
+  public static final ERXKey<Double> PREIS = new ERXKey<Double>("preis");
+  public static final ERXKey<Integer> SORTORDER = new ERXKey<Integer>("sortorder");
+  public static final ERXKey<String> SPRACHE = new ERXKey<String>("sprache");
 
   // Attributes
   public static final String BESCHREIBUNG_KEY = BESCHREIBUNG.key();
   public static final String NAME_KEY = NAME.key();
   public static final String PREIS_KEY = PREIS.key();
+  public static final String SORTORDER_KEY = SORTORDER.key();
   public static final String SPRACHE_KEY = SPRACHE.key();
 
   //********************************************************************
@@ -250,67 +253,83 @@ public abstract class _SpeisekarteTBL extends  TBEOGenericRecord {
   //  Attribute Accessor : アトリビュート・アクセス
   //********************************************************************
 
-  public String Beschreibung() {
+  public String beschreibung() {
     return (String) storedValueForKey(BESCHREIBUNG_KEY);
   }
 
   public void setBeschreibung(String value) {
     if (_SpeisekarteTBL.log.isDebugEnabled()) {
-      _SpeisekarteTBL.log.debug("updating Beschreibung from {} to {}", Beschreibung(), value);
+      _SpeisekarteTBL.log.debug("updating beschreibung from {} to {}", beschreibung(), value);
     }
     takeStoredValueForKey(value, BESCHREIBUNG_KEY);
   }
 
   public Object validateBeschreibung(Object value) throws NSValidation.ValidationException {
-    _SpeisekarteTBL.log.debug("validate Beschreibung");
+    _SpeisekarteTBL.log.debug("validate beschreibung");
     return ERXValidationException.validateForUserInfo(this, BESCHREIBUNG_KEY, value);
   }
 
-  public String Name() {
+  public String name() {
     return (String) storedValueForKey(NAME_KEY);
   }
 
   public void setName(String value) {
     if (_SpeisekarteTBL.log.isDebugEnabled()) {
-      _SpeisekarteTBL.log.debug("updating Name from {} to {}", Name(), value);
+      _SpeisekarteTBL.log.debug("updating name from {} to {}", name(), value);
     }
     takeStoredValueForKey(value, NAME_KEY);
   }
 
   public Object validateName(Object value) throws NSValidation.ValidationException {
-    _SpeisekarteTBL.log.debug("validate Name");
+    _SpeisekarteTBL.log.debug("validate name");
     return ERXValidationException.validateForUserInfo(this, NAME_KEY, value);
   }
 
-  public Double Preis() {
+  public Double preis() {
     return (Double) storedValueForKey(PREIS_KEY);
   }
 
   public void setPreis(Double value) {
     if (_SpeisekarteTBL.log.isDebugEnabled()) {
-      _SpeisekarteTBL.log.debug("updating Preis from {} to {}", Preis(), value);
+      _SpeisekarteTBL.log.debug("updating preis from {} to {}", preis(), value);
     }
     takeStoredValueForKey(value, PREIS_KEY);
   }
 
   public Object validatePreis(Object value) throws NSValidation.ValidationException {
-    _SpeisekarteTBL.log.debug("validate Preis");
+    _SpeisekarteTBL.log.debug("validate preis");
     return ERXValidationException.validateForUserInfo(this, PREIS_KEY, value);
   }
 
-  public String Sprache() {
+  public Integer sortorder() {
+    return (Integer) storedValueForKey(SORTORDER_KEY);
+  }
+
+  public void setSortorder(Integer value) {
+    if (_SpeisekarteTBL.log.isDebugEnabled()) {
+      _SpeisekarteTBL.log.debug("updating sortorder from {} to {}", sortorder(), value);
+    }
+    takeStoredValueForKey(value, SORTORDER_KEY);
+  }
+
+  public Object validateSortorder(Object value) throws NSValidation.ValidationException {
+    _SpeisekarteTBL.log.debug("validate sortorder");
+    return ERXValidationException.validateForUserInfo(this, SORTORDER_KEY, value);
+  }
+
+  public String sprache() {
     return (String) storedValueForKey(SPRACHE_KEY);
   }
 
   public void setSprache(String value) {
     if (_SpeisekarteTBL.log.isDebugEnabled()) {
-      _SpeisekarteTBL.log.debug("updating Sprache from {} to {}", Sprache(), value);
+      _SpeisekarteTBL.log.debug("updating sprache from {} to {}", sprache(), value);
     }
     takeStoredValueForKey(value, SPRACHE_KEY);
   }
 
   public Object validateSprache(Object value) throws NSValidation.ValidationException {
-    _SpeisekarteTBL.log.debug("validate Sprache");
+    _SpeisekarteTBL.log.debug("validate sprache");
     return ERXValidationException.validateForUserInfo(this, SPRACHE_KEY, value);
   }
 
@@ -340,33 +359,37 @@ public abstract class _SpeisekarteTBL extends  TBEOGenericRecord {
   //********************************************************************
 
   public static SpeisekarteTBL createSpeisekarteTBL(EOEditingContext editingContext
-   , String Beschreibung
-   , String Name
-   , Double Preis
-   , String Sprache
+   , String beschreibung
+   , String name
+   , Double preis
+   , Integer sortorder
+   , String sprache
     )
   {
     SpeisekarteTBL eo = (SpeisekarteTBL) EOUtilities.createAndInsertInstance(editingContext, _SpeisekarteTBL.ENTITY_NAME);
-    eo.setBeschreibung(Beschreibung);
-    eo.setName(Name);
-    eo.setPreis(Preis);
-    eo.setSprache(Sprache);
+    eo.setBeschreibung(beschreibung);
+    eo.setName(name);
+    eo.setPreis(preis);
+    eo.setSortorder(sortorder);
+    eo.setSprache(sprache);
     return eo;
   }
   
   /* EO creation with Stamped EO Support */
   public static SpeisekarteTBL createSpeisekarteTBLWithStampedSupport(EOEditingContext editingContext
-   , String Beschreibung
-   , String Name
-   , Double Preis
-   , String Sprache
+   , String beschreibung
+   , String name
+   , Double preis
+   , Integer sortorder
+   , String sprache
     )
   {
     SpeisekarteTBL eo = (SpeisekarteTBL) EOUtilities.createAndInsertInstance(editingContext, _SpeisekarteTBL.ENTITY_NAME);
-    eo.setBeschreibung(Beschreibung);
-    eo.setName(Name);
-    eo.setPreis(Preis);
-    eo.setSprache(Sprache);
+    eo.setBeschreibung(beschreibung);
+    eo.setName(name);
+    eo.setPreis(preis);
+    eo.setSortorder(sortorder);
+    eo.setSprache(sprache);
     return eo;
   }
 

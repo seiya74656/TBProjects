@@ -7,3 +7,10 @@ PopUp : WOPopUpButton {
 	selection = selectedPopUp;
 	displayString = oneSprache.sprache;
 }
+PopUp2 : WOPopUpButton {
+	list = tabes;
+	item = oneSprache;
+	selection = selectedPopUp;
+	displayString = oneSprache.sprache;
+
+}
