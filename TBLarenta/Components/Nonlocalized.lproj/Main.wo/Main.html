@@ -15,7 +15,7 @@
 		</div>
 <br />
 
-<wo:TBForm>
+<wo:TBForm>ID, Name, Beschreibung, Preis, Sortorder<br />
 <wo:foreach list="$allSpeisekartesTBLs" item="$einzelAuflistungSpeisekarteTBL">
 ID: <wo:TBString value="$einzelAuflistungSpeisekarteTBL.primaryKey"></wo:TBString> 
 <wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.name" /> 
@@ -25,17 +25,17 @@ ID: <wo:TBString value="$einzelAuflistungSpeisekarteTBL.primaryKey"></wo:TBStrin
 <wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.sortorder" />
 <br />
 </wo:foreach>
-<br />
+<br />ID,Allergencode, SpeisenID<br />
 <wo:foreach list="$allAllergeneTBLs" item="$einzelAllergeneTBL">
-ID: <wo:TBString value="$einzelAllergeneTBL.primaryKey" /> 
-Code: <wo:TBString value="$einzelAllergeneTBL.allergencode" /> 
-SpeisenID: <wo:TBString value="$einzelAllergeneTBL.speisenid"/><br /> 
+ID: <wo:TBTextField value="$einzelAllergeneTBL.primaryKey" /> 
+Code: <wo:TBTextField value="$einzelAllergeneTBL.allergencode" /> 
+SpeisenID: <wo:TBTextField value="$einzelAllergeneTBL.speisenid"/><br /> 
 </wo:foreach>
-<br />
+<br />ID, Allergen,AllergeninfoCode<br />
 <wo:foreach list="$allAllergenInfoTBLs" item="$einzelAllergenInfoTBL">
-ID: <wo:TBString value="$einzelAllergenInfoTBL.primaryKey" />
-Allergen: <wo:TBString value="$einzelAllergenInfoTBL.allergen" />
-AllergenCode: <wo:TBString value="$einzelAllergenInfoTBL.allergeninfocode" /><br />
+ID: <wo:TBTextField value="$einzelAllergenInfoTBL.primaryKey" />
+Allergen: <wo:TBTextField value="$einzelAllergenInfoTBL.allergen" />
+AllergenCode: <wo:TBTextField value="$einzelAllergenInfoTBL.allergeninfocode" /><br />
 
 </wo:foreach>
 <wo:submit action="$doSaveEntrys" value="Änderungen speichern"></wo:submit>
