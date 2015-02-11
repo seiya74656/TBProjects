@@ -25,8 +25,8 @@
   "Pages.EditEmbeddedAllergeneTBL" = "Edit Embedded AllergeneTBL";
   "Pages.CreateEmbeddedAllergeneTBL" = "Create Embedded AllergeneTBL";
 
-  "PropertyKey.Allergencode" = "Allergencode";
-  "PropertyKey.SpeisenID" = "SpeisenID";
+  "PropertyKey.allergencode" = "allergencode";
+  "PropertyKey.speisenid" = "speisenid";
 
  * ----------------------------------------
  */
@@ -43,22 +43,22 @@
   105 : pageConfiguration = 'CreateAllergeneTBL' => navigationState = "XX.xx.createAllergeneTBL" [com.webobjects.directtoweb.Assignment]
   105 : pageConfiguration = 'QueryAllergeneTBL' => navigationState = "XX.xx.queryAllergeneTBL" [com.webobjects.directtoweb.Assignment]
   
-  401 : pageConfiguration = 'QueryAllergeneTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "Allergencode" , "SpeisenID"  ) [com.webobjects.directtoweb.Assignment] 
-  402 : pageConfiguration = 'ListAllergeneTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "Allergencode" , "SpeisenID"  ) [com.webobjects.directtoweb.Assignment] 
-  403 : pageConfiguration = 'InspectAllergeneTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "Allergencode" , "SpeisenID"  ) [com.webobjects.directtoweb.Assignment] 
-  404 : pageConfiguration = 'EditAllergeneTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "Allergencode" , "SpeisenID"  ) [com.webobjects.directtoweb.Assignment] 
-  405 : pageConfiguration = 'CreateAllergeneTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "Allergencode" , "SpeisenID"  ) [com.webobjects.directtoweb.Assignment] 
+  401 : pageConfiguration = 'QueryAllergeneTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "allergencode" , "speisenid"  ) [com.webobjects.directtoweb.Assignment] 
+  402 : pageConfiguration = 'ListAllergeneTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "allergencode" , "speisenid"  ) [com.webobjects.directtoweb.Assignment] 
+  403 : pageConfiguration = 'InspectAllergeneTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "allergencode" , "speisenid"  ) [com.webobjects.directtoweb.Assignment] 
+  404 : pageConfiguration = 'EditAllergeneTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "allergencode" , "speisenid"  ) [com.webobjects.directtoweb.Assignment] 
+  405 : pageConfiguration = 'CreateAllergeneTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "allergencode" , "speisenid"  ) [com.webobjects.directtoweb.Assignment] 
    
   // D3W
 
   200 : EN = '#' => crud = "0100" [com.webobjects.directtoweb.Assignment]
   600 : PC = 'EditRelationshipEmbedded#' => cruds = "00001" [com.webobjects.directtoweb.Assignment]
   
-  401 : PC = 'Query#' => DPK = ("[MainTab]", "(MainSection)", "Allergencode", "SpeisenID") [com.webobjects.directtoweb.Assignment] 
-  402 : PC = 'List#' => DPK = ("[MainTab]", "(MainSection)", "Allergencode", "SpeisenID") [com.webobjects.directtoweb.Assignment] 
-  403 : PC = 'Inspect#' => DPK = ("[MainTab]", "(MainSection)", "Allergencode", "SpeisenID") [com.webobjects.directtoweb.Assignment] 
-  404 : PC = 'Edit#' => DPK = ("[MainTab]", "(MainSection)", "Allergencode", "SpeisenID") [com.webobjects.directtoweb.Assignment] 
-  405 : PC = 'Create#' => DPK = ("[MainTab]", "(MainSection)", "Allergencode", "SpeisenID") [com.webobjects.directtoweb.Assignment] 
+  401 : PC = 'Query#' => DPK = ("[MainTab]", "(MainSection)", "allergencode", "speisenid") [com.webobjects.directtoweb.Assignment] 
+  402 : PC = 'List#' => DPK = ("[MainTab]", "(MainSection)", "allergencode", "speisenid") [com.webobjects.directtoweb.Assignment] 
+  403 : PC = 'Inspect#' => DPK = ("[MainTab]", "(MainSection)", "allergencode", "speisenid") [com.webobjects.directtoweb.Assignment] 
+  404 : PC = 'Edit#' => DPK = ("[MainTab]", "(MainSection)", "allergencode", "speisenid") [com.webobjects.directtoweb.Assignment] 
+  405 : PC = 'Create#' => DPK = ("[MainTab]", "(MainSection)", "allergencode", "speisenid") [com.webobjects.directtoweb.Assignment] 
 
  * ----------------------------------------
  */
@@ -213,12 +213,12 @@ public abstract class _AllergeneTBL extends  TBEOGenericRecord {
   //********************************************************************
 
   // Attribute Keys
-  public static final ERXKey<Integer> ALLERGENCODE = new ERXKey<Integer>("Allergencode");
-  public static final ERXKey<Integer> SPEISEN_ID = new ERXKey<Integer>("SpeisenID");
+  public static final ERXKey<String> ALLERGENCODE = new ERXKey<String>("allergencode");
+  public static final ERXKey<Integer> SPEISENID = new ERXKey<Integer>("speisenid");
 
   // Attributes
   public static final String ALLERGENCODE_KEY = ALLERGENCODE.key();
-  public static final String SPEISEN_ID_KEY = SPEISEN_ID.key();
+  public static final String SPEISENID_KEY = SPEISENID.key();
 
   //********************************************************************
   //  Relationship : リレーションシップ
@@ -244,36 +244,36 @@ public abstract class _AllergeneTBL extends  TBEOGenericRecord {
   //  Attribute Accessor : アトリビュート・アクセス
   //********************************************************************
 
-  public Integer Allergencode() {
-    return (Integer) storedValueForKey(ALLERGENCODE_KEY);
+  public String allergencode() {
+    return (String) storedValueForKey(ALLERGENCODE_KEY);
   }
 
-  public void setAllergencode(Integer value) {
+  public void setAllergencode(String value) {
     if (_AllergeneTBL.log.isDebugEnabled()) {
-      _AllergeneTBL.log.debug("updating Allergencode from {} to {}", Allergencode(), value);
+      _AllergeneTBL.log.debug("updating allergencode from {} to {}", allergencode(), value);
     }
     takeStoredValueForKey(value, ALLERGENCODE_KEY);
   }
 
   public Object validateAllergencode(Object value) throws NSValidation.ValidationException {
-    _AllergeneTBL.log.debug("validate Allergencode");
+    _AllergeneTBL.log.debug("validate allergencode");
     return ERXValidationException.validateForUserInfo(this, ALLERGENCODE_KEY, value);
   }
 
-  public Integer SpeisenID() {
-    return (Integer) storedValueForKey(SPEISEN_ID_KEY);
+  public Integer speisenid() {
+    return (Integer) storedValueForKey(SPEISENID_KEY);
   }
 
-  public void setSpeisenID(Integer value) {
+  public void setSpeisenid(Integer value) {
     if (_AllergeneTBL.log.isDebugEnabled()) {
-      _AllergeneTBL.log.debug("updating SpeisenID from {} to {}", SpeisenID(), value);
+      _AllergeneTBL.log.debug("updating speisenid from {} to {}", speisenid(), value);
     }
-    takeStoredValueForKey(value, SPEISEN_ID_KEY);
+    takeStoredValueForKey(value, SPEISENID_KEY);
   }
 
-  public Object validateSpeisenID(Object value) throws NSValidation.ValidationException {
-    _AllergeneTBL.log.debug("validate SpeisenID");
-    return ERXValidationException.validateForUserInfo(this, SPEISEN_ID_KEY, value);
+  public Object validateSpeisenid(Object value) throws NSValidation.ValidationException {
+    _AllergeneTBL.log.debug("validate speisenid");
+    return ERXValidationException.validateForUserInfo(this, SPEISENID_KEY, value);
   }
 
   //********************************************************************
@@ -302,25 +302,25 @@ public abstract class _AllergeneTBL extends  TBEOGenericRecord {
   //********************************************************************
 
   public static AllergeneTBL createAllergeneTBL(EOEditingContext editingContext
-   , Integer Allergencode
-   , Integer SpeisenID
+   , String allergencode
+   , Integer speisenid
     )
   {
     AllergeneTBL eo = (AllergeneTBL) EOUtilities.createAndInsertInstance(editingContext, _AllergeneTBL.ENTITY_NAME);
-    eo.setAllergencode(Allergencode);
-    eo.setSpeisenID(SpeisenID);
+    eo.setAllergencode(allergencode);
+    eo.setSpeisenid(speisenid);
     return eo;
   }
   
   /* EO creation with Stamped EO Support */
   public static AllergeneTBL createAllergeneTBLWithStampedSupport(EOEditingContext editingContext
-   , Integer Allergencode
-   , Integer SpeisenID
+   , String allergencode
+   , Integer speisenid
     )
   {
     AllergeneTBL eo = (AllergeneTBL) EOUtilities.createAndInsertInstance(editingContext, _AllergeneTBL.ENTITY_NAME);
-    eo.setAllergencode(Allergencode);
-    eo.setSpeisenID(SpeisenID);
+    eo.setAllergencode(allergencode);
+    eo.setSpeisenid(speisenid);
     return eo;
   }
 

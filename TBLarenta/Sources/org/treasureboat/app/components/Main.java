@@ -1,5 +1,7 @@
 package org.treasureboat.app.components;
 
+import org.treasureboat.app.eo.AllergenInfoTBL;
+import org.treasureboat.app.eo.AllergeneTBL;
 import org.treasureboat.app.eo.SpeisekarteTBL;
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.webcore.annotations.TBPageAccess;
@@ -11,6 +13,7 @@ import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
 
 import er.extensions.eof.ERXEC;
+
 
 @TBPageAccess(navigationState = "Welcome")
 public class Main extends TBComponent {
@@ -61,9 +64,25 @@ public class Main extends TBComponent {
   }
 
   public SpeisekarteTBL einzelAuflistungSpeisekarteTBL;
+
+  // Auflistung aller Allergene
+   public NSArray<AllergeneTBL> allAllergeneTBLs() {
+     return AllergeneTBL.fetchAllAllergeneTBLs(editingContext());
+   }
+   
+   public AllergeneTBL einzelAllergeneTBL;
+
+   // Auflistung aller AllergeneInfo
+   
+   public NSArray<AllergenInfoTBL> allAllergenInfoTBLs() {
+     return AllergenInfoTBL.fetchAllAllergenInfoTBLs(editingContext());
+   }
+   
+   public AllergenInfoTBL einzelAllergenInfoTBL;
+
   // Einträge speichern.
   public WOActionResults doSaveEntrys() {
-    log.info("{} - {} - {} - {} - {}", beschreibung, preis, sortorder, name2, selectedPopUp.sprache());
+    log.info("{} - {} - {} - {} - {}", beschreibung , preis, sortorder, name2, selectedPopUp.sprache());
     editingContext().saveChanges();
     return goToMySelfAction();
   }

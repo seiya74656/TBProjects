@@ -10,7 +10,6 @@
         }, 
         {className = "org.treasureboat.app.eo.SpeisekarteTBL"; name = SpeisekarteTBL; }
     ); 
-    internalInfo = {"_deletedEntityNamesInObjectStore" = (SpeisekarteTBL); }; 
     userInfo = {
         "_EntityModeler" = {
             activeDatabaseConfigName = Default; 
