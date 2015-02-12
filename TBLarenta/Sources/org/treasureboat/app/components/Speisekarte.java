@@ -12,7 +12,6 @@ public class Speisekarte extends Main {
 
   public Speisekarte(WOContext context) {
     super(context);
-    // TODO Auto-generated constructor stub
   }
 
   // Auflistung aller AllergeneInfo

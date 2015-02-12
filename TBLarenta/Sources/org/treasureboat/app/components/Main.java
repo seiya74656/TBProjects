@@ -14,7 +14,6 @@ import com.webobjects.foundation.NSArray;
 
 import er.extensions.eof.ERXEC;
 
-
 @TBPageAccess(navigationState = "Welcome")
 public class Main extends TBComponent {
 
@@ -57,6 +56,17 @@ public class Main extends TBComponent {
   public Sprache oneSprache;
 
   // WOPopUpButton ENDE
+  // Rückgabe von einer bestimmten Speise
+  public SpeisekarteTBL meinespeisekarteTBLs(String string) {
+    return SpeisekarteTBL.fetchSpeisekarteTBL(editingContext(), SpeisekarteTBL.BESCHREIBUNG.eq(string));
+  }
+
+  public String meinespeisekarte2(String string) {
+    String x;
+    x = meinespeisekarteTBLs(string).name() + " " + meinespeisekarteTBLs(string).beschreibung() + " " + meinespeisekarteTBLs(string).preis();
+    return x;
+    
+  }
 
   // Auflistung aller Speisekarten Inhalte
   public NSArray<SpeisekarteTBL> allSpeisekartesTBLs() {
@@ -66,32 +76,36 @@ public class Main extends TBComponent {
   public SpeisekarteTBL einzelAuflistungSpeisekarteTBL;
 
   // Auflistung aller Allergene
-   public NSArray<AllergeneTBL> allAllergeneTBLs() {
-     return AllergeneTBL.fetchAllAllergeneTBLs(editingContext());
-   }
-   
-   public AllergeneTBL einzelAllergeneTBL;
+  public NSArray<AllergeneTBL> allAllergeneTBLs() {
+    return AllergeneTBL.fetchAllAllergeneTBLs(editingContext());
+  }
 
-   // Auflistung aller AllergeneInfo
-   
-   public NSArray<AllergenInfoTBL> allAllergenInfoTBLs() {
-     return AllergenInfoTBL.fetchAllAllergenInfoTBLs(editingContext());
-   }
-   
-   public AllergenInfoTBL einzelAllergenInfoTBL;
+  public AllergeneTBL einzelAllergeneTBL;
+
+  // Auflistung aller AllergeneInfo
+
+  public NSArray<AllergenInfoTBL> allAllergenInfoTBLs() {
+    return AllergenInfoTBL.fetchAllAllergenInfoTBLs(editingContext());
+  }
+
+  public AllergenInfoTBL einzelAllergenInfoTBL;
 
   // Einträge speichern.
   public WOActionResults doSaveEntrys() {
-    log.info("{} - {} - {} - {} - {}", beschreibung , preis, sortorder, name2, selectedPopUp.sprache());
+    log.info("{} - {} - {} - {} - {}", beschreibung, preis, sortorder, name2, selectedPopUp.sprache());
+    log.info("OHHH NOEEEEES: {} <<<<<<<<", meinespeisekarteTBLs("Kurve").name());
+    log.info("OHHH YEEEEEES: {} <<<<<<<<", meinespeisekarte2("Vita"));
+
     editingContext().saveChanges();
     return goToMySelfAction();
   }
-  
+
   // Neuen eintrag erstellen
   public WOActionResults doCreateEntry() {
     if (TBFString.stringIsNullOrEmpty(beschreibung) || TBFString.stringIsNullOrEmpty(preis) || TBFString.stringIsNullOrEmpty(sortorder) || TBFString.stringIsNullOrEmpty(name2)) {
 
-    } else {
+    }
+    else {
       // Clean Editting Context
       EOEditingContext ec = ERXEC.newEditingContext();
 
@@ -110,7 +124,7 @@ public class Main extends TBComponent {
     return goToMySelfAction();
   }
 
-  /// Sprache Class for Dropdown
+  // / Sprache Class for Dropdown
   public class Sprache {
 
     public Sprache(String language) {
