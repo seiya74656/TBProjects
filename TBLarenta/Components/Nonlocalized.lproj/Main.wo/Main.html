@@ -1,44 +1,109 @@
 <webobject name="PageWrapper">
-
-	<div class="row">
-		<div class="twelve columns">
-		<wo:TBHyperlink pageName="Speisekarte">Speisekarte</wo:TBHyperlink>
-			<h2>Neue Speise eintragen:</h2>
-			<wo:TBForm>
-			Name: <wo:TBTextField value="$name2" automatic="true"/><br />
-			Beschreibung: <wo:TBTextField value="$beschreibung"  automatic="true" /><br />
-			Preis: <wo:TBNumberField  value="$preis"  automatic="true" /><br />
-			Sortorder ID: <wo:TBNumberField  value="$sortorder"  automatic="true" /><br />
-			Sprache: <webobject name="PopUp" />
-			<wo:submit action="$doCreateEntry" value="Neue Speisekarte eintragen." />
-			</wo:TBForm>
-		</div>
 <br />
-
-<wo:TBForm>ID, Name, Beschreibung, Preis, Sortorder<br />
-<wo:foreach list="$allSpeisekartesTBLs" item="$einzelAuflistungSpeisekarteTBL">
-ID: <wo:TBString value="$einzelAuflistungSpeisekarteTBL.primaryKey"></wo:TBString> 
-<wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.name" /> 
-<wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.beschreibung" />
-<wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.preis" /> 
-<webobject name="PopUp2" />
-<wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.sortorder" />
-<br />
-</wo:foreach>
-<br />ID,Allergencode, SpeisenID<br />
-<wo:foreach list="$allAllergeneTBLs" item="$einzelAllergeneTBL">
-ID: <wo:TBTextField value="$einzelAllergeneTBL.primaryKey" /> 
-Code: <wo:TBTextField value="$einzelAllergeneTBL.allergencode" /> 
-SpeisenID: <wo:TBTextField value="$einzelAllergeneTBL.speisenid"/><br /> 
-</wo:foreach>
-<br />ID, Allergen,AllergeninfoCode<br />
-<wo:foreach list="$allAllergenInfoTBLs" item="$einzelAllergenInfoTBL">
-ID: <wo:TBTextField value="$einzelAllergenInfoTBL.primaryKey" />
-Allergen: <wo:TBTextField value="$einzelAllergenInfoTBL.allergen" />
-AllergenCode: <wo:TBTextField value="$einzelAllergenInfoTBL.allergeninfocode" /><br />
-
-</wo:foreach>
-<wo:submit action="$doSaveEntrys" value="Änderungen speichern"></wo:submit>
-</wo:TBForm>
-	</div>	
+  <div class="row">
+    <section class="tabs">
+      <ul class="tab-nav">
+        <li class="active">
+          <a href="#">Neuen Speisen hinzuf&uuml;gen</a>
+        </li>
+        <li>
+          <a href="#">Speisen</a>
+        </li>
+        <li>
+          <a href="#">Allergene</a>
+        </li>
+        <li>
+          <a href="#">Allergene Info</a>
+        </li>
+      </ul>
+      <div class="tab-content active">
+        <p>
+          <div class="twelve columns">
+            <wo:TBHyperlink pageName="Speisekarte">Zur Speisekarte</wo:TBHyperlink>
+            <h2>Neue Speise eintragen:</h2>
+            <wo:TBForm>
+              Name: 
+              <wo:TBTextField value="$name2" automatic="true" />
+              <br />
+              Beschreibung: 
+              <wo:TBTextField value="$beschreibung" automatic="true" />
+              <br />
+              Preis: 
+              <wo:TBNumberField value="$preis" automatic="true" />
+              <br />
+              Sortorder ID: 
+              <wo:TBNumberField value="$sortorder" automatic="true" />
+              <br />
+              Sprache: 
+              <webobject name="PopUp" /><p>
+			<div class="medium default btn">
+              <wo:submit action="$doCreateEntry"  value="Neue Speise eintragen." />
+            </div></p>
+            </wo:TBForm>
+          </div>
+        </p>
+      </div>
+      <div class="tab-content">
+        <p>
+          <wo:TBForm>ID, Name, Beschreibung, Preis, Sortorder<br />
+            <wo:foreach list="$allSpeisekartesTBLs" item="$einzelAuflistungSpeisekarteTBL">
+              ID: 
+              <wo:TBString value="$einzelAuflistungSpeisekarteTBL.primaryKey" />
+              <wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.name" />
+              <wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.beschreibung" />
+              <wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.preis" />
+              <webobject name="PopUp2" />
+              <wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.sortorder" />
+              <br />
+            </wo:foreach><p>
+			<div class="medium default btn">
+            <wo:submit action="$doSaveEntrys" value="Änderungen speichern" />
+            </div>
+            </p>
+          </wo:TBForm>
+        </p>
+      </div>
+      <div class="tab-content">
+        <p>
+          <wo:TBForm>
+            ID,Allergencode, SpeisenID<br />
+            <wo:foreach list="$allAllergeneTBLs" item="$einzelAllergeneTBL">
+              ID: 
+              <wo:TBTextField value="$einzelAllergeneTBL.primaryKey" />
+              Code: 
+              <wo:TBTextField value="$einzelAllergeneTBL.allergencode" />
+              SpeisenID: 
+              <wo:TBTextField value="$einzelAllergeneTBL.speisenid" />
+              <br />
+            </wo:foreach>
+            <p>
+			<div class="medium default btn">
+            <wo:submit action="$doSaveEntrys" value="Änderungen speichern" />
+            </div>
+            </p>
+          </wo:TBForm>
+        </p>
+      </div>
+      <div class="tab-content">
+        <wo:TBForm>
+          <p>ID, Allergen,AllergeninfoCode<br />
+            <wo:foreach list="$allAllergenInfoTBLs" item="$einzelAllergenInfoTBL">
+              ID: 
+              <wo:TBTextField value="$einzelAllergenInfoTBL.primaryKey" />
+              Allergen: 
+              <wo:TBTextField value="$einzelAllergenInfoTBL.allergen" />
+              AllergenCode: 
+              <wo:TBTextField value="$einzelAllergenInfoTBL.allergeninfocode" />
+              <br />
+            </wo:foreach>
+            <p>
+			<div class="medium default btn">
+            <wo:submit action="$doSaveEntrys" value="Änderungen speichern" />
+            </div>
+            </p>
+          </p>
+        </wo:TBForm>
+      </div>
+    </section>
+  </div>
 </webobject>
