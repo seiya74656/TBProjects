@@ -62,8 +62,7 @@ public class Main extends TBComponent {
   }
 
   public String meinespeisekarte2(String string) {
-    String x;
-    x = meinespeisekarteTBLs(string).name() + " " + meinespeisekarteTBLs(string).beschreibung() + " " + meinespeisekarteTBLs(string).preis();
+    String x = meinespeisekarteTBLs(string).name() + " " + meinespeisekarteTBLs(string).beschreibung() + " " + meinespeisekarteTBLs(string).preis();
     return x;
     
   }

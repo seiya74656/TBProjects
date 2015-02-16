@@ -1,0 +1,16 @@
+{
+    attributes = (
+        {columnName = category; name = category; prototypeName = varchar100; }, 
+        {columnName = description; name = description; prototypeName = varcharLarge; }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {columnName = title; name = title; prototypeName = varchar255; }
+    ); 
+    attributesUsedForLocking = (category, description, id, title); 
+    className = "org.treasureboat.app.eo.Content"; 
+    classProperties = (category, description, title); 
+    externalName = Content; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_javaClientClassName" = Content; }; 
+    name = Content; 
+    primaryKeyAttributes = (id); 
+}

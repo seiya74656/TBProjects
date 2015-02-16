@@ -3,11 +3,13 @@
     adaptorName = JDBC; 
     connectionDictionary = {}; 
     entities = (
+        {className = "org.treasureboat.app.eo.Content"; name = Content; }, 
         {
             className = "org.treasureboat.app.eo.GewinnspielTeilnehmer"; 
             name = GewinnspielTeilnehmer; 
         }
     ); 
+    internalInfo = {"_deletedEntityNamesInObjectStore" = (Content); }; 
     userInfo = {
         "_EntityModeler" = {
             activeDatabaseConfigName = Default; 

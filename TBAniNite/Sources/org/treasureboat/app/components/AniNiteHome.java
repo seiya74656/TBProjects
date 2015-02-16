@@ -13,4 +13,9 @@ public class AniNiteHome extends TBComponent {
     // TODO Auto-generated constructor stub
   }
 
+  public org.treasureboat.app.eo.Content getContent() {
+    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("Cosplay"));
+  }
+
+  
 }
