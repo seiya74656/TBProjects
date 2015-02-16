@@ -177,7 +177,8 @@ public class Gewinnspiel extends TBComponent {
 
       EOEditingContext ec = ERXEC.newEditingContext();
       GewinnspielTeilnehmer newGewinnspielTeilnehmer = _GewinnspielTeilnehmer.createAndInsertInstance(ec);
-//      newGewinnspielTeilnehmer.setAntwort(antwort);
+      int antwortInt = Integer.parseInt(antwort); //TODO - is this correct?
+      newGewinnspielTeilnehmer.setAntwort(antwortInt);
       newGewinnspielTeilnehmer.setName(deinname);
       newGewinnspielTeilnehmer.setAgb(agb);
       newGewinnspielTeilnehmer.setEmail(email);
