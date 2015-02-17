@@ -60,6 +60,14 @@ public class AniNiteHome extends TBComponent {
     return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("footer"));
   }
 
+  public org.treasureboat.app.eo.Content getSubtitle() {
+    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("subtitle"));
+  }
+
+  public org.treasureboat.app.eo.Content getMaintitle() {
+    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("maintitle"));
+  }
+
   public WOActionResults doSwitchAutomatic() {
     _isEdit = !_isEdit;
 

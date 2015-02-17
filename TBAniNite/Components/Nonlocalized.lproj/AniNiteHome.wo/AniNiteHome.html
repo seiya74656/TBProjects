@@ -96,24 +96,30 @@ height: 100%;
     <section id="promo" class="promo section offset-header">
         <div class="container text-center">
             <h2 class="title"><wo:TBImage filename="images/Maskottchen-Klein.gif" class="img-responsive center-block" /></h2>
-            <p class="intro">28-30.08.2015 im Multiversum Wien/Schwechat<br />
-			
-			<wo:if condition="$isEdit" negate="true"><wo:WOSubmitButton action="$doSwitchAutomatic" value="Editieren" /></wo:if>
-			<wo:if condition="$isEdit" negate="false"><wo:WOSubmitButton action="$doSwitchAutomatic" value="Speichern" /></wo:if>
-			
-                        
-</p>
-</div><!--//container-->
+            <!-- //TODO class=intro wird nicht angenommen -->
+   				<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getMaintitle.description" class="intro" escapeHTML="false" markdown="true" /></wo:if> 
+				<wo:if condition="$isEdit"><wo:TBTextField value="$getMaintitle.description" automatic="true" size="40" /></wo:if>                            
+			<br />
+			<wo:if condition="$isEdit" negate="true">
+			<wo:genericContainer elementName="div" class="$editOnListButton.cssContainerClass">
+		    <wo:TBHyperlink action="$doSwitchAutomatic" class="$editOnListButton.cssClass" string="$editOnListButton.name" />
+			</wo:genericContainer>
+			<wo:WOSubmitButton action="$doSwitchAutomatic" value="Editieren" /></wo:if>
+			<wo:if condition="$isEdit" negate="false"><wo:WOSubmitButton action="$doSwitchAutomatic" value="Speichern" /></wo:if>                       
+			</div><!--//container-->
         
     </section><!--//promo-->
     
     <!-- ******ABOUT****** --> 
     <section id="about" class="about section">
         <div class="container">
-            <h2 class="title text-center">AniNite - Österreichs größte Anime Convention</h2>
-            <p class="intro text-center">
-            Mehr als 14.000 Anime-, Manga-, Japan- und Videospielefans versammelten sich 2014 im Multiversum bei Wien. Jährlich lädt der Verein AniManga dazu ein, ein buntes Fest unter Freunden zu feiern.
-            
+            <h2 class="title text-center">
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getSubtitle.title" escapeHTML="false" markdown="false" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBTextField value="$getSubtitle.title" automatic="true" size="26" /></wo:if>                        
+            </h2>
+            <p class="intro text-center">            
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getSubtitle.description" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBTextField value="$getSubtitle.description" automatic="true" size="100" /></wo:if>                        
             </p>
             <div class="row">
                 <div class="item col-md-4 col-sm-6 col-xs-12">
