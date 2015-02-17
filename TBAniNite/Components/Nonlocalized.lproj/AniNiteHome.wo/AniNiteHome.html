@@ -47,6 +47,8 @@ height: 100%;
 </head> 
 
 <body data-spy="scroll">
+	<wo:form>
+			                    
          <div id="fb-root"></div>
     <!---//Facebook button code-->
     <div id="fb-root"></div>
@@ -57,13 +59,14 @@ height: 100%;
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1376556025976460&version=v2.0";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-    
+<wo:TBGenericContainer ></wo:TBGenericContainer>
     <!-- ******HEADER****** --> 
     <header id="header" class="header">  
         <div class="container">            
             <h1 class="logo pull-left">
                 <a class="scrollto" href="#promo">
-                    <span class="logo-title"><wo:TBImage filename="images/AniNite15-Logo-small.png" /></span>
+                    <span class="logo-title">
+                    	<wo:TBImage filename="images/AniNite15-Logo-small.png" /></span>
                 </a>
             </h1><!--//logo-->              
             <nav id="main-nav" class="main-nav navbar-right" role="navigation">
@@ -94,6 +97,11 @@ height: 100%;
         <div class="container text-center">
             <h2 class="title"><wo:TBImage filename="images/Maskottchen-Klein.gif" class="img-responsive center-block" /></h2>
             <p class="intro">28-30.08.2015 im Multiversum Wien/Schwechat<br />
+			
+			<wo:if condition="$isEdit" negate="true"><wo:WOSubmitButton action="$doSwitchAutomatic" value="Editieren" /></wo:if>
+			<wo:if condition="$isEdit" negate="false"><wo:WOSubmitButton action="$doSwitchAutomatic" value="Speichern" /></wo:if>
+			
+                        
 </p>
 </div><!--//container-->
         
@@ -103,15 +111,24 @@ height: 100%;
     <section id="about" class="about section">
         <div class="container">
             <h2 class="title text-center">AniNite - Österreichs größte Anime Convention</h2>
-            <p class="intro text-center">Mehr als 14.000 Anime-, Manga-, Japan- und Videospielefans versammelten sich 2014 im Multiversum bei Wien. Jährlich lädt der Verein AniManga dazu ein, ein buntes Fest unter Freunden zu feiern.</p>
+            <p class="intro text-center">
+            Mehr als 14.000 Anime-, Manga-, Japan- und Videospielefans versammelten sich 2014 im Multiversum bei Wien. Jährlich lädt der Verein AniManga dazu ein, ein buntes Fest unter Freunden zu feiern.
+            
+            </p>
             <div class="row">
                 <div class="item col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-holder">
                         <i class="fa fa-heart"></i>
                     </div>
                     <div class="content">
-                        <h3 class="sub-title">Cosplay / Verkleidungskünstler</h3>
-                        <p>Wir haben sie, die besten CosplayerInnen Österreichs, versammelt an einem Ort! Jedes Jahr veranstalten wir zahlreiche Kostümwettbewerbe um Österreichs beste Cosplayer/in zu finden! Von Anime- und Manga-Charakteren, bis hin zu Comic- und Videospiel-Charakteren ist mittlerweile alles bei uns vertreten. Immer mehr internationale Gäste kommen ebenso zu uns, um Teil der AniNite zu werden!</p>
+                        <h3 class="sub-title">
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeatured1.title" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBTextField value="$getFeatured1.title" automatic="true" size="26" /></wo:if>                        
+						</h3>
+                        <p>
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeatured1.description" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBText value="$getFeatured1.description" automatic="true" rows="10" cols="35"/></wo:if>                        
+						</p>
                     </div><!--//content-->
                 </div><!--//item-->
                 <div class="item col-md-4 col-sm-6 col-xs-12">
@@ -119,9 +136,13 @@ height: 100%;
                         <i class="fa fa-star-o"></i>
                     </div>
                     <div class="content">
-                        <h3 class="sub-title"><wo:TBString value="$getContent.title" escapeHTML="false" markdown="true" /></h3>
+                        <h3 class="sub-title">
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeatured2.title" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBTextField value="$getFeatured2.title" automatic="true" size="26" /></wo:if>                        
+						</h3>
                         <p>
-                        <wo:TBString value="$getContent.description" escapeHTML="false" markdown="true" />
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeatured2.description" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBText value="$getFeatured2.description" automatic="true" rows="10" cols="35"/></wo:if>                        
                         </p>
                     </div><!--//content-->
                 </div><!--//item-->
@@ -130,8 +151,14 @@ height: 100%;
                         <i class="fa fa-crosshairs"></i>
                     </div>
                     <div class="content">
-                        <h3 class="sub-title">Games</h3>
-                        <p>Ob X-BoX, Nintendo oder Dance Dance Revolution-Automaten, letztes Jahr hatten wir eine Vielzahl an aktuellen Games auf der AniNite. In Turnieren könnt ihr gegeneinander antreten und tolle Preise von unseren Sponsoren gewinnen! Immer mehr Firmen entdecken die AniNite für sich und kommen jedes Jahr gerne wieder. Erstmalig hatten wir auch einen Mario Kart- sowie Nerf Gun Wettbewerb auf der AniNite 2014.</p>
+                        <h3 class="sub-title">
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeatured3.title" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBTextField value="$getFeatured3.title" automatic="true"  size="26" /></wo:if>                        
+						</h3>
+                        <p>
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeatured3.description" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBText value="$getFeatured3.description" automatic="true" rows="10" cols="35"/></wo:if>                        
+						</p>
                    </div><!--//content-->
                 </div><!--//item-->           
                 <div class="clearfix visible-md"></div>    
@@ -140,8 +167,14 @@ height: 100%;
                         <i class="fa fa-leaf"></i>
                     </div>
                     <div class="content">
-                        <h3 class="sub-title">Workshops / Kurse</h3>
-                        <p>Mit welchen Stiften zeichnen die Profis ? Welche Software verwenden Videocutter für Music Videos? Wie werden Figuren modelliert? Wie bekomme ich so tolle Fotos hin wie Profifotografen? Wie funktioniert Bildbearbeitung? Wie und wo benutzt man ein Yukata? In unseren Workshops könnt Ihr das alles und noch viel mehr von den Profis lernen. </p>
+                        <h3 class="sub-title">
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeatured4.title" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBTextField value="$getFeatured4.title" automatic="true" size="26" /></wo:if>                        
+						</h3>
+                        <p>
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeatured4.description" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBText value="$getFeatured4.description" automatic="true" rows="10" cols="35"/></wo:if>                        
+						</p>
                     </div><!--//content-->
                 </div><!--//item-->                
                 <div class="item col-md-4 col-sm-6 col-xs-12">
@@ -149,8 +182,14 @@ height: 100%;
                         <i class="fa fa-exclamation"></i>
                     </div>
                     <div class="content">
-                        <h3 class="sub-title">Vorträge</h3>
-                        <p>Auf der AniNite gibt es von Jahr zu Jahr immer wieder neue Vorträge, die meist von freiwilligen Experten abgehalten werden, welche sich ganz dem Thema widmen. Welche Unterschiede gibt es zwischen Österreich und Japan? Wieso sind die meisten Downloads illegal, und kann ich dafür in den Knast kommen? Was ist Yaoi/Slash und warum stehen so viele Mädchen darauf? Haustiere in Japan, kann das gut gehen? </p>
+                        <h3 class="sub-title">
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeatured5.title" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBTextField value="$getFeatured5.title" automatic="true" size="26" /></wo:if>                        
+						</h3>
+                        <p>
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeatured5.description" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBText value="$getFeatured5.description" automatic="true" rows="10" cols="35"/></wo:if>                        
+						</p>
                     </div><!--//content-->
                 </div><!--//item-->
                 <div class="item col-md-4 col-sm-6 col-xs-12">
@@ -158,8 +197,14 @@ height: 100%;
                         <i class="fa fa-euro"></i>
                     </div>
                     <div class="content">
-                        <h3 class="sub-title">Charity Aktion!</h3>
-                        <p>Jedes Jahr sammelt die AniNite mittels witzigen Auktionen oder Tombolas spenden für gemeinnützige Vereine. Ob ALS Spendenaktionen, Tierschutzorganisationen, Rotes Kreuz, Fukushima Katastrophe oder Nachbar in Not, wir legen noch einen schönen Betrag zu den Einnahmen drauf und Spenden alles ohne wenn und aber! </p>
+                        <h3 class="sub-title">
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeatured6.title" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBTextField value="$getFeatured6.title" automatic="true" size="26" /></wo:if>                        
+						</h3>
+                        <p>
+						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeatured6.description" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBText value="$getFeatured6.description" automatic="true" rows="10" cols="35"/></wo:if>                        
+						</p>
                     </div><!--//content-->
                 </div><!--//item-->               
             </div><!--//row-->            
@@ -169,17 +214,13 @@ height: 100%;
     <!-- ******FEATURES****** --> 
     <section id="features" class="features section">
         <div class="container text-center">
-            <h2 class="title">Vorverkaufstickets ab Februar 2015</h2>
-            <ul class="feature-list list-unstyled">
-                <li><i class="fa fa-check"></i> Von Fans für Fans (Wir sind ein Verein, keine kommerzielle Firma)</li>
-                <li><i class="fa fa-check"></i> Größte Anime Convention Bühne mit über 1000 Sitzplätzen</li>
-                <li><i class="fa fa-check"></i> Konzerte, Turniere, Gewinnspiele und Live Bühnenshows</li>
-                <li><i class="fa fa-check"></i> Großer Händlerraum zum Shoppen</li>
-                <li><i class="fa fa-check"></i> Modernste Location mit Klimaanlagen</li>
-                <li><i class="fa fa-check"></i> Behindertengerecht!</li>
-                <li><i class="fa fa-check"></i> Kostenlose Parkplätze (limitiert)</li>
-                <li><i class="fa fa-check"></i> Leicht und günstig mit den Öffis zu erreichen!</li>
-            </ul>
+            <h2 class="title">
+                <wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedlist.title" escapeHTML="false" markdown="true" /></wo:if>
+				<wo:if condition="$isEdit"><wo:TBTextField value="$getFeaturedlist.title" automatic="true" size="30" /></wo:if>                                        
+            </h2>
+  					<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedlist.description" escapeHTML="false" markdown="true" /></wo:if>
+					<wo:if condition="$isEdit"><wo:TBText value="$getFeaturedlist.description" automatic="true" style="color:black; font-size:15px" rows="15" cols="80"/></wo:if>                  
+
         </div><!--//container-->
     </section><!--//features-->
     
@@ -189,20 +230,27 @@ height: 100%;
             <div class="docs-inner">
             <h2 class="title text-center">Händler und Sponsoren</h2>            
             <div class="block">
-                <h3 class="sub-title text-center">Händler</h3>
-                <p>Unzählige Händler werden wieder bei uns zu Gast sein.</p>
-                <ul class="list-unstyled">
-                    <li><strong>Auflistung:</strong> folgt in kürze</li>
-                </ul>
-			</div><!--//block-->
+                <h3 class="sub-title text-center">
+                <wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedhandler.title" escapeHTML="false" markdown="true" /></wo:if>
+				<wo:if condition="$isEdit"><wo:TBTextField value="$getFeaturedhandler.title" automatic="true" size="30" /></wo:if>                                        
+                </h3>
+                <p class="text-center">
+  					<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedhandler.description" escapeHTML="false" markdown="true" /></wo:if>
+					<wo:if condition="$isEdit"><wo:TBText value="$getFeaturedhandler.description" automatic="true" rows="10" cols="65"/></wo:if>                        
+                </p>
+                			</div><!--//block-->
             
             <div class="block">
-                <h3 class="sub-title text-center">Sponsoren</h3>
-                                <ul class="list-unstyled">
-				<li><strong>Letztes Jahr bedankten wir uns bei</strong> Samsung, Filmconfect, Topp, Kaze, Stabilo, Toxic Sushi, Tokyopop, Egmont Manga, Japan Touristig, SQUARE ENIX, 88Noodles, WACOM, Copic, Nipponart, Ubisoft, Nintendo, Microsoft XBOX, EA Games, TECMO KOEI. Wir hoffen diese 2015 wieder bei uns begrüßen zu dürfen!
-                </li></ul>
-
-            
+                <h3 class="sub-title text-center">
+                <wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedsponsor.title" escapeHTML="false" markdown="true" /></wo:if>
+				<wo:if condition="$isEdit"><wo:TBTextField value="$getFeaturedsponsor.title" automatic="true" size="30" /></wo:if>                        
+                
+                </h3>
+                                <ul class="list-unstyled text-center">
+				<li>
+  					<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedsponsor.description" escapeHTML="false" markdown="true" /></wo:if>
+					<wo:if condition="$isEdit"><wo:TBText value="$getFeaturedsponsor.description" automatic="true" rows="10" cols="65"/></wo:if>                        
+                </li></ul>            
             </div><!--//docs-inner-->         
         </div><!--//container-->
        </div>
@@ -226,32 +274,19 @@ height: 100%;
     <section id="contact" class="contact section has-pattern">
         <div class="container">
             <div class="contact-inner">
-                <h2 class="title  text-center">Kontakt / Mitarbeit</h2>
+                <h2 class="title  text-center">
+ 						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedlast.title" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBTextField value="$getFeaturedlast.title" automatic="true" size="30"/></wo:if>                        
+                </h2>
                 <p class="intro  text-center">Wir freuen uns, euch auf der AniNite 2015 zu sehen! <br />Habt Ihr Lust bekommen bei einem solchen Projekt mitzuarbeiten, so scheut euch nicht uns zu kontaktieren.</p>
                 <div class="author-message">                      
                     <div class="profile">
                         <wo:TBImage class="img-responsive" filename="images/profile.png" alt="" />
                     </div><!--//profile-->
                     <div class="speech-bubble">
-                        <h3 class="sub-title">Wie kann man bei der AniNite Mitarbeiten?</h3>
-                        <p>Die AniNite ist die größte Anime Convention in ganz Österreich. Das ist ein Fakt. Außerdem sind wir der Meinung, dass sie auch die Beste im ganzen Land ist. Die Frage ist nur: “Wem haben wir so eine tolle Veranstaltung zu verdanken?” Vielleicht auch dir!</p><p>
-
-Das komplette Team der AniNite besteht aus ehrenamtlichen Mädels, Burschen, Frauen und Männern. Wir arbeiten dafür das ganze Jahr ohne einen Cent zu verdienen. Unser Lohn ist der Dank und die Begeisterung unserer Besucher. Diese Begeisterung ist ansteckend und führt dazu, dass jedes Jahr mehr Besucher kommen. Daher brauchen wir jedes Jahr mehr Freiwillige, die unser bestehendes Team verstärken.</p> 
-
-<p><strong>Das hast du davon wenn du uns hilfst:</strong></p>
-<p>Kreative Freiheit! Crew Mitglieder haben eindeutig die besseren Chancen ihre Ideen und Vorstellungen in das Konzept der AniNite zu bringen. Dich stört was an der AniNite? Komm doch ins Team und hilf uns die AniNite zu verbessern! Exkluxive, streng limitierte gratis T-Shirts! AniNite Crew T-Shirts sind strenger limitiert als die “Limited Special Collectors Edition”. Es gibt sie nur für die Crew. Top-Secret Background Infos! Als Mitarbeiter erfährst du alles viel schneller von der Projektleitung als der Rest der Welt. Hervorragende Karrierechancen! Leute die gerne etwas mehr Verantwortung übernehmen wollen sind bei uns immer gerne gesehen. Exklusive V.I.P Partys! Wie oben schon erwähnt, können wir keine Gehälter auszahlen. Wir versuchen dafür auf andere Art und Weise unsere Dankbarkeit auszudrücken. Es gibt daher als Dankeschön ein paar Tage/Wochen später eine wirklich tolle Feier für alle Helfer. Jetzt Neu! Mit Anrechnung für die Dienstjahre: Jedes Crew-Mitglied kann ein “Dienstzeugnis” haben. Darin könnte dann so etwas stehen: “Frau X war Schichtleiterin für die AniNite Bar. Sie koordinierte ihre Bar-Schicht mit fünf Angestellten. u.s.w…”. Klingt das nicht gut wenn man sich für einen Job bewerben muss? Desweiteren können wir uns darum bemühen, dass deine Arbeit als Studentin für den Verein als Praktikum angerechnet werden kann. <b>All Inclusive Aufenthalt:</b> Als Mitarbeiter kommt man nicht nur gratis zu der Veranstaltung, es gibt auch für alle Mitarbeiter gratis Getränke (ausgenommen Energy-Drinks, Alkohol und Import-Ware) und gratis Essen..</p>
-<p><strong>Tolle Leute treffen</strong></p>
-<p>Im AniNite Team wurden schon viele Freundschaften geschlossen. Das ist DIE Gelegenheit nette Leute zu treffen und mit ihnen etwas zu erleben.</p>
-<p><strong>Geregelte Arbeitsbedingungen</strong></p>
-<p>Weil wir 100% motivierte Mitarbeiter wollen, haben wir uns selbst Grenzen gesetzt. Näheres zu deinen Rechten findest du unter: AniManga Projekt Manifest "Was wir von dir wollen"</p>
-<p><strong>Engagement und Begeisterung</strong></p>
-<p>Aktive Umsetzung der Grundlagen der Körperpflege, sowie Beherrschung der deutschen Sprache. Crew Mitglieder sollten mindestens 16 Jahre alt sein. Ansonsten brauchen wir eine persönliche und schriftliche Einverständniserklärung der Eltern. Personen die mit Geld hantieren, müssen gut im Kopf rechnen können und mindestens 18 Jahre alt sein. Du musst die körperliche und geistige Fitness für deinen dir zugeteilten Arbeitsbereich haben. Bitte verstehe, dass du zwar nicht bezahlt wirst, der Job jedoch trotzdem gemacht werden muss und sich viele Leute auf dich verlassen. Auf- und Abbau gehören zu diesem Job dazu.</p>
-<p><strong>Wie kann man sich bewerben?</strong></p>
-<p>Auf AniManga.at registrieren. (Alte Hasen müssen sich nur anmelden ;) Unter http://animanga.at/project/aninite-2015/teams/ findest du eine Liste von allen Teams die noch Mitarbeiter benötigen, suche dir eines aus. Dort kannst du dich mit einem kurzen Bewerbungstext für diesen Posten bewerben. Du solltest binnen weniger Tage eine Nachricht bekommen ob du angenommen wurdest. Dieses Jahr wird es wieder Infoabende für neue Crewmitglieder geben. Nähere Infos folgen! Bei Fragen einfach eine Mail an uns schicken:</p>
-                        <div class="source">
-                            <span class="title"><a href="http://animanga.at/project/aninite-2015/teams/" target="_blank">>>Bewerben im AniNite Team</a></span>
-                            <br />
-                        </div><!--//source-->
+  						<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedlast.description" escapeHTML="false" markdown="true" /></wo:if>
+						<wo:if condition="$isEdit"><wo:TBText value="$getFeaturedlast.description" automatic="true" rows="40" cols="65"/></wo:if>                        
+                       
                     </div><!--//speech-bubble-->                        
                 </div><!--//author-message-->
                 <div class="clearfix"></div>
@@ -272,7 +307,10 @@ Das komplette Team der AniNite besteht aus ehrenamtlichen Mädels, Burschen, Fra
     <!-- ******FOOTER****** --> 
     <footer class="footer">
         <div class="container text-center">
-            <small class="copyright">Medieninhaber: Verein "AniManga Austria - Arbeitskreis japanische Jugendkultur", A-1100 Wien, Landgutgasse 36/2/26 | ZVR: 339472708 | Copyright Rene Fürst © 2014-2015</small>
+            <small class="copyright">
+				<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFooter.description" escapeHTML="false" markdown="true" /></wo:if>
+				<wo:if condition="$isEdit"><wo:TBTextField value="$getFooter.description" automatic="true" style="color:black" size="120"/></wo:if>                                    
+            </small>
         </div><!--//container-->
     </footer><!--//footer-->
      
@@ -284,6 +322,8 @@ Das komplette Team der AniNite besteht aus ehrenamtlichen Mädels, Burschen, Fra
     <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script> 
     <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
     <script type="text/javascript" src="assets/js/main.js"></script>       
+			</wo:form>
+
 </body>
 </html> 
 
