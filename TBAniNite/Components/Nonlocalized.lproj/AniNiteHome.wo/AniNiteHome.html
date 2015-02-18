@@ -314,6 +314,7 @@ height: 100%;
     <footer class="footer">
         <div class="container text-center">
             <small class="copyright">
+            	<wo:AjaxSubmitButton value="Speichern Ajax" action="$saveChanges" ></wo:AjaxSubmitButton>
 				<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFooter.description" escapeHTML="false" markdown="true" /></wo:if>
 				<wo:if condition="$isEdit"><wo:TBTextField value="$getFooter.description" automatic="true" style="color:black" size="120"/></wo:if>                                    
             </small>
