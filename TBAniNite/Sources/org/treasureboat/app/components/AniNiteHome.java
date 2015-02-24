@@ -67,6 +67,10 @@ public class AniNiteHome extends TBComponent {
   public org.treasureboat.app.eo.Content getMaintitle() {
     return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("maintitle"));
   }
+  
+  public org.treasureboat.app.eo.Content getVVK() {
+    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("vvk"));
+  }
 
   public WOActionResults doSwitchAutomatic() {
     _isEdit = !_isEdit;

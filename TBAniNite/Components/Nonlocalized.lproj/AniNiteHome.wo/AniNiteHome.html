@@ -42,7 +42,17 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-}</style>
+}
+
+.features {
+color:#000;
+}
+
+.table th {
+text-align:center;
+}
+
+</style>
 
 </head> 
 
@@ -99,6 +109,10 @@ height: 100%;
             <!-- //TODO class=intro wird nicht angenommen -->
    				<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getMaintitle.description" class="intro" escapeHTML="false" markdown="true" /></wo:if> 
 				<wo:if condition="$isEdit"><wo:TBTextField value="$getMaintitle.description" automatic="true" size="40" /></wo:if>                            
+                       <div class="btn-group" role="group" aria-label="Tickets"><a href="http://aninite.at/ticket/" target="_blank">
+			<button type="button" class="btn btn-default">Hier Vorverkauf Ticket bestellen!</button></a><br />
+			</div>
+ 
 			<br />
 			<wo:if condition="$isEdit" negate="true">
 			<wo:genericContainer elementName="div" class="$editOnListButton.cssContainerClass">
@@ -217,16 +231,16 @@ height: 100%;
         </div><!--//container-->
     </section><!--//about-->
     
-    <!-- ******FEATURES****** --> 
-    <section id="features" class="features section">
+    <!-- ******VVK ****** --> 
+    <section id="tickets" class="features section">
         <div class="container text-center">
             <h2 class="title">
-                <wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedlist.title" escapeHTML="false" markdown="true" /></wo:if>
-				<wo:if condition="$isEdit"><wo:TBTextField value="$getFeaturedlist.title" automatic="true" size="30" /></wo:if>                                        
-            </h2>
-  					<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedlist.description" escapeHTML="false" markdown="true" /></wo:if>
-					<wo:if condition="$isEdit"><wo:TBText value="$getFeaturedlist.description" automatic="true" style="color:black; font-size:15px" rows="15" cols="80"/></wo:if>                  
-
+                <wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getVVK.title" escapeHTML="false" markdown="true" /></wo:if>
+				<wo:if condition="$isEdit"><wo:TBTextField value="$getVVK.title" automatic="true" size="30" /></wo:if>                                        
+            </h2>            <div class="panel panel-default">
+  					<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getVVK.description" escapeHTML="false" markdown="true" /></wo:if>
+					<wo:if condition="$isEdit"><wo:TBText value="$getVVK.description" automatic="true" style="color:black; font-size:15px" rows="15" cols="80"/></wo:if>                  
+</div>
         </div><!--//container-->
     </section><!--//features-->
     
@@ -261,6 +275,20 @@ height: 100%;
         </div><!--//container-->
        </div>
     </section><!--//features-->
+    
+    <!-- ******FEATURES****** --> 
+    <section id="features" class="features section">
+        <div class="container text-center">
+            <h2 class="title">
+                <wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedlist.title" escapeHTML="false" markdown="true" /></wo:if>
+				<wo:if condition="$isEdit"><wo:TBTextField value="$getFeaturedlist.title" automatic="true" size="30" /></wo:if>                                        
+            </h2>
+  					<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedlist.description" escapeHTML="false" markdown="true" /></wo:if>
+					<wo:if condition="$isEdit"><wo:TBText value="$getFeaturedlist.description" automatic="true" style="color:black; font-size:15px" rows="15" cols="80"/></wo:if>                  
+
+        </div><!--//container-->
+    </section><!--//features-->
+
     
     <!-- ******LICENSE****** --> 
     <section id="license" class="license section">
