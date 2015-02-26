@@ -293,7 +293,7 @@ text-align:center;
 				<wo:if condition="$isEdit"><wo:TBTextField value="$getFeaturedlist.title" automatic="true" size="30" /></wo:if>                                        
             </h2>
   					<wo:if condition="$isEdit" negate="true" ><wo:TBString value="$getFeaturedlist.description" escapeHTML="false" markdown="true" /></wo:if>
-					<wo:if condition="$isEdit"><wo:TBText value="$getFeaturedlist.description" automatic="true" style="color:black; font-size:15px" rows="15" cols="80"/></wo:if>                  
+					<wo:else><wo:TBText value="$getFeaturedlist.description" automatic="true" style="color:black; font-size:15px" rows="15" cols="80"/></wo:else>            
 
         </div><!--//container-->
     </section><!--//features-->
