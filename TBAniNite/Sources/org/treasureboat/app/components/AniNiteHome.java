@@ -1,5 +1,6 @@
 package org.treasureboat.app.components;
 
+import org.treasureboat.app.eo.Content;
 import org.treasureboat.webcore.components.TBComponent;
 
 import com.webobjects.appserver.WOActionResults;
@@ -16,64 +17,64 @@ public class AniNiteHome extends TBComponent {
     // TODO Auto-generated constructor stub
   }
 
-  public org.treasureboat.app.eo.Content getFeatured1() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("featured1"));
+  public Content getFeatured1() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("featured1"));
   }
 
-  public org.treasureboat.app.eo.Content getFeatured2() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("featured2"));
+  public Content getFeatured2() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("featured2"));
   }
 
-  public org.treasureboat.app.eo.Content getFeatured3() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("featured3"));
+  public Content getFeatured3() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("featured3"));
   }
 
-  public org.treasureboat.app.eo.Content getFeatured4() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("featured4"));
+  public Content getFeatured4() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("featured4"));
   }
 
-  public org.treasureboat.app.eo.Content getFeatured5() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("featured5"));
+  public Content getFeatured5() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("featured5"));
   }
 
-  public org.treasureboat.app.eo.Content getFeatured6() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("featured6"));
+  public Content getFeatured6() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("featured6"));
   }
 
-  public org.treasureboat.app.eo.Content getFeaturedlast() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("featuredlast"));
+  public Content getFeaturedlast() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("featuredlast"));
   }
   
-  public org.treasureboat.app.eo.Content getFeaturedhandler() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("handler"));
+  public Content getFeaturedhandler() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("handler"));
   }
 
-  public org.treasureboat.app.eo.Content getFeaturedlist() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("festurelist"));
+  public Content getFeaturedlist() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("festurelist"));
   }
 
-  public org.treasureboat.app.eo.Content getFeaturedsponsor() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("sponsor"));
+  public Content getFeaturedsponsor() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("sponsor"));
   }
 
-  public org.treasureboat.app.eo.Content getFooter() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("footer"));
+  public Content getFooter() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("footer"));
   }
 
-  public org.treasureboat.app.eo.Content getSubtitle() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("subtitle"));
+  public Content getSubtitle() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("subtitle"));
   }
 
-  public org.treasureboat.app.eo.Content getMaintitle() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("maintitle"));
+  public Content getMaintitle() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("maintitle"));
   }
   
-  public org.treasureboat.app.eo.Content getVVK() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("vvk"));
+  public Content getVVK() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("vvk"));
   }
 
-  public org.treasureboat.app.eo.Content getTicketinfo() {
-    return org.treasureboat.app.eo.Content.fetchContent(editingContext(), org.treasureboat.app.eo.Content.CATEGORY.eq("ticketinfo"));
+  public Content getTicketinfo() {
+    return Content.fetchContent(editingContext(), Content.CATEGORY.eq("ticketinfo"));
   }
 
   public WOActionResults doSwitchAutomatic() {
