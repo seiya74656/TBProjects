@@ -107,7 +107,10 @@ public class Main extends TBComponent {
     else {
       // Clean Editting Context
       EOEditingContext ec = ERXEC.newEditingContext();
-
+      
+      AllergenInfoTBL a = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("A"));
+      AllergenInfoTBL b = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("B"));
+      
       SpeisekarteTBL newSpeisekarteTBL = SpeisekarteTBL.createAndInsertInstance(ec);
       newSpeisekarteTBL.setBeschreibung(beschreibung);
       newSpeisekarteTBL.setName(name2);
@@ -117,6 +120,17 @@ public class Main extends TBComponent {
       newSpeisekarteTBL.setSortorder(sortorderid);
 
       newSpeisekarteTBL.setSprache(selectedPopUp.sprache());
+      
+      newSpeisekarteTBL.addToAllergenInfoTBLs(a);
+      newSpeisekarteTBL.addToAllergenInfoTBLs(b);
+      
+    //  newSpeisekarteTBL.removeFromAllergenInfoTBLs(b);
+      
+//      a.addToSpeisekarteTBLs(newSpeisekarteTBL);
+      
+      
+      
+      
       log.info(">>> Datenbank Eintrag angelegt <<< {}", selectedPopUp.sprache());
       ec.saveChanges();
     }

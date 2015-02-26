@@ -54,6 +54,13 @@
               <wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.preis" />
               <webobject name="PopUp2" />
               <wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.sortorder" />
+              
+              <wo:foreach list="$einzelAuflistungSpeisekarteTBL.allergenInfoTBLs" item="$einzelAllergenInfoTBL">
+	              [<wo:str value="$einzelAllergenInfoTBL.allergeninfocode" />]
+              </wo:foreach>
+              
+              
+              
               <br />
             </wo:foreach><p>
 			<div class="medium default btn">

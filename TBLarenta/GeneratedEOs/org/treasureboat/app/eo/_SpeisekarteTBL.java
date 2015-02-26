@@ -31,6 +31,7 @@
   "PropertyKey.sortorder" = "sortorder";
   "PropertyKey.sprache" = "sprache";
 
+  "PropertyKey.allergenInfoTBLs" = "allergenInfoTBLs";
  * ----------------------------------------
  */
 
@@ -46,22 +47,22 @@
   105 : pageConfiguration = 'CreateSpeisekarteTBL' => navigationState = "XX.xx.createSpeisekarteTBL" [com.webobjects.directtoweb.Assignment]
   105 : pageConfiguration = 'QuerySpeisekarteTBL' => navigationState = "XX.xx.querySpeisekarteTBL" [com.webobjects.directtoweb.Assignment]
   
-  401 : pageConfiguration = 'QuerySpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  ) [com.webobjects.directtoweb.Assignment] 
-  402 : pageConfiguration = 'ListSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  ) [com.webobjects.directtoweb.Assignment] 
-  403 : pageConfiguration = 'InspectSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  ) [com.webobjects.directtoweb.Assignment] 
-  404 : pageConfiguration = 'EditSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  ) [com.webobjects.directtoweb.Assignment] 
-  405 : pageConfiguration = 'CreateSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  ) [com.webobjects.directtoweb.Assignment] 
+  401 : pageConfiguration = 'QuerySpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  , "allergenInfoTBLs" ) [com.webobjects.directtoweb.Assignment] 
+  402 : pageConfiguration = 'ListSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  , "allergenInfoTBLs" ) [com.webobjects.directtoweb.Assignment] 
+  403 : pageConfiguration = 'InspectSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  , "allergenInfoTBLs" ) [com.webobjects.directtoweb.Assignment] 
+  404 : pageConfiguration = 'EditSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  , "allergenInfoTBLs" ) [com.webobjects.directtoweb.Assignment] 
+  405 : pageConfiguration = 'CreateSpeisekarteTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "beschreibung" , "name" , "preis" , "sortorder" , "sprache"  , "allergenInfoTBLs" ) [com.webobjects.directtoweb.Assignment] 
    
   // D3W
 
   200 : EN = '#' => crud = "0100" [com.webobjects.directtoweb.Assignment]
   600 : PC = 'EditRelationshipEmbedded#' => cruds = "00001" [com.webobjects.directtoweb.Assignment]
   
-  401 : PC = 'Query#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache") [com.webobjects.directtoweb.Assignment] 
-  402 : PC = 'List#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache") [com.webobjects.directtoweb.Assignment] 
-  403 : PC = 'Inspect#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache") [com.webobjects.directtoweb.Assignment] 
-  404 : PC = 'Edit#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache") [com.webobjects.directtoweb.Assignment] 
-  405 : PC = 'Create#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache") [com.webobjects.directtoweb.Assignment] 
+  401 : PC = 'Query#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache", "allergenInfoTBLs" ) [com.webobjects.directtoweb.Assignment] 
+  402 : PC = 'List#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache", "allergenInfoTBLs" ) [com.webobjects.directtoweb.Assignment] 
+  403 : PC = 'Inspect#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache", "allergenInfoTBLs" ) [com.webobjects.directtoweb.Assignment] 
+  404 : PC = 'Edit#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache", "allergenInfoTBLs" ) [com.webobjects.directtoweb.Assignment] 
+  405 : PC = 'Create#' => DPK = ("[MainTab]", "(MainSection)", "beschreibung", "name", "preis", "sortorder", "sprache", "allergenInfoTBLs" ) [com.webobjects.directtoweb.Assignment] 
 
  * ----------------------------------------
  */
@@ -234,8 +235,10 @@ public abstract class _SpeisekarteTBL extends  TBEOGenericRecord {
   //********************************************************************
 
   // Relationship Keys
+  public static final ERXKey<org.treasureboat.app.eo.AllergenInfoTBL> ALLERGEN_INFO_TB_LS = new ERXKey<org.treasureboat.app.eo.AllergenInfoTBL>("allergenInfoTBLs");
 
   // Relationships
+  public static final String ALLERGEN_INFO_TB_LS_KEY = ALLERGEN_INFO_TB_LS.key();
 
   //********************************************************************
   //  clazz methods : クラス・メソッド
@@ -353,6 +356,90 @@ public abstract class _SpeisekarteTBL extends  TBEOGenericRecord {
   //********************************************************************
   //  toMany relationship : toMany リレーションシップ
   //********************************************************************
+
+  public NSArray<org.treasureboat.app.eo.AllergenInfoTBL> allergenInfoTBLs() {
+    NSArray<org.treasureboat.app.eo.AllergenInfoTBL> results = (NSArray<org.treasureboat.app.eo.AllergenInfoTBL>)storedValueForKey("allergenInfoTBLs");
+    if(useCoreQualifierForToManyRelationships()) { // CoreQualifier
+      if(!TBWConcurrencyUtilities.isStopRestrictDeleteQualifier()) {
+        NSMutableArray<org.treasureboat.app.eo.AllergenInfoTBL> marr = new NSMutableArray<org.treasureboat.app.eo.AllergenInfoTBL>(results.count());
+        for (org.treasureboat.app.eo.AllergenInfoTBL one : results) {
+
+          if (one instanceof ITBEnterpriseVirtualDeleteSupport) {
+            if(one.deleted() == null) {
+              marr.addObject(one);
+            }
+          } else {
+            marr.addObject(one);
+          }
+
+        }
+        results = marr.immutableClone();
+      }     
+    }
+    return results;
+  }
+
+  public NSArray<org.treasureboat.app.eo.AllergenInfoTBL> allergenInfoTBLs(EOQualifier qualifier) {
+    return allergenInfoTBLs(qualifier, null);
+  }
+
+  public NSArray<org.treasureboat.app.eo.AllergenInfoTBL> allergenInfoTBLs(EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
+    NSArray<org.treasureboat.app.eo.AllergenInfoTBL> results;
+      results = allergenInfoTBLs();
+      if (qualifier != null) {
+        results = (NSArray<org.treasureboat.app.eo.AllergenInfoTBL>)EOQualifier.filteredArrayWithQualifier(results, qualifier);
+      }
+      if (sortOrderings != null) {
+        results = (NSArray<org.treasureboat.app.eo.AllergenInfoTBL>)EOSortOrdering.sortedArrayUsingKeyOrderArray(results, sortOrderings);
+      }
+      return results;
+  }
+  
+  public void addToAllergenInfoTBLs(org.treasureboat.app.eo.AllergenInfoTBL object) {
+    includeObjectIntoPropertyWithKey(object, "allergenInfoTBLs");
+  }
+
+  public void removeFromAllergenInfoTBLs(org.treasureboat.app.eo.AllergenInfoTBL object) {
+    excludeObjectFromPropertyWithKey(object, "allergenInfoTBLs");
+  }
+
+  public void addToAllergenInfoTBLsRelationship(org.treasureboat.app.eo.AllergenInfoTBL object) {
+    _SpeisekarteTBL.log.debug("adding {} to allergenInfoTBLs relationship", object);
+    if (ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
+      addToAllergenInfoTBLs(object);
+    } else {
+      addObjectToBothSidesOfRelationshipWithKey(object, "allergenInfoTBLs");
+    }
+  }
+
+  public void removeFromAllergenInfoTBLsRelationship(org.treasureboat.app.eo.AllergenInfoTBL object) {
+    _SpeisekarteTBL.log.debug("removing {} from allergenInfoTBLs relationship", object);
+    if (ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
+      removeFromAllergenInfoTBLs(object);
+    } else {
+      removeObjectFromBothSidesOfRelationshipWithKey(object, "allergenInfoTBLs");
+    }
+  }
+
+  public org.treasureboat.app.eo.AllergenInfoTBL createAllergenInfoTBLsRelationship() {
+    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName("AllergenInfoTBL");
+    EOEnterpriseObject eo = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
+    editingContext().insertObject(eo);
+    addObjectToBothSidesOfRelationshipWithKey(eo, "allergenInfoTBLs");
+    return (org.treasureboat.app.eo.AllergenInfoTBL) eo;
+  }
+
+  public void deleteAllergenInfoTBLsRelationship(org.treasureboat.app.eo.AllergenInfoTBL object) {
+    removeObjectFromBothSidesOfRelationshipWithKey(object, "allergenInfoTBLs");
+      editingContext().deleteObject(object);
+  }
+
+  public void deleteAllAllergenInfoTBLsRelationships() {
+    Enumeration objects = allergenInfoTBLs().immutableClone().objectEnumerator();
+    while (objects.hasMoreElements()) {
+      deleteAllergenInfoTBLsRelationship((org.treasureboat.app.eo.AllergenInfoTBL)objects.nextElement());
+    }
+  }
 
   //********************************************************************
   //  Instance : インスタンス化

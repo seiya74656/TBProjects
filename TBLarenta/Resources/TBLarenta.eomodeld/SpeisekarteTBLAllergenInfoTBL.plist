@@ -1,0 +1,40 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = allergenInfoTBLId; 
+            name = allergenInfoTBLId; 
+            prototypeName = id; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = speisekarteTBLId; 
+            name = speisekarteTBLId; 
+            prototypeName = id; 
+        }
+    ); 
+    attributesUsedForLocking = (allergenInfoTBLId, speisekarteTBLId); 
+    className = EOGenericRecord; 
+    externalName = SpeisekarteTBLAllergenInfoTBL; 
+    fetchSpecificationDictionary = {}; 
+    name = SpeisekarteTBLAllergenInfoTBL; 
+    primaryKeyAttributes = (allergenInfoTBLId, speisekarteTBLId); 
+    relationships = (
+        {
+            destination = AllergenInfoTBL; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = allergenInfoTBLId; }); 
+            name = allergenInfoTBL; 
+        }, 
+        {
+            destination = SpeisekarteTBL; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = speisekarteTBLId; }); 
+            name = speisekarteTBL; 
+        }
+    ); 
+}

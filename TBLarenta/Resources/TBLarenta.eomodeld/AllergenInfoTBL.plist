@@ -10,10 +10,25 @@
     ); 
     attributesUsedForLocking = (allergen, allergeninfocode, id); 
     className = "org.treasureboat.app.eo.AllergenInfoTBL"; 
-    classProperties = (allergen, allergeninfocode); 
+    classProperties = (allergen, allergeninfocode, speisekarteTBLs); 
     externalName = AllergenInfoTBL; 
     fetchSpecificationDictionary = {}; 
     internalInfo = {"_javaClientClassName" = AllergenInfoTBL; }; 
     name = AllergenInfoTBL; 
     primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SpeisekarteTBLAllergenInfoTBL; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = allergenInfoTBLId; sourceAttribute = id; }); 
+            name = speisekarteTBLAllergenInfoTBLs; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            definition = "speisekarteTBLAllergenInfoTBLs.speisekarteTBL"; 
+            name = speisekarteTBLs; 
+        }
+    ); 
 }

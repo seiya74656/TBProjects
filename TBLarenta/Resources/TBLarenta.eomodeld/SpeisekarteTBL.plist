@@ -9,10 +9,25 @@
     ); 
     attributesUsedForLocking = (beschreibung, id, name, preis, sortorder, sprache); 
     className = "org.treasureboat.app.eo.SpeisekarteTBL"; 
-    classProperties = (beschreibung, name, preis, sortorder, sprache); 
+    classProperties = (allergenInfoTBLs, beschreibung, name, preis, sortorder, sprache); 
     externalName = SpeisekarteTBL; 
     fetchSpecificationDictionary = {}; 
     internalInfo = {"_javaClientClassName" = SpeisekarteTBL; }; 
     name = SpeisekarteTBL; 
     primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            definition = "speisekarteTBLAllergenInfoTBLs.allergenInfoTBL"; 
+            name = allergenInfoTBLs; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SpeisekarteTBLAllergenInfoTBL; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = speisekarteTBLId; sourceAttribute = id; }); 
+            name = speisekarteTBLAllergenInfoTBLs; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
 }
