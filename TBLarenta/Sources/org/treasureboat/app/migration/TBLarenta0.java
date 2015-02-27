@@ -29,14 +29,7 @@ public class TBLarenta0 extends ERXMigrationDatabase.Migration {
     allergenInfoTBLTable.newIntegerColumn("id", false);
     allergenInfoTBLTable.create();
     allergenInfoTBLTable.setPrimaryKey("id");
-
-    ERXMigrationTable allergeneTBLTable = database.newTableNamed("AllergeneTBL");
-    allergeneTBLTable.newIntegerColumn("Allergencode", false);
-    allergeneTBLTable.newIntegerColumn("id", false);
-    allergeneTBLTable.newIntegerColumn("SpeisenID", false);
-    allergeneTBLTable.create();
-    allergeneTBLTable.setPrimaryKey("id");
-
+    
     ERXMigrationTable speisekarteTBLTable = database.newTableNamed("SpeisekarteTBL");
     speisekarteTBLTable.newStringColumn("Beschreibung", false);
     speisekarteTBLTable.newIntegerColumn("id", false);

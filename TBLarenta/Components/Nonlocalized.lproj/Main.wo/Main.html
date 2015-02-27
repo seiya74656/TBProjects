@@ -12,9 +12,6 @@
         <li>
           <a href="#">Allergene</a>
         </li>
-        <li>
-          <a href="#">Allergene Info</a>
-        </li>
       </ul>
       <div class="tab-content active">
         <p>
@@ -33,6 +30,9 @@
               <br />
               Sortorder ID: 
               <wo:TBNumberField value="$sortorder" automatic="true" />
+              <br />
+              A: <wo:WOCheckBox checked="$allergenA" /> - B: <wo:WOCheckBox checked="$allergenB" /> - 
+              C: <wo:WOCheckBox checked="$allergenC" /> - D: <wo:WOCheckBox checked="$allergenD" />
               <br />
               Sprache: 
               <webobject name="PopUp" /><p>
@@ -56,34 +56,14 @@
               <wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.sortorder" />
               
               <wo:foreach list="$einzelAuflistungSpeisekarteTBL.allergenInfoTBLs" item="$einzelAllergenInfoTBL">
-	              [<wo:str value="$einzelAllergenInfoTBL.allergeninfocode" />]
+	              <wo:str value="$einzelAllergenInfoTBL.allergeninfocode" />
+	              <wo:checkBox value="$einzelAllergenInfoTBL.allergeninfocode" selection="$einzelAllergenInfoTBL" />
               </wo:foreach>
               
               
               
               <br />
             </wo:foreach><p>
-			<div class="medium default btn">
-            <wo:submit action="$doSaveEntrys" value="Änderungen speichern" />
-            </div>
-            </p>
-          </wo:TBForm>
-        </p>
-      </div>
-      <div class="tab-content">
-        <p>
-          <wo:TBForm>
-            ID,Allergencode, SpeisenID<br />
-            <wo:foreach list="$allAllergeneTBLs" item="$einzelAllergeneTBL">
-              ID: 
-              <wo:TBTextField value="$einzelAllergeneTBL.primaryKey" />
-              Code: 
-              <wo:TBTextField value="$einzelAllergeneTBL.allergencode" />
-              SpeisenID: 
-              <wo:TBTextField value="$einzelAllergeneTBL.speisenid" />
-              <br />
-            </wo:foreach>
-            <p>
 			<div class="medium default btn">
             <wo:submit action="$doSaveEntrys" value="Änderungen speichern" />
             </div>

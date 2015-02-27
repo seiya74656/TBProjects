@@ -1,7 +1,6 @@
 package org.treasureboat.app.components;
 
 import org.treasureboat.app.eo.AllergenInfoTBL;
-import org.treasureboat.app.eo.AllergeneTBL;
 import org.treasureboat.app.eo.SpeisekarteTBL;
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.webcore.annotations.TBPageAccess;
@@ -35,6 +34,11 @@ public class Main extends TBComponent {
   public String name2;
   public String preis;
   public String sortorder;
+  public boolean allergenA = false;
+  public boolean allergenB = false;
+  public boolean allergenC = false;
+  public boolean allergenD = false;
+
 
   // ********************************************************************
   // Actions : アクション
@@ -74,13 +78,6 @@ public class Main extends TBComponent {
 
   public SpeisekarteTBL einzelAuflistungSpeisekarteTBL;
 
-  // Auflistung aller Allergene
-  public NSArray<AllergeneTBL> allAllergeneTBLs() {
-    return AllergeneTBL.fetchAllAllergeneTBLs(editingContext());
-  }
-
-  public AllergeneTBL einzelAllergeneTBL;
-
   // Auflistung aller AllergeneInfo
 
   public NSArray<AllergenInfoTBL> allAllergenInfoTBLs() {
@@ -107,11 +104,27 @@ public class Main extends TBComponent {
     else {
       // Clean Editting Context
       EOEditingContext ec = ERXEC.newEditingContext();
-      
-      AllergenInfoTBL a = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("A"));
-      AllergenInfoTBL b = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("B"));
-      
       SpeisekarteTBL newSpeisekarteTBL = SpeisekarteTBL.createAndInsertInstance(ec);
+
+      if(allergenA == true) { 
+        AllergenInfoTBL a = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("A")); 
+        newSpeisekarteTBL.addToAllergenInfoTBLs(a);
+      }
+      if(allergenB == true) { 
+        AllergenInfoTBL b = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("B")); 
+        newSpeisekarteTBL.addToAllergenInfoTBLs(b);
+      }
+
+      if(allergenC == true) { 
+        AllergenInfoTBL c = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("C")); 
+        newSpeisekarteTBL.addToAllergenInfoTBLs(c);
+      }
+      
+      if(allergenD == true) {
+        AllergenInfoTBL d = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("D")); 
+        newSpeisekarteTBL.addToAllergenInfoTBLs(d);
+        }
+      
       newSpeisekarteTBL.setBeschreibung(beschreibung);
       newSpeisekarteTBL.setName(name2);
       double preisdb = Double.parseDouble(preis);
@@ -121,8 +134,6 @@ public class Main extends TBComponent {
 
       newSpeisekarteTBL.setSprache(selectedPopUp.sprache());
       
-      newSpeisekarteTBL.addToAllergenInfoTBLs(a);
-      newSpeisekarteTBL.addToAllergenInfoTBLs(b);
       
     //  newSpeisekarteTBL.removeFromAllergenInfoTBLs(b);
       
