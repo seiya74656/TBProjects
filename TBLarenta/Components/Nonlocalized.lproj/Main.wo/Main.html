@@ -31,6 +31,15 @@
               Sortorder ID: 
               <wo:TBNumberField value="$sortorder" automatic="true" />
               <br />
+              
+              
+              
+              	<wo:ERXCheckboxMatrix list="$allAllergenInfoTBLs" item="$einzelAllergenInfoTBL" selections="$selectedAllergenInfos" goingVertically="$false">
+              		<wo:TBString value = "$einzelAllergenInfoTBL.allergeninfocode" />&nbsp;
+              	</wo:ERXCheckboxMatrix>
+              
+              
+              
               A: <wo:WOCheckBox checked="$allergenA" /> - B: <wo:WOCheckBox checked="$allergenB" /> - 
               C: <wo:WOCheckBox checked="$allergenC" /> - D: <wo:WOCheckBox checked="$allergenD" />
               <br />
@@ -54,11 +63,17 @@
               <wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.preis" />
               <webobject name="PopUp2" />
               <wo:TBTextField value="$einzelAuflistungSpeisekarteTBL.sortorder" />
+              <br />
               
-              <wo:foreach list="$einzelAuflistungSpeisekarteTBL.allergenInfoTBLs" item="$einzelAllergenInfoTBL">
-	              <wo:str value="$einzelAllergenInfoTBL.allergeninfocode" />
-	              <wo:checkBox value="$einzelAllergenInfoTBL.allergeninfocode" selection="$einzelAllergenInfoTBL" />
-              </wo:foreach>
+              
+                  <wo:ERXCheckboxMatrix list="$allAllergenInfoTBLs" item="$einzelAllergenInfoTBL" selections="$einzelAuflistungSpeisekarteTBL.allergenInfoTBLs" goingVertically="$false" shouldShowSelectAllButtons="$true">
+              		<wo:TBString value = "$einzelAllergenInfoTBL.allergeninfocode" />&nbsp;
+              	</wo:ERXCheckboxMatrix>
+              
+                            
+              
+              
+              
               
               
               

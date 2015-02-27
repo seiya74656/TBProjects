@@ -10,6 +10,7 @@ import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
+import com.webobjects.foundation.NSMutableArray;
 
 import er.extensions.eof.ERXEC;
 
@@ -39,7 +40,11 @@ public class Main extends TBComponent {
   public boolean allergenC = false;
   public boolean allergenD = false;
 
-
+  
+  
+  
+  
+  
   // ********************************************************************
   // Actions : アクション
   // ********************************************************************
@@ -81,11 +86,14 @@ public class Main extends TBComponent {
   // Auflistung aller AllergeneInfo
 
   public NSArray<AllergenInfoTBL> allAllergenInfoTBLs() {
-    return AllergenInfoTBL.fetchAllAllergenInfoTBLs(editingContext());
+    return AllergenInfoTBL.fetchAllAllergenInfoTBLs(editingContext(), AllergenInfoTBL.ALLERGENINFOCODE.asc().array());
   }
 
   public AllergenInfoTBL einzelAllergenInfoTBL;
 
+  public NSMutableArray<AllergenInfoTBL> selectedAllergenInfos;
+  
+  
   // Einträge speichern.
   public WOActionResults doSaveEntrys() {
     log.info("{} - {} - {} - {} - {}", beschreibung, preis, sortorder, name2, selectedPopUp.sprache());
@@ -98,6 +106,10 @@ public class Main extends TBComponent {
 
   // Neuen eintrag erstellen
   public WOActionResults doCreateEntry() {
+    
+    
+    
+
     if (TBFString.stringIsNullOrEmpty(beschreibung) || TBFString.stringIsNullOrEmpty(preis) || TBFString.stringIsNullOrEmpty(sortorder) || TBFString.stringIsNullOrEmpty(name2)) {
 
     }
@@ -106,24 +118,29 @@ public class Main extends TBComponent {
       EOEditingContext ec = ERXEC.newEditingContext();
       SpeisekarteTBL newSpeisekarteTBL = SpeisekarteTBL.createAndInsertInstance(ec);
 
-      if(allergenA == true) { 
-        AllergenInfoTBL a = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("A")); 
+      for (AllergenInfoTBL a : selectedAllergenInfos) {
         newSpeisekarteTBL.addToAllergenInfoTBLs(a);
       }
-      if(allergenB == true) { 
-        AllergenInfoTBL b = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("B")); 
-        newSpeisekarteTBL.addToAllergenInfoTBLs(b);
-      }
 
-      if(allergenC == true) { 
-        AllergenInfoTBL c = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("C")); 
-        newSpeisekarteTBL.addToAllergenInfoTBLs(c);
-      }
       
-      if(allergenD == true) {
-        AllergenInfoTBL d = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("D")); 
-        newSpeisekarteTBL.addToAllergenInfoTBLs(d);
-        }
+//      if(allergenA == true) { 
+//        AllergenInfoTBL a = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("A")); 
+//        newSpeisekarteTBL.addToAllergenInfoTBLs(a);
+//      }
+//      if(allergenB == true) { 
+//        AllergenInfoTBL b = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("B")); 
+//        newSpeisekarteTBL.addToAllergenInfoTBLs(b);
+//      }
+//
+//      if(allergenC == true) { 
+//        AllergenInfoTBL c = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("C")); 
+//        newSpeisekarteTBL.addToAllergenInfoTBLs(c);
+//      }
+//      
+//      if(allergenD == true) {
+//        AllergenInfoTBL d = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("D")); 
+//        newSpeisekarteTBL.addToAllergenInfoTBLs(d);
+//        }
       
       newSpeisekarteTBL.setBeschreibung(beschreibung);
       newSpeisekarteTBL.setName(name2);
