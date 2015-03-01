@@ -31,12 +31,9 @@
               Sortorder ID: 
               <wo:TBNumberField value="$sortorder" automatic="true" />
               <br />
-              	<wo:TBCheckboxMatrix list="$allAllergenInfoTBLs" item="$einzelAllergenInfoTBL" selections="$selectedAllergenInfos" goingVertically="$false">
+              	<wo:TBCheckboxMatrix list="$allAllergenInfoTBLs" item="$einzelAllergenInfoTBL" selections="$selectedAllergenInfos">
               		<wo:TBString value = "$einzelAllergenInfoTBL.allergeninfocode" />&nbsp;
-              	</wo:TBCheckboxMatrix>
-              
-              
-              
+              	</wo:TBCheckboxMatrix>              
               A: <wo:WOCheckBox checked="$allergenA" /> - B: <wo:WOCheckBox checked="$allergenB" /> - 
               C: <wo:WOCheckBox checked="$allergenC" /> - D: <wo:WOCheckBox checked="$allergenD" />
               <br />
@@ -63,9 +60,9 @@
               <br />
               
               
-                  <wo:ERXCheckboxMatrix list="$allAllergenInfoTBLs" item="$einzelAllergenInfoTBL" selections="$einzelAuflistungSpeisekarteTBL.allergenInfoTBLs" goingVertically="$false" shouldShowSelectAllButtons="$true">
+                  <wo:TBCheckboxMatrix list="$allAllergenInfoTBLs" item="$einzelAllergenInfoTBL" selections="$einzelAuflistungSpeisekarteTBL.allergenInfoTBLs" goingVertically="$false" shouldShowSelectAllButtons="$true">
               		<wo:TBString value = "$einzelAllergenInfoTBL.allergeninfocode" />&nbsp;
-              	</wo:ERXCheckboxMatrix>
+              	</wo:TBCheckboxMatrix>
               
                             
               
