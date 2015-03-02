@@ -1,12 +1,8 @@
 <webobject name="CheckBoxWrapper">
   <webobject name="Conditional2">
     <webobject name="CheckBoxRepetition">
-        <table class="rounded">
-          <tr>
-            <td><webobject name="CheckBox" /></td>
-            <webobject name="GenericContainer1"><webobject name="Content" /></webobject>
-          </tr>
-        </table>
+            <webobject name="CheckBox" />
+            <webobject name="Content" /></webobject>
     </webobject>
     <webobject name="HiddenInput" />
     <webobject name="Conditional1">
@@ -14,7 +10,7 @@
       <webobject name="GenericElement2" />
       <webobject name="OnlyOnce">
         <script type="text/javascript">
-          var TBCheckboxMatrix = {
+          var ERXCheckboxMatrix = {
           checkAll : function (form, name, shouldCheck) {
               var elements = form.elements;
               for (var i = 0; i < elements.length; i++) {
@@ -30,5 +26,4 @@
         </script>
       </webobject>
     </webobject>
-  </webobject>
 </webobject>

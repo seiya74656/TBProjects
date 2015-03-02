@@ -75,7 +75,7 @@ public class TBCheckboxMatrix extends ERXNonSynchronizingComponent {
   }
 
   public String onClick(boolean onOff) {
-    return "ERXCheckboxMatrix.checkAll(this.form, '" + wrapperElementID + "'," + (onOff ? "true" : "false") + ")";
+    return "TBCheckboxMatrix.checkAll(this.form, '" + wrapperElementID + "'," + (onOff ? "true" : "false") + ")";
   }
 
   public String selectOnClick() {
