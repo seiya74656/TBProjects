@@ -91,7 +91,7 @@ public class Main extends TBComponent {
 
   public AllergenInfoTBL einzelAllergenInfoTBL;
 
-  public NSMutableArray<AllergenInfoTBL> selectedAllergenInfos;
+  public NSArray<AllergenInfoTBL> selectedAllergenInfos;
   
   
   // Einträge speichern.
