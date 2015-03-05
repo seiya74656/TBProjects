@@ -5,4 +5,13 @@
 	"DisplayDTS" = "%d-%m-%Y %H:%M:%S";
 	
 	"Hello World" = "Hallo Welt";
+
+	"Could not save your changes: " = "Änderungen nicht gespeichert: ";
+	"TBArrayChooser.noneString" = "- keine -";
+	"TBCheckboxMatrix.deselectAll" = "Keine";
+	"TBCheckboxMatrix.selectAll" = "Alle";
+	
+	"Addnewmeal" = "Neuen Speisen hinzuf&uuml;gen";
+	"Meal" = "Speisekarte";
+	"Allergen" = "Allergene";
 }

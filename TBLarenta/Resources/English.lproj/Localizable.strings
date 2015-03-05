@@ -7,4 +7,13 @@
 	
 	"PropertyKey.oldClob" = "Old Values";
 	"PropertyKey.newClob" = "New Values";
+
+	"Could not save your changes: " = "Could not save your changes: ";
+	"TBArrayChooser.noneString" = "- none -";
+	"TBCheckboxMatrix.deselectAll" = "None";
+	"TBCheckboxMatrix.selectAll" = "All";
+	
+	"Addnewmeal" = "New Meal";
+	"Meal" = "Menu";
+	"Allergen" = "Allergen";
 }
