@@ -64,7 +64,7 @@ GenericElement1: WOGenericElement {
 	name = "SelectAll";
 	onclick = selectOnClick;
 	type = "button";
-	value = session.localizer.ERXCheckboxMatrix.selectAll; // VALID
+	value = session.localizer.TBCheckboxMatrix.selectAll; // VALID
 }
 
 GenericElement2: WOGenericElement {
@@ -72,9 +72,9 @@ GenericElement2: WOGenericElement {
 	name = "DeselectAll";
 	onclick = deselectOnClick;
 	type = "button";
-	value = session.localizer.ERXCheckboxMatrix.deselectAll; // VALID
+	value = session.localizer.TBCheckboxMatrix.deselectAll; // VALID
 }
 
 OnlyOnce: TBOncePerRequestConditional {
-	keyName = "erxcheckboxmatrix";
+	keyName = "tbcheckboxmatrix";
 }
