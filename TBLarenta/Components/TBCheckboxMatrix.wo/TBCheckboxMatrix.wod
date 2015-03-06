@@ -51,13 +51,6 @@ Conditional2: WOConditional {
 Content: WOComponentContent {
 }
 
-GenericContainer1: WOGenericContainer {
-	align = "left";
-	elementName = "td";
-	otherTagString = ^contentCellOtherTagString;
-	valign = "top";
-	class = "ERXMatrixTableCell";
-}
 
 GenericElement1: WOGenericElement {
 	elementName = "input";
