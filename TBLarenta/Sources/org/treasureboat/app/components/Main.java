@@ -41,11 +41,6 @@ public class Main extends TBComponent {
   public boolean allergenC = false;
   public boolean allergenD = false;
 
-  
-  
-  
-  
-  
   // ********************************************************************
   // Actions : アクション
   // ********************************************************************
@@ -74,7 +69,7 @@ public class Main extends TBComponent {
   public String meinespeisekarte2(String string) {
     String x = meinespeisekarteTBLs(string).name() + " " + meinespeisekarteTBLs(string).beschreibung() + " " + meinespeisekarteTBLs(string).preis();
     return x;
-    
+
   }
 
   // Auflistung aller Speisekarten Inhalte
@@ -93,13 +88,10 @@ public class Main extends TBComponent {
   public AllergenInfoTBL einzelAllergenInfoTBL;
 
   public NSArray<AllergenInfoTBL> selectedAllergenInfos;
-  
-  
+
   // Einträge speichern.
   public WOActionResults doSaveEntrys() {
     log.info("{} - {} - {} - {} - {}", beschreibung, preis, sortorder, name2, selectedPopUp.sprache());
-    log.info("OHHH NOEEEEES: {} <<<<<<<<", meinespeisekarteTBLs("Kurve").name());
-    log.info("OHHH YEEEEEES: {} <<<<<<<<", meinespeisekarte2("Vita"));
 
     editingContext().saveChanges();
     return goToMySelfAction();
@@ -107,9 +99,6 @@ public class Main extends TBComponent {
 
   // Neuen eintrag erstellen
   public WOActionResults doCreateEntry() {
-    
-    
-    
 
     if (TBFString.stringIsNullOrEmpty(beschreibung) || TBFString.stringIsNullOrEmpty(preis) || TBFString.stringIsNullOrEmpty(sortorder) || TBFString.stringIsNullOrEmpty(name2)) {
 
@@ -123,26 +112,29 @@ public class Main extends TBComponent {
         newSpeisekarteTBL.addToAllergenInfoTBLs(a);
       }
 
-      
-//      if(allergenA == true) { 
-//        AllergenInfoTBL a = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("A")); 
-//        newSpeisekarteTBL.addToAllergenInfoTBLs(a);
-//      }
-//      if(allergenB == true) { 
-//        AllergenInfoTBL b = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("B")); 
-//        newSpeisekarteTBL.addToAllergenInfoTBLs(b);
-//      }
-//
-//      if(allergenC == true) { 
-//        AllergenInfoTBL c = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("C")); 
-//        newSpeisekarteTBL.addToAllergenInfoTBLs(c);
-//      }
-//      
-//      if(allergenD == true) {
-//        AllergenInfoTBL d = AllergenInfoTBL.fetchAllergenInfoTBL(ec, AllergenInfoTBL.ALLERGENINFOCODE.eq("D")); 
-//        newSpeisekarteTBL.addToAllergenInfoTBLs(d);
-//        }
-      
+      // if(allergenA == true) {
+      // AllergenInfoTBL a = AllergenInfoTBL.fetchAllergenInfoTBL(ec,
+      // AllergenInfoTBL.ALLERGENINFOCODE.eq("A"));
+      // newSpeisekarteTBL.addToAllergenInfoTBLs(a);
+      // }
+      // if(allergenB == true) {
+      // AllergenInfoTBL b = AllergenInfoTBL.fetchAllergenInfoTBL(ec,
+      // AllergenInfoTBL.ALLERGENINFOCODE.eq("B"));
+      // newSpeisekarteTBL.addToAllergenInfoTBLs(b);
+      // }
+      //
+      // if(allergenC == true) {
+      // AllergenInfoTBL c = AllergenInfoTBL.fetchAllergenInfoTBL(ec,
+      // AllergenInfoTBL.ALLERGENINFOCODE.eq("C"));
+      // newSpeisekarteTBL.addToAllergenInfoTBLs(c);
+      // }
+      //
+      // if(allergenD == true) {
+      // AllergenInfoTBL d = AllergenInfoTBL.fetchAllergenInfoTBL(ec,
+      // AllergenInfoTBL.ALLERGENINFOCODE.eq("D"));
+      // newSpeisekarteTBL.addToAllergenInfoTBLs(d);
+      // }
+
       newSpeisekarteTBL.setBeschreibung(beschreibung);
       newSpeisekarteTBL.setName(name2);
       double preisdb = Double.parseDouble(preis);
@@ -151,15 +143,11 @@ public class Main extends TBComponent {
       newSpeisekarteTBL.setSortorder(sortorderid);
 
       newSpeisekarteTBL.setSprache(selectedPopUp.sprache());
-      
-      
-    //  newSpeisekarteTBL.removeFromAllergenInfoTBLs(b);
-      
-//      a.addToSpeisekarteTBLs(newSpeisekarteTBL);
-      
-      
-      
-      
+
+      // newSpeisekarteTBL.removeFromAllergenInfoTBLs(b);
+
+      // a.addToSpeisekarteTBLs(newSpeisekarteTBL);
+
       log.info(">>> Datenbank Eintrag angelegt <<< {}", selectedPopUp.sprache());
       ec.saveChanges();
     }
