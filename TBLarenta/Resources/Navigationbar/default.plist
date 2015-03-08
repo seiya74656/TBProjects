@@ -6,12 +6,17 @@
 		name = Root;
 		children = (
 			"Welcome", 
-			"Dashboard"
+			"Dashboard",
+			"StatistikAustria"
 		);
 	},
 	{
 		name = "Welcome";
 		action = "session.handlers.welcome.customMainAction";
+	},
+	{
+		name = "StatistikAustria";
+		action = "session.handlers.statistikaustria.customStatistikAustriaAction";
 	}
 	
 	/* 
