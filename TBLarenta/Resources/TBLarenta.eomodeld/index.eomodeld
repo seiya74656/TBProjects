@@ -7,6 +7,14 @@
             className = "org.treasureboat.app.eo.AllergenInfoTBL"; 
             name = AllergenInfoTBL; 
         }, 
+        {
+            className = "org.treasureboat.app.eo.BarcodeCheckTBL"; 
+            name = BarcodeCheckTBL; 
+        }, 
+        {
+            className = "org.treasureboat.app.eo.BarcodeRechnungTBL"; 
+            name = BarcodeRechnungTBL; 
+        }, 
         {className = "org.treasureboat.app.eo.SpeisekarteTBL"; name = SpeisekarteTBL; }, 
         {className = EOGenericRecord; name = SpeisekarteTBLAllergenInfoTBL; }
     ); 

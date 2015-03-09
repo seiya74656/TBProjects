@@ -1,0 +1,14 @@
+{
+    attributes = (
+        {columnName = barcode; name = barcode; prototypeName = intNumber; }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {columnName = scanned; name = scanned; prototypeName = dateTime; }
+    ); 
+    attributesUsedForLocking = (barcode, id, scanned); 
+    className = "org.treasureboat.app.eo.BarcodeRechnungTBL"; 
+    classProperties = (barcode, scanned); 
+    externalName = BarcodeRechnungTBL; 
+    fetchSpecificationDictionary = {}; 
+    name = BarcodeRechnungTBL; 
+    primaryKeyAttributes = (id); 
+}
