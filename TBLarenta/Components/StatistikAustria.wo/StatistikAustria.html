@@ -6,7 +6,7 @@
         <wo:TBTextField autofocus="true" placeholder="Barcode" value="$barcode" automatic="true" />
         <p>
           <wo:genericContainer elementName="div" class="$selectButton.cssContainerClass"> 
-           <wo:TBHyperlink action="$barcodecheck" class="$selectButton.cssClass" string="Check" /> 
+           <wo:submit action="$barcodecheck" class="$selectButton.cssClass" string="Check" /> 
           </wo:genericContainer>
         </p>
         <p>Barcode ist <b><wo:TBString value="$barcode" valueWhenEmpty="noch keine eingabe" /></b></p>
