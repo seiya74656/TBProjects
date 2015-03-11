@@ -22,8 +22,12 @@ public class StatistikAustria extends Main {
     super(context);
   }
 
+  public BarcodeRechnungTBL barcodeReTBL(int intbarcode) {
+   return BarcodeRechnungTBL.fetchBarcodeRechnungTBL(editingContext(), BarcodeRechnungTBL.BARCODE.eq(intbarcode)); 
+  }
+  
   public WOActionResults barcodecheck() {
-
+    
      EOEditingContext ec = ERXEC.newEditingContext();
      BarcodeRechnungTBL newBaRechnungTBL = BarcodeRechnungTBL.createAndInsertInstance(ec);
      int intbarcode = Integer.parseInt(barcode);
@@ -32,6 +36,11 @@ public class StatistikAustria extends Main {
     
      ec.saveChanges();
     log.info("Barcode is:" + barcode);
+    
+    if(intbarcode == barcodeReTBL(intbarcode) {
+      log.info("IF BARCODE = TRUE");      
+    }
+    
     return goToMySelfAction();
   }
 
