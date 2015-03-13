@@ -5,6 +5,7 @@ import org.treasureboat.app.eo.BarcodeRechnungTBL;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.eocontrol.EOEditingContext;
+import com.webobjects.foundation.NSArray;
 import com.webobjects.foundation.NSTimestamp;
 
 import er.extensions.eof.ERXEC;
@@ -35,6 +36,11 @@ public class StatistikAustria extends Main {
       return false;
     }
   }
+  
+// NOT WORKING , try to generate a NSArray with intbarcode, and count Array, if array higher als 0 , check is true
+//  public NSArray<BarcodeRechnungTBL> allBarcodeRechnungTBLs(int intbarcode) {
+//    return BarcodeRechnungTBL.fetchAllBarcodeRechnungTBLs(editingContext(), BarcodeRechnungTBL.BARCODE.eq(intbarcode));
+//  }
   
   public WOActionResults barcodecheck() {
     
