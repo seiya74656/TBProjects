@@ -1,11 +1,17 @@
 {
     attributes = (
         {columnName = barcodevalid; name = barcodevalid; prototypeName = intNumber; }, 
-        {allowsNull = N; name = id; prototypeName = id; }
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {
+            columnName = validDate; 
+            name = validDate; 
+            prototypeName = date; 
+            serverTimeZone = "Europe/Vienna"; 
+        }
     ); 
-    attributesUsedForLocking = (barcodevalid, id); 
+    attributesUsedForLocking = (barcodevalid, id, validDate); 
     className = "org.treasureboat.app.eo.BarcodeCheckTBL"; 
-    classProperties = (barcodevalid); 
+    classProperties = (barcodevalid, validDate); 
     externalName = BarcodeCheckTBL; 
     fetchSpecificationDictionary = {}; 
     name = BarcodeCheckTBL; 

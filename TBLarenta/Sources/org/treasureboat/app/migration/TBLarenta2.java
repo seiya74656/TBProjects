@@ -25,6 +25,7 @@ public class TBLarenta2 extends ERXMigrationDatabase.Migration {
 
     ERXMigrationTable barcodeCheckTBLTable = database.newTableNamed("BarcodeCheckTBL");
     barcodeCheckTBLTable.newIntegerColumn("barcodevalid", false);
+    barcodeCheckTBLTable.newDateColumn("validDate", false);
     barcodeCheckTBLTable.newIntegerColumn("id", false);
     barcodeCheckTBLTable.create();
     barcodeCheckTBLTable.setPrimaryKey("id");

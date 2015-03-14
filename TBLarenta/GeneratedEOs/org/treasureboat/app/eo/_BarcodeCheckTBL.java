@@ -26,6 +26,7 @@
   "Pages.CreateEmbeddedBarcodeCheckTBL" = "Create Embedded BarcodeCheckTBL";
 
   "PropertyKey.barcodevalid" = "barcodevalid";
+  "PropertyKey.validDate" = "validDate";
 
  * ----------------------------------------
  */
@@ -42,22 +43,22 @@
   105 : pageConfiguration = 'CreateBarcodeCheckTBL' => navigationState = "XX.xx.createBarcodeCheckTBL" [com.webobjects.directtoweb.Assignment]
   105 : pageConfiguration = 'QueryBarcodeCheckTBL' => navigationState = "XX.xx.queryBarcodeCheckTBL" [com.webobjects.directtoweb.Assignment]
   
-  401 : pageConfiguration = 'QueryBarcodeCheckTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "barcodevalid"  ) [com.webobjects.directtoweb.Assignment] 
-  402 : pageConfiguration = 'ListBarcodeCheckTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "barcodevalid"  ) [com.webobjects.directtoweb.Assignment] 
-  403 : pageConfiguration = 'InspectBarcodeCheckTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "barcodevalid"  ) [com.webobjects.directtoweb.Assignment] 
-  404 : pageConfiguration = 'EditBarcodeCheckTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "barcodevalid"  ) [com.webobjects.directtoweb.Assignment] 
-  405 : pageConfiguration = 'CreateBarcodeCheckTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "barcodevalid"  ) [com.webobjects.directtoweb.Assignment] 
+  401 : pageConfiguration = 'QueryBarcodeCheckTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "barcodevalid" , "validDate"  ) [com.webobjects.directtoweb.Assignment] 
+  402 : pageConfiguration = 'ListBarcodeCheckTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "barcodevalid" , "validDate"  ) [com.webobjects.directtoweb.Assignment] 
+  403 : pageConfiguration = 'InspectBarcodeCheckTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "barcodevalid" , "validDate"  ) [com.webobjects.directtoweb.Assignment] 
+  404 : pageConfiguration = 'EditBarcodeCheckTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "barcodevalid" , "validDate"  ) [com.webobjects.directtoweb.Assignment] 
+  405 : pageConfiguration = 'CreateBarcodeCheckTBL' => displayPropertyKeys = ("[MainTab]", "(MainSection)", "barcodevalid" , "validDate"  ) [com.webobjects.directtoweb.Assignment] 
    
   // D3W
 
   200 : EN = '#' => crud = "0100" [com.webobjects.directtoweb.Assignment]
   600 : PC = 'EditRelationshipEmbedded#' => cruds = "00001" [com.webobjects.directtoweb.Assignment]
   
-  401 : PC = 'Query#' => DPK = ("[MainTab]", "(MainSection)", "barcodevalid") [com.webobjects.directtoweb.Assignment] 
-  402 : PC = 'List#' => DPK = ("[MainTab]", "(MainSection)", "barcodevalid") [com.webobjects.directtoweb.Assignment] 
-  403 : PC = 'Inspect#' => DPK = ("[MainTab]", "(MainSection)", "barcodevalid") [com.webobjects.directtoweb.Assignment] 
-  404 : PC = 'Edit#' => DPK = ("[MainTab]", "(MainSection)", "barcodevalid") [com.webobjects.directtoweb.Assignment] 
-  405 : PC = 'Create#' => DPK = ("[MainTab]", "(MainSection)", "barcodevalid") [com.webobjects.directtoweb.Assignment] 
+  401 : PC = 'Query#' => DPK = ("[MainTab]", "(MainSection)", "barcodevalid", "validDate") [com.webobjects.directtoweb.Assignment] 
+  402 : PC = 'List#' => DPK = ("[MainTab]", "(MainSection)", "barcodevalid", "validDate") [com.webobjects.directtoweb.Assignment] 
+  403 : PC = 'Inspect#' => DPK = ("[MainTab]", "(MainSection)", "barcodevalid", "validDate") [com.webobjects.directtoweb.Assignment] 
+  404 : PC = 'Edit#' => DPK = ("[MainTab]", "(MainSection)", "barcodevalid", "validDate") [com.webobjects.directtoweb.Assignment] 
+  405 : PC = 'Create#' => DPK = ("[MainTab]", "(MainSection)", "barcodevalid", "validDate") [com.webobjects.directtoweb.Assignment] 
 
  * ----------------------------------------
  */
@@ -213,9 +214,11 @@ public abstract class _BarcodeCheckTBL extends  TBEOGenericRecord {
 
   // Attribute Keys
   public static final ERXKey<Integer> BARCODEVALID = new ERXKey<Integer>("barcodevalid");
+  public static final ERXKey<NSTimestamp> VALID_DATE = new ERXKey<NSTimestamp>("validDate");
 
   // Attributes
   public static final String BARCODEVALID_KEY = BARCODEVALID.key();
+  public static final String VALID_DATE_KEY = VALID_DATE.key();
 
   //********************************************************************
   //  Relationship : リレーションシップ
@@ -257,6 +260,22 @@ public abstract class _BarcodeCheckTBL extends  TBEOGenericRecord {
     return ERXValidationException.validateForUserInfo(this, BARCODEVALID_KEY, value);
   }
 
+  public NSTimestamp validDate() {
+    return (NSTimestamp) storedValueForKey(VALID_DATE_KEY);
+  }
+
+  public void setValidDate(NSTimestamp value) {
+    if (_BarcodeCheckTBL.log.isDebugEnabled()) {
+      _BarcodeCheckTBL.log.debug("updating validDate from {} to {}", validDate(), value);
+    }
+    takeStoredValueForKey(value, VALID_DATE_KEY);
+  }
+
+  public Object validateValidDate(Object value) throws NSValidation.ValidationException {
+    _BarcodeCheckTBL.log.debug("validate validDate");
+    return ERXValidationException.validateForUserInfo(this, VALID_DATE_KEY, value);
+  }
+
   //********************************************************************
   //  ToOne relationship : ToOne リレーションシップ
   //********************************************************************
@@ -284,20 +303,24 @@ public abstract class _BarcodeCheckTBL extends  TBEOGenericRecord {
 
   public static BarcodeCheckTBL createBarcodeCheckTBL(EOEditingContext editingContext
    , Integer barcodevalid
+   , NSTimestamp validDate
     )
   {
     BarcodeCheckTBL eo = (BarcodeCheckTBL) EOUtilities.createAndInsertInstance(editingContext, _BarcodeCheckTBL.ENTITY_NAME);
     eo.setBarcodevalid(barcodevalid);
+    eo.setValidDate(validDate);
     return eo;
   }
   
   /* EO creation with Stamped EO Support */
   public static BarcodeCheckTBL createBarcodeCheckTBLWithStampedSupport(EOEditingContext editingContext
    , Integer barcodevalid
+   , NSTimestamp validDate
     )
   {
     BarcodeCheckTBL eo = (BarcodeCheckTBL) EOUtilities.createAndInsertInstance(editingContext, _BarcodeCheckTBL.ENTITY_NAME);
     eo.setBarcodevalid(barcodevalid);
+    eo.setValidDate(validDate);
     return eo;
   }
 
