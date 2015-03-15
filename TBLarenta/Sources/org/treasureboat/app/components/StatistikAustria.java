@@ -5,7 +5,6 @@ import org.treasureboat.app.eo.BarcodeRechnungTBL;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.eocontrol.EOEditingContext;
-import com.webobjects.foundation.NSArray;
 import com.webobjects.foundation.NSTimestamp;
 
 import er.extensions.eof.ERXEC;
