@@ -8,8 +8,12 @@
           <wo:genericContainer elementName="div" class="$selectButton.cssContainerClass"> 
            <wo:submit action="$barcodecheck" class="$selectButton.cssClass" string="Check" /> 
           </wo:genericContainer>
-        </p>
+        </p><wo:if condition="$barcode" negate="true">
         <p>Barcode ist <b><wo:TBString value="$barcode" valueWhenEmpty="noch keine eingabe" /></b></p>
+        </wo:if>
+        <wo:else>
+        <p>Barcode <b><wo:TBString value="$barcode" /></b> wurde überprüft.</p>
+        </wo:else>
       </wo:TBForm>
     </div>
   </div>
