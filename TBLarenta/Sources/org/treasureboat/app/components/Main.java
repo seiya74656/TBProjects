@@ -40,6 +40,10 @@ public class Main extends TBComponent {
   public boolean allergenB = false;
   public boolean allergenC = false;
   public boolean allergenD = false;
+  public boolean allergenE = false;
+  public boolean allergenF = false;
+  public boolean allergenG = false;
+  public boolean allergenH = false;
 
   // ********************************************************************
   // Actions : アクション
