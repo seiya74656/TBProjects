@@ -1,6 +1,7 @@
 package org.treasureboat.app.components;
 
 import org.treasureboat.app.eo.BarcodeRechnungTBL;
+import org.treasureboat.webcore.components.TBComponent;
 
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOActionResults;
@@ -9,7 +10,7 @@ import com.webobjects.foundation.NSTimestamp;
 
 import er.extensions.eof.ERXEC;
 
-public class StatistikAustria extends Main {
+public class StatistikAustria extends TBComponent {
 
   /**
    * For Barcode Scanner via iPhone WebApp

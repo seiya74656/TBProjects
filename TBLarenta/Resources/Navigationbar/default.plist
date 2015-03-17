@@ -16,7 +16,7 @@
 	},
 	{
 		name = "StatistikAustria";
-		action = "session.handlers.statistikaustria.customStatistikAustriaAction";
+		action = "session.handlers.statistikAustria.customStatistikAustriaAction";
 	}
 	
 	/* 
