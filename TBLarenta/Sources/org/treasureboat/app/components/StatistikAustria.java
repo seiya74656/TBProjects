@@ -24,25 +24,6 @@ public class StatistikAustria extends TBComponent {
     super(context);
   }
 
-  public boolean barcodeReTBL(int intbarcode) {
-
-    BarcodeRechnungTBL testb = BarcodeRechnungTBL.fetchBarcodeRechnungTBL(editingContext(), BarcodeRechnungTBL.BARCODE.eq(intbarcode));
-
-    final String ObjecttoString = testb.toString(); // Wandelt die Aufgabe in einen String um , um mit parseInt zu convertieren
-
-    Integer testcode = Integer.parseInt(ObjecttoString); //Convertiert den String in Int
-    if (testcode.equals(intbarcode)) { //vergleicht ob der Integer mit der eingangs intbarcode überein stimmt
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  // NOT WORKING , try to generate a NSArray with intbarcode, and count Array, if array higher als 0 , check is true
-  //  public NSArray<BarcodeRechnungTBL> allBarcodeRechnungTBLs(int intbarcode) {
-  //    return BarcodeRechnungTBL.fetchAllBarcodeRechnungTBLs(editingContext(), BarcodeRechnungTBL.BARCODE.eq(intbarcode));
-  //  }
-
   public WOActionResults barcodecheck() {
 
 
