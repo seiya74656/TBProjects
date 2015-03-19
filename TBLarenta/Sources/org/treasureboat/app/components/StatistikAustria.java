@@ -9,7 +9,6 @@ import org.treasureboat.webcore.components.TBComponent;
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSArray;
-import com.webobjects.foundation.NSTimestamp;
 
 public class StatistikAustria extends TBComponent {
 
@@ -47,33 +46,13 @@ public class StatistikAustria extends TBComponent {
       }
     }
 
-
-
-
-
-
-
-
-
     //     EOEditingContext ec = ERXEC.newEditingContext();
     //     BarcodeRechnungTBL newBaRechnungTBL = BarcodeRechnungTBL.createAndInsertInstance(ec);
     //     newBaRechnungTBL.setBarcode(intbarcode);
     //     newBaRechnungTBL.setScanned(timestamp());
-    //    
-    //     ec.saveChanges();
-    //    log.info("Barcode is:" + barcode);
-    //    
-    //    if (barcodeReTBL(intbarcode)) { 
-    //      log.info("Barcodevergleich ist TRUE");
-    //    } else {
-    //      log.info("Barcodevergleich ist FALSE");
-    //    }
 
     return goToMySelfAction();
   }
 
-  public NSTimestamp timestamp() {
-    return new NSTimestamp();
-  }
 
 }
