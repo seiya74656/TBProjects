@@ -9,6 +9,7 @@ import org.treasureboat.webcore.components.TBComponent;
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSArray;
+import com.webobjects.foundation.NSTimestamp;
 
 public class StatistikAustria extends TBComponent {
 
@@ -33,12 +34,16 @@ public class StatistikAustria extends TBComponent {
 
       if (intBarCode > 0) {
         
+        BarcodeCheckTBL barcodeCheck = BarcodeCheckTBL.fetchBarcodeCheckTBL(editingContext(), BarcodeCheckTBL.BARCODEVALID.eq(intBarCode).and(BarcodeCheckTBL.VALID_DATE.after(now)));
         NSArray<BarcodeCheckTBL> barcodeChecks = BarcodeCheckTBL.fetchBarcodeCheckTBLs(editingContext(), BarcodeCheckTBL.BARCODEVALID.eq(intBarCode).and(BarcodeCheckTBL.VALID_DATE.after(now)), BarcodeCheckTBL.VALID_DATE.asc().array());
         if (barcodeChecks.count() != 0) {
 //          BarcodeCheckTBL barcodeCheck = barcodeChecks.firstObject();
+
+          log.info(barcodeCheck.barcodevalid().toString() + barcodeChecks.firstObject());
+          
           @SuppressWarnings("unused")
           BarcodeRechnungTBL barcodeRechnung = BarcodeRechnungTBL.createBarcodeRechnungTBL(editingContext(), intBarCode, now.timestamp());      
-          editingContext().saveChanges();
+//          editingContext().saveChanges();
         } else {
           // show error
           
