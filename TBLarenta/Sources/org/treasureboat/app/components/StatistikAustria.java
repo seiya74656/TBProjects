@@ -19,6 +19,12 @@ public class StatistikAustria extends TBComponent {
 
   public String barcode;
 
+  private String _streamPathLocation;
+
+  private String _clientFilePath;
+
+  private String _finalFilePath;
+
   public StatistikAustria(WOContext context) {
     super(context);
   }
@@ -56,6 +62,48 @@ public class StatistikAustria extends TBComponent {
     //     newBaRechnungTBL.setScanned(timestamp());
 
     return goToMySelfAction();
+  }
+
+  /**
+   * @return the streamPathLocation
+   */
+  public String streamPathLocation() {
+    return _streamPathLocation;
+  }
+
+  /**
+   * @param streamPathLocation the streamPathLocation to set
+   */
+  public void setStreamPathLocation(String streamPathLocation) {
+    _streamPathLocation = streamPathLocation;
+  }
+
+  /**
+   * @return the clientFilePath
+   */
+  public String clientFilePath() {
+    return _clientFilePath;
+  }
+
+  /**
+   * @param clientFilePath the clientFilePath to set
+   */
+  public void setClientFilePath(String clientFilePath) {
+    _clientFilePath = clientFilePath;
+  }
+
+  /**
+   * @return the finalFilePath
+   */
+  public String finalFilePath() {
+    return _finalFilePath;
+  }
+
+  /**
+   * @param finalFilePath the finalFilePath to set
+   */
+  public void setFinalFilePath(String finalFilePath) {
+    _finalFilePath = finalFilePath;
   }
 
 

@@ -16,6 +16,14 @@
         </wo:else>
             <input name="Datei" type="file" size="50" maxlength="100000" accept="text/*">
       </wo:TBForm>
+      
+            <wo:form enctype = "multipart/form-data">
+ 
+  <wo:fileUpload streamToFilePath="$streamPathLocation"
+                 overwrite="true"
+                 filePath="$clientFilePath"
+                 finalFilePath="$finalFilePath" />
+	</wo:form> 
     </div>
   </div>
 </webobject>
