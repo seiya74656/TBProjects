@@ -60,7 +60,7 @@ public class StatistikAustria extends TBComponent {
     //     BarcodeRechnungTBL newBaRechnungTBL = BarcodeRechnungTBL.createAndInsertInstance(ec);
     //     newBaRechnungTBL.setBarcode(intbarcode);
     //     newBaRechnungTBL.setScanned(timestamp());
-
+    log.info("Client: " + _clientFilePath + " final: " + _finalFilePath + " Stream:" + _streamPathLocation);
     return goToMySelfAction();
   }
 
@@ -82,6 +82,7 @@ public class StatistikAustria extends TBComponent {
    * @return the clientFilePath
    */
   public String clientFilePath() {
+    _clientFilePath = "upload.csv";
     return _clientFilePath;
   }
 

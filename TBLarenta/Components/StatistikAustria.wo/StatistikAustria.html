@@ -6,7 +6,7 @@
         <wo:TBTextField autofocus="true" placeholder="Barcode" value="$barcode" automatic="true" />
         <p>
           <wo:genericContainer elementName="div" class="$selectButton.cssContainerClass"> 
-           <wo:submit action="$barcodecheck" class="$selectButton.cssClass" string="Check" /> 
+           <wo:submit action="$barcodecheck" class="$selectButton.cssClass" value="Check" /> 
           </wo:genericContainer>
         </p><wo:if condition="$barcode" negate="true">
         <p>Barcode ist <b><wo:TBString value="$barcode" valueWhenEmpty="noch keine eingabe" /></b></p>
@@ -15,7 +15,7 @@
         <p>Barcode <b><wo:TBString value="$barcode" /></b> wurde überprüft.</p>
         </wo:else>
             <input name="Datei" type="file" size="50" maxlength="100000" accept="text/*">
-      </wo:TBForm>
+        </wo:TBForm>
       
             <wo:form enctype = "multipart/form-data">
  
@@ -23,6 +23,11 @@
                  overwrite="true"
                  filePath="$clientFilePath"
                  finalFilePath="$finalFilePath" />
+        <p>
+          <wo:genericContainer elementName="div" class="$selectButton.cssContainerClass"> 
+           <wo:submit action="$barcodecheck" class="$selectButton.cssClass" value="Upload" /> 
+          </wo:genericContainer>
+        </p>      
 	</wo:form> 
     </div>
   </div>
