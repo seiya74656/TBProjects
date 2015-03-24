@@ -82,7 +82,6 @@ public class StatistikAustria extends TBComponent {
    * @return the clientFilePath
    */
   public String clientFilePath() {
-    _clientFilePath = "upload.csv";
     return _clientFilePath;
   }
 
