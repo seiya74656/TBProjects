@@ -20,9 +20,6 @@ public class Akicon extends Convention {
 
   private static final long serialVersionUID = 1L;
 
-  /** 
-   * <a href="http://wiki.wocommunity.org/display/documentation/Wonder+Logging">new org.slf4j.Logger</a> 
-   */
   static final Logger log = LoggerFactory.getLogger(Akicon.class);
 
   public Akicon(WOContext context) {
