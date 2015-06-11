@@ -1,13 +1,13 @@
 PageWrapper : TBEDefaultPageWrapper {
 }
 
-PopUp : WOPopUpButton {
+PopUp : TBPopUp {
 	list = tabes;
 	item = oneSprache;
 	selection = selectedPopUp;
 	displayString = oneSprache.sprache;
 }
-PopUp2 : WOPopUpButton {
+PopUp2 : TBPopUp {
 	list = tabes;
 	item = oneSprache;
 	selection = selectedPopUp;

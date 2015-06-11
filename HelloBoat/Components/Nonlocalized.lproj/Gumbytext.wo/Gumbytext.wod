@@ -7,7 +7,7 @@ MyText : TBTextField {
 	automatic = "true";
 }
 
-PopUp : WOPopUpButton {
+PopUp : TBPopUp {
 	list = tabes;
 	item = oneConvention;
 	selection = selectedPopUp;

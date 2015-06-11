@@ -49,7 +49,7 @@ public class Main extends TBComponent {
   // Actions : アクション
   // ********************************************************************
 
-  // WOPopUpButton
+  // PopUpButton
   private NSArray<Sprache> _tabs;
   public Sprache selectedPopUp;
 
@@ -64,7 +64,7 @@ public class Main extends TBComponent {
 
   public Sprache oneSprache;
 
-  // WOPopUpButton ENDE
+  // PopUpButton ENDE
   // Rückgabe von einer bestimmten Speise
   public SpeisekarteTBL meinespeisekarteTBLs(String string) {
     return SpeisekarteTBL.fetchSpeisekarteTBL(editingContext(), SpeisekarteTBL.BESCHREIBUNG.eq(string));

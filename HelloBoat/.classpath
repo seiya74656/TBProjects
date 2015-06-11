@@ -17,7 +17,6 @@
 	<classpathentry kind="con" path="WOFramework/JavaWebObjects"/>
 	<classpathentry kind="con" path="WOFramework/JavaEOAccess"/>
 	<classpathentry kind="con" path="WOFramework/JavaEOControl"/>
-	<classpathentry kind="con" path="WOFramework/JavaJDBCAdaptor"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="WOFramework/TBAjax"/>
