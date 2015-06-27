@@ -1,14 +1,13 @@
 package org.treasureboat.app.migration;
 
+import org.treasureboat.enterprise.migration.TBEnterpriseMigrationDatabase;
+import org.treasureboat.enterprise.migration.TBEnterpriseMigrationTable;
 import org.treasureboat.enterprise.migration.TBWModelVersion;
 
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
 
-import er.extensions.migration.ERXMigrationDatabase;
-import er.extensions.migration.ERXMigrationTable;
-
-public class TBLarenta0 extends ERXMigrationDatabase.Migration {
+public class TBLarenta0 extends TBEnterpriseMigrationDatabase.Migration {
 
 	@Override
 	public NSArray<TBWModelVersion> modelDependencies() {
@@ -16,21 +15,21 @@ public class TBLarenta0 extends ERXMigrationDatabase.Migration {
 	}
   
 	@Override
-	public void downgrade(EOEditingContext editingContext, ERXMigrationDatabase database) throws Throwable {
+	public void downgrade(EOEditingContext editingContext, TBEnterpriseMigrationDatabase database) throws Throwable {
 	    // DO NOTHING
 	}
 
 	@Override
-	public void upgrade(EOEditingContext editingContext, ERXMigrationDatabase database) throws Throwable {
+	public void upgrade(EOEditingContext editingContext, TBEnterpriseMigrationDatabase database) throws Throwable {
 	  
-    ERXMigrationTable allergenInfoTBLTable = database.newTableNamed("AllergenInfoTBL");
+    TBEnterpriseMigrationTable allergenInfoTBLTable = database.newTableNamed("AllergenInfoTBL");
     allergenInfoTBLTable.newStringColumn("Allergen", 100, false);
     allergenInfoTBLTable.newIntegerColumn("AllergenInfocode", false);
     allergenInfoTBLTable.newIntegerColumn("id", false);
     allergenInfoTBLTable.create();
     allergenInfoTBLTable.setPrimaryKey("id");
     
-    ERXMigrationTable speisekarteTBLTable = database.newTableNamed("SpeisekarteTBL");
+    TBEnterpriseMigrationTable speisekarteTBLTable = database.newTableNamed("SpeisekarteTBL");
     speisekarteTBLTable.newStringColumn("Beschreibung", false);
     speisekarteTBLTable.newIntegerColumn("id", false);
     speisekarteTBLTable.newStringColumn("Name", 100, false);

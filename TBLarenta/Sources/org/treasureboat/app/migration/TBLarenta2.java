@@ -1,14 +1,13 @@
 package org.treasureboat.app.migration;
 
+import org.treasureboat.enterprise.migration.TBEnterpriseMigrationDatabase;
+import org.treasureboat.enterprise.migration.TBEnterpriseMigrationTable;
 import org.treasureboat.enterprise.migration.TBWModelVersion;
 
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
 
-import er.extensions.migration.ERXMigrationDatabase;
-import er.extensions.migration.ERXMigrationTable;
-
-public class TBLarenta2 extends ERXMigrationDatabase.Migration {
+public class TBLarenta2 extends TBEnterpriseMigrationDatabase.Migration {
 
 	@Override
 	public NSArray<TBWModelVersion> modelDependencies() {
@@ -16,21 +15,21 @@ public class TBLarenta2 extends ERXMigrationDatabase.Migration {
 	}
   
 	@Override
-	public void downgrade(EOEditingContext editingContext, ERXMigrationDatabase database) throws Throwable {
+	public void downgrade(EOEditingContext editingContext, TBEnterpriseMigrationDatabase database) throws Throwable {
 	    // DO NOTHING
 	}
 
 	@Override
-	public void upgrade(EOEditingContext editingContext, ERXMigrationDatabase database) throws Throwable {
+	public void upgrade(EOEditingContext editingContext, TBEnterpriseMigrationDatabase database) throws Throwable {
 
-    ERXMigrationTable barcodeCheckTBLTable = database.newTableNamed("BarcodeCheckTBL");
+    TBEnterpriseMigrationTable barcodeCheckTBLTable = database.newTableNamed("BarcodeCheckTBL");
     barcodeCheckTBLTable.newIntegerColumn("barcodevalid", false);
     barcodeCheckTBLTable.newDateColumn("validDate", false);
     barcodeCheckTBLTable.newIntegerColumn("id", false);
     barcodeCheckTBLTable.create();
     barcodeCheckTBLTable.setPrimaryKey("id");
 
-    ERXMigrationTable barcodeRechnungTBLTable = database.newTableNamed("BarcodeRechnungTBL");
+    TBEnterpriseMigrationTable barcodeRechnungTBLTable = database.newTableNamed("BarcodeRechnungTBL");
     barcodeRechnungTBLTable.newIntegerColumn("barcode", false);
     barcodeRechnungTBLTable.newIntegerColumn("id", false);
     barcodeRechnungTBLTable.newTimestampColumn("scanned", false);

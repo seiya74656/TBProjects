@@ -1,14 +1,13 @@
 package org.treasureboat.app.migration;
 
+import org.treasureboat.enterprise.migration.TBEnterpriseMigrationDatabase;
+import org.treasureboat.enterprise.migration.TBEnterpriseMigrationTable;
 import org.treasureboat.enterprise.migration.TBWModelVersion;
 
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
 
-import er.extensions.migration.ERXMigrationDatabase;
-import er.extensions.migration.ERXMigrationTable;
-
-public class TBAniNite0 extends ERXMigrationDatabase.Migration {
+public class TBAniNite0 extends TBEnterpriseMigrationDatabase.Migration {
 
 	@Override
 	public NSArray<TBWModelVersion> modelDependencies() {
@@ -16,14 +15,14 @@ public class TBAniNite0 extends ERXMigrationDatabase.Migration {
 	}
   
 	@Override
-	public void downgrade(EOEditingContext editingContext, ERXMigrationDatabase database) throws Throwable {
+	public void downgrade(EOEditingContext editingContext, TBEnterpriseMigrationDatabase database) throws Throwable {
 	    // DO NOTHING
 	}
 
 	@Override
-	public void upgrade(EOEditingContext editingContext, ERXMigrationDatabase database) throws Throwable {
+	public void upgrade(EOEditingContext editingContext, TBEnterpriseMigrationDatabase database) throws Throwable {
 	  
-	    ERXMigrationTable gewinnspielTeilnehmerTable = database.newTableNamed("GewinnspielTeilnehmer");
+	    TBEnterpriseMigrationTable gewinnspielTeilnehmerTable = database.newTableNamed("GewinnspielTeilnehmer");
 	    gewinnspielTeilnehmerTable.newBooleanColumn("agb", false);
 	    gewinnspielTeilnehmerTable.newIntegerColumn("antwort", false);
 	    gewinnspielTeilnehmerTable.newTimestampColumn("datum", false);
