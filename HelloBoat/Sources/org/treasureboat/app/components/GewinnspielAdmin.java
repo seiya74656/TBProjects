@@ -2,9 +2,9 @@ package org.treasureboat.app.components;
 
 import org.treasureboat.app.eo.GewinnspielTBL;
 
+import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSArray;
-import com.webobjects.appserver.WOActionResults;
 
 public class GewinnspielAdmin extends Gewinnspiel {
 

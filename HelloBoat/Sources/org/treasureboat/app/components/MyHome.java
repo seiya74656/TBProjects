@@ -1,8 +1,9 @@
 package org.treasureboat.app.components;
 
+import org.treasureboat.webcore.components.TBComponent;
+
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
-import org.treasureboat.webcore.components.TBComponent;
 
 
 public class MyHome extends TBComponent {
