@@ -4,6 +4,6 @@
  -model Resources/TBAniNite.eomodeld \
  -packagedirs \
  -subclassDestination Sources \
- -templatedir ../../Tower/TreasureBoat/TemplatesForEO \
+ -templatedir /TreasureBoat/TemplatesForEO \
  -verbose \
  -loadModelGroup

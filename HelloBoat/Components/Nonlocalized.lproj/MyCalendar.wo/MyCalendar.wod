@@ -12,7 +12,7 @@ Frage : TBString {
 Tage : TBString {
 	value = adventkalendarloop.tag;
 }
-adventkalendarloop : WORepetition {
+adventkalendarloop : TBRepetition {
 	item = adventkalendarloop;
 	list = adventkalendar;
 }

@@ -3,7 +3,6 @@ package org.treasureboat.app;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.treasureboat.app.navigation.NavigationController;
-import org.treasureboat.foundation.constants.TBFKnownLookNames;
 import org.treasureboat.webcore.appserver.TBSession;
 
 public class Session extends TBSession {
@@ -30,8 +29,5 @@ public class Session extends TBSession {
     if(navController() == null) {
       setNavController(new NavigationController(this));
     }
-
-    // set the default Look
-    setCurrentD2WLook(TBFKnownLookNames.GUMBY);
   }
 }

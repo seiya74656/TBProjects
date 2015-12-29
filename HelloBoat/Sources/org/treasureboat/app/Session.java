@@ -30,8 +30,5 @@ public class Session extends TBSession {
 		if(navController() == null) {
 			setNavController(new NavigationController(this));
 		}
-	
-		// set the default Look
-		setCurrentD2WLook(TBFKnownLookNames.GUMBY);
 	}
 }

@@ -1,12 +1,12 @@
 package org.treasureboat.app;
 
 import org.treasureboat.app.components.Main;
-import org.treasureboat.webcore.appserver.TBWDirectAction;
+import org.treasureboat.webcore.appserver.TBDirectAction;
 
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WORequest;
 
-public class DirectAction extends TBWDirectAction {
+public class DirectAction extends TBDirectAction {
 
 	//********************************************************************
 	//  Constructor : コンストラクタ
