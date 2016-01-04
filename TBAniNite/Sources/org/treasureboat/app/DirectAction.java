@@ -2,9 +2,9 @@ package org.treasureboat.app;
 
 import org.treasureboat.app.components.Main;
 import org.treasureboat.webcore.appserver.TBDirectAction;
+import org.treasureboat.webcore.appserver.TBRequest;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WORequest;
 
 public class DirectAction extends TBDirectAction {
 
@@ -12,7 +12,7 @@ public class DirectAction extends TBDirectAction {
 	//  Constructor : コンストラクタ
 	//********************************************************************
 
-	public DirectAction(WORequest request) {
+	public DirectAction(TBRequest request) {
 		super(request);
 	}
 
