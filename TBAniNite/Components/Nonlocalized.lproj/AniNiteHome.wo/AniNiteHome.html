@@ -358,9 +358,9 @@ text-align:center;
     </footer><!--//footer-->
 			<div id="foo">
    			<wo:if condition="$isEdit" negate="true">
-			<wo:WOSubmitButton action="$doSwitchAutomatic" value="Editieren" class="btn btn-danger" /></wo:if>
+			<wo:TBSubmitButton action="$doSwitchAutomatic" value="Editieren" class="btn btn-danger" /></wo:if>
 			<wo:if condition="$isEdit" negate="false">
-			<wo:WOSubmitButton action="$doSwitchAutomatic" class="btn btn-danger" value="Speichern" /></wo:if><br /><br />                       
+			<wo:TBSubmitButton action="$doSwitchAutomatic" class="btn btn-danger" value="Speichern" /></wo:if><br /><br />                       
            	<wo:AjaxSubmitButton value="Speichern Ajax" class="btn btn-danger" action="$saveChanges" ></wo:AjaxSubmitButton>
             </div>
      

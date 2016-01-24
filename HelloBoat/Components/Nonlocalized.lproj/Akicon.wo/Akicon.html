@@ -34,11 +34,11 @@ Sprache = <webobject name="Language" />
 	<h3>Einzelne Daten</h3>
 		<wo:TBForm>
 			<wo:foreach list="$allTodos" item="$oneTodo">
-				<wo:WOCheckBox value="$true" selection="$oneTodo.done" />
+				<wo:TBCheckBox value="$true" selection="$oneTodo.done" />
 				<wo:TBTextField value="$oneTodo.priority" automatic="true" class="narrow" />
 				<wo:TBTextField value="$oneTodo.task" automatic="true" class="normal" /> <wo:hyperlink action="$doRemoveAction" string="Remove me?" /><br />
 			</wo:foreach>
-			<wo:WOSubmitButton value="Save" action="$doSaveAction" />
+			<wo:TBSubmitButton value="Save" action="$doSaveAction" />
 		</wo:TBForm>
 	<hr />
 	<wo:hyperlink action="$doCreateAction" string="CREATE" />

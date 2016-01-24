@@ -9,7 +9,6 @@
 	<classpathentry kind="con" path="WOFramework/TBWebCore"/>
 	<classpathentry kind="con" path="WOFramework/TBExtensions"/>
 	<classpathentry kind="con" path="WOFramework/TBSkinGumby"/>
-	<classpathentry kind="con" path="WOFramework/TBDeprecated"/>
 	<classpathentry kind="con" path="WOFramework/TBPrototypes"/>
 	<classpathentry kind="con" path="WOFramework/TBDB_MySQL"/>
 	<classpathentry kind="con" path="WOFramework/JavaEOControl"/>

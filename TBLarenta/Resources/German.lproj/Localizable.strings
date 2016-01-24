@@ -6,7 +6,6 @@
 	
 	"Hello World" = "Hallo Welt";
 
-	"Could not save your changes: " = "Änderungen nicht gespeichert: ";
 	"TBArrayChooser.noneString" = "- keine -";
 	"TBCheckboxMatrix.deselectAll" = "Keine";
 	"TBCheckboxMatrix.selectAll" = "Alle";
