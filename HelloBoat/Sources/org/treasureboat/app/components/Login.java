@@ -1,9 +1,9 @@
 package org.treasureboat.app.components;
 
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.components.TBComponent;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WOContext;
 
 
 public class Login extends TBComponent {
@@ -13,7 +13,7 @@ public class Login extends TBComponent {
   //********************************************************************
   //  Constructor : コンストラクタ
   //********************************************************************
-    public Login(WOContext context) {
+    public Login(TBContext context) {
         super(context);
     }
 

@@ -2,10 +2,10 @@ package org.treasureboat.app.components;
 
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.webcore.annotations.TBPageAccess;
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.components.TBComponent;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WOContext;
 
 @TBPageAccess (
     navigationState = "Welcome"
@@ -18,7 +18,7 @@ public class Formatierungen extends TBComponent {
   //  Constructor : コンストラクタ
   //********************************************************************
 
-  public Formatierungen(WOContext context) {
+  public Formatierungen(TBContext context) {
     super(context);
   }
 

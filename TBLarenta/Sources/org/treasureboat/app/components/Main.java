@@ -4,12 +4,12 @@ import org.treasureboat.app.eo.AllergenInfoTBL;
 import org.treasureboat.app.eo.SpeisekarteTBL;
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.webcore.annotations.TBPageAccess;
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.appserver.TBSession;
 import org.treasureboat.webcore.components.TBComponent;
 import org.treasureboat.webcore.enums.ETBWLanguage;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WOContext;
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
 
@@ -24,7 +24,7 @@ public class Main extends TBComponent {
   // Constructor : コンストラクタ
   // ********************************************************************
 
-  public Main(WOContext context) {
+  public Main(TBContext context) {
     super(context);
   }
 

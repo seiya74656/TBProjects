@@ -8,12 +8,12 @@ import java.io.UnsupportedEncodingException;
 import org.treasureboat.app.eo.GewinnspielTBL;
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.foundation.date.TBFTimestamp;
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.appserver.TBSession;
 import org.treasureboat.webcore.components.TBComponent;
 import org.treasureboat.webcore.enums.ETBWLanguage;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WOContext;
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
 import com.webobjects.foundation.NSTimestamp;
@@ -27,7 +27,7 @@ public class Gewinnspiel extends TBComponent {
   // ********************************************************************
   // Constructor : コンストラクタ
   // ********************************************************************
-  public Gewinnspiel(WOContext context) {
+  public Gewinnspiel(TBContext context) {
     super(context);
 
   }

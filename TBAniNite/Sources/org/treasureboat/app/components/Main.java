@@ -1,12 +1,12 @@
 package org.treasureboat.app.components;
 
 import org.treasureboat.webcore.annotations.TBPageAccess;
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.appserver.TBSession;
 import org.treasureboat.webcore.components.TBComponent;
 import org.treasureboat.webcore.enums.ETBWLanguage;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WOContext;
 
 @TBPageAccess (
     navigationState = "Welcome"
@@ -19,7 +19,7 @@ public class Main extends TBComponent {
 	//  Constructor : コンストラクタ
 	//********************************************************************
 
-	public Main(WOContext context) {
+	public Main(TBContext context) {
 		super(context);
 	}
 	

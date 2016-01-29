@@ -3,10 +3,10 @@ package org.treasureboat.app.components;
 import org.treasureboat.app.businesslogic.Schaltjahr;
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.foundation.TBFV;
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.components.TBComponent;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSArray;
 
 public class Gumbytext extends TBComponent implements SampleInterface {
@@ -16,7 +16,7 @@ public class Gumbytext extends TBComponent implements SampleInterface {
   //********************************************************************
   //  Constructor : コンストラクタ
   //********************************************************************
-  public Gumbytext(WOContext context) throws Exception {
+  public Gumbytext(TBContext context) throws Exception {
     super(context);
     Zeitungsabo("Java Magazin", "Jahresabo");
     Program();

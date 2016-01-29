@@ -5,11 +5,11 @@ import org.treasureboat.foundation.date.TBFTimestamp;
 import org.treasureboat.foundation.image.TBFImage;
 import org.treasureboat.webcore.annotations.TBNonSynchronizing;
 import org.treasureboat.webcore.annotations.TBPageAccess;
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.appserver.location.TBWStaticResource;
 import org.treasureboat.webcore.components.TBComponent;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSTimestamp;
 
 @TBPageAccess (
@@ -25,7 +25,7 @@ public class Main extends TBComponent {
 	//  Constructor : コンストラクタ
 	//********************************************************************
 
-	public Main(WOContext context) {
+	public Main(TBContext context) {
 		super(context);
 	}
 	

@@ -1,9 +1,9 @@
 package org.treasureboat.app.components;
 
 import org.treasureboat.webcore.annotations.TBPageAccess;
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.components.TBComponent;
 
-import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSMutableArray;
 
 @TBPageAccess (
@@ -17,7 +17,7 @@ public class MyCalendar extends TBComponent {
   //  Constructor : コンストラクタ
   //********************************************************************
 
-    public MyCalendar(WOContext context) {
+    public MyCalendar(TBContext context) {
         super(context);
     }
     public NSMutableArray<Adventkalendar> adventkalendar() {

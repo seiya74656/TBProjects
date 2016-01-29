@@ -1,12 +1,12 @@
 package org.treasureboat.app.components;
 
-import com.webobjects.appserver.WOContext;
+import org.treasureboat.webcore.appserver.TBContext;
 
 public class APITest extends Sample {
 
   private static final long serialVersionUID = 1L;
 
-  public APITest(WOContext context) {
+  public APITest(TBContext context) {
     super(context);
     // TODO Auto-generated constructor stub
   }

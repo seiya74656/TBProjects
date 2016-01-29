@@ -1,10 +1,10 @@
 package org.treasureboat.app.components;
 
 import org.treasureboat.app.eo.Content;
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.components.TBComponent;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WOContext;
 
 public class AniNiteHome extends TBComponent {
 
@@ -12,7 +12,7 @@ public class AniNiteHome extends TBComponent {
 
   public boolean _isEdit = false;
 
-  public AniNiteHome(WOContext context) {
+  public AniNiteHome(TBContext context) {
     super(context);
     // TODO Auto-generated constructor stub
   }

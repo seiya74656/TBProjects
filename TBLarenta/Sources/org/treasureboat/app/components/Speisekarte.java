@@ -2,15 +2,15 @@ package org.treasureboat.app.components;
 
 import org.treasureboat.app.eo.AllergenInfoTBL;
 import org.treasureboat.app.eo.SpeisekarteTBL;
+import org.treasureboat.webcore.appserver.TBContext;
 
-import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSArray;
 
 public class Speisekarte extends Main {
 
   private static final long serialVersionUID = 1L;
 
-  public Speisekarte(WOContext context) {
+  public Speisekarte(TBContext context) {
     super(context);
   }
 

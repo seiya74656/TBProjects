@@ -1,14 +1,13 @@
 package org.treasureboat.app.components;
 
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.components.TBComponent;
-
-import com.webobjects.appserver.WOContext;
 
 public class Sample extends TBComponent {
 
   private static final long serialVersionUID = 1L;
 
-  public Sample(WOContext context) {
+  public Sample(TBContext context) {
     super(context);
   }
 

@@ -4,12 +4,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.treasureboat.app.eo.ToDo;
 import org.treasureboat.foundation.date.TBFTimestamp;
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.appserver.TBSession;
 import org.treasureboat.webcore.enums.ETBWLanguage;
 import org.treasureboat.webcore.localization.TBWLocalizer;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WOContext;
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
 
@@ -21,7 +21,7 @@ public class Akicon extends Convention {
 
   static final Logger log = LoggerFactory.getLogger(Akicon.class);
 
-  public Akicon(WOContext context) {
+  public Akicon(TBContext context) {
     super(context);
   }
 

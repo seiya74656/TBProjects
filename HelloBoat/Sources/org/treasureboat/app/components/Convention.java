@@ -1,8 +1,7 @@
 package org.treasureboat.app.components;
 
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.components.TBComponent;
-
-import com.webobjects.appserver.WOContext;
 
 public class Convention extends TBComponent {
 
@@ -13,7 +12,7 @@ public class Convention extends TBComponent {
   //********************************************************************
 
 
-  public Convention(WOContext context) {
+  public Convention(TBContext context) {
     super(context);
   }
 

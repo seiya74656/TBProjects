@@ -1,14 +1,15 @@
 package org.treasureboat.app.components;
 
 
-import com.webobjects.appserver.WOContext;
+import org.treasureboat.webcore.appserver.TBContext;
+
 import com.webobjects.foundation.NSMutableArray;
 
 public class Aninite extends Convention {
 
   private static final long serialVersionUID = 1L;
 
-  public Aninite(WOContext context) {
+  public Aninite(TBContext context) {
     super(context);
   }
 

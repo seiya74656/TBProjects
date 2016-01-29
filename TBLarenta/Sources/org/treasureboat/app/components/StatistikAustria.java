@@ -4,10 +4,10 @@ import org.treasureboat.app.eo.BarcodeCheckTBL;
 import org.treasureboat.app.eo.BarcodeRechnungTBL;
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.foundation.date.TBFTimestamp;
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.components.TBComponent;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSArray;
 
 public class StatistikAustria extends TBComponent {
@@ -25,7 +25,7 @@ public class StatistikAustria extends TBComponent {
 
   private String _finalFilePath;
 
-  public StatistikAustria(WOContext context) {
+  public StatistikAustria(TBContext context) {
     super(context);
   }
 

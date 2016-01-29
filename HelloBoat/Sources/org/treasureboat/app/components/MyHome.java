@@ -1,16 +1,16 @@
 package org.treasureboat.app.components;
 
+import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.components.TBComponent;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WOContext;
 
 
 public class MyHome extends TBComponent {
 
   private static final long serialVersionUID = 1L;
 
-  public MyHome(WOContext context) {
+  public MyHome(TBContext context) {
         super(context);
     }
   
