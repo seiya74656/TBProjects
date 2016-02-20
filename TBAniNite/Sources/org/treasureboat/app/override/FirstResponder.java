@@ -3,10 +3,10 @@ package org.treasureboat.app.override;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.treasureboat.webcore.appserver.TBSession;
+import org.treasureboat.webcore.appserver.WOApplication;
 import org.treasureboat.webcore.security.user.TBWFirstResponder;
 
 import com.webobjects.appserver.WOActionResults;
-import com.webobjects.appserver.WOApplication;
 
 public class FirstResponder extends TBWFirstResponder {
 
