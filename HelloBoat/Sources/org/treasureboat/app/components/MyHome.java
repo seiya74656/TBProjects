@@ -1,9 +1,8 @@
 package org.treasureboat.app.components;
 
 import org.treasureboat.webcore.appserver.TBContext;
+import org.treasureboat.webcore.appserver.iface.ITBWActionResults;
 import org.treasureboat.webcore.components.TBComponent;
-
-import com.webobjects.appserver.WOActionResults;
 
 
 public class MyHome extends TBComponent {
@@ -36,7 +35,7 @@ public String hotelkosten, autokosten,datum, uhrzeit, telephone, test;
   //  Actions : アクション
   //********************************************************************
   
-  public WOActionResults goBackToMainAction() {
+  public ITBWActionResults goBackToMainAction() {
     
     System.err.println(username());
     

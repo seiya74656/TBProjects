@@ -4,9 +4,9 @@
 // DO NOT EDIT. 
 // Make changes to ToDo.java instead.
 //
-// version 7.1.3
+// version 7.2
 //
-// 2008-2014 by TreasureBoat.org
+// 2008-2016 by TreasureBoat.org
 //
 
 /*
@@ -25,10 +25,10 @@
   "Pages.EditEmbeddedToDo" = "Edit Embedded ToDo";
   "Pages.CreateEmbeddedToDo" = "Create Embedded ToDo";
 
-  "PropertyKey.done" = "done";
-  "PropertyKey.dueDate" = "dueDate";
-  "PropertyKey.priority" = "priority";
-  "PropertyKey.task" = "task";
+  "PropertyKey.ToDo.done" = "done";
+  "PropertyKey.ToDo.dueDate" = "dueDate";
+  "PropertyKey.ToDo.priority" = "priority";
+  "PropertyKey.ToDo.task" = "task";
 
  * ----------------------------------------
  */
@@ -84,6 +84,7 @@ import org.treasureboat.webcore.security.domain.ITBWDomain;
 import org.treasureboat.webcore.security.domain.TBWMultiDomainSupport;
 import org.treasureboat.webcore.security.grant.TBWGrantAccess;
 import org.treasureboat.webcore.security.password.TBWAccessPermission;
+
 
 import com.webobjects.eoaccess.EOEntity;
 import com.webobjects.eoaccess.EOUtilities;
@@ -471,6 +472,11 @@ public abstract class _ToDo extends  TBEOGenericRecord {
     }
     return localInstance;
   }
+
+  //********************************************************************
+  //  TBEnterpriseCopyable
+  //********************************************************************
+
 
   //********************************************************************
   //  Fetch specification : フェッチ・スペシフィケーション

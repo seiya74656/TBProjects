@@ -6,10 +6,10 @@ import org.treasureboat.foundation.TBFString;
 import org.treasureboat.webcore.annotations.TBPageAccess;
 import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.appserver.TBSession;
+import org.treasureboat.webcore.appserver.iface.ITBWActionResults;
 import org.treasureboat.webcore.components.TBComponent;
 import org.treasureboat.webcore.enums.ETBWLanguage;
 
-import com.webobjects.appserver.WOActionResults;
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
 
@@ -94,7 +94,7 @@ public class Main extends TBComponent {
   public NSArray<AllergenInfoTBL> selectedAllergenInfos;
 
   // Einträge speichern.
-  public WOActionResults doSaveEntrys() {
+  public ITBWActionResults doSaveEntrys() {
     log.info("{} - {} - {} - {} - {}", beschreibung, preis, sortorder, name2, selectedPopUp.sprache());
 
     editingContext().saveChanges();
@@ -102,7 +102,7 @@ public class Main extends TBComponent {
   }
 
   // Neuen eintrag erstellen
-  public WOActionResults doCreateEntry() {
+  public ITBWActionResults doCreateEntry() {
 
     if (TBFString.stringIsNullOrEmpty(beschreibung) || TBFString.stringIsNullOrEmpty(preis) || TBFString.stringIsNullOrEmpty(sortorder) || TBFString.stringIsNullOrEmpty(name2)) {
 
@@ -176,7 +176,7 @@ public class Main extends TBComponent {
     private String _sprache;
   }
 
-  public WOActionResults setGerman() {
+  public ITBWActionResults setGerman() {
     TBSession.session().setLanguage(ETBWLanguage.German.name());
     return goToMySelfAction();
   }

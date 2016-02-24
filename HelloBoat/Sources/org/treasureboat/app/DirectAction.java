@@ -3,8 +3,7 @@ package org.treasureboat.app;
 import org.treasureboat.app.components.Main;
 import org.treasureboat.webcore.appserver.TBDirectAction;
 import org.treasureboat.webcore.appserver.TBRequest;
-
-import com.webobjects.appserver.WOActionResults;
+import org.treasureboat.webcore.appserver.iface.ITBWActionResults;
 
 
 public class DirectAction extends TBDirectAction {
@@ -24,7 +23,7 @@ public class DirectAction extends TBDirectAction {
 	/**
 	 * Main Page
 	 */
-	public WOActionResults s634Action() {
+	public ITBWActionResults s634Action() {
 		Main nextPage = pageWithName(Main.class);
 		return nextPage;
 	}

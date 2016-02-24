@@ -4,9 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.treasureboat.webcore.appserver.TBApplication;
 import org.treasureboat.webcore.appserver.TBSession;
+import org.treasureboat.webcore.appserver.iface.ITBWActionResults;
 import org.treasureboat.webcore.security.user.TBWFirstResponder;
-
-import com.webobjects.appserver.WOActionResults;
 
 public class FirstResponder extends TBWFirstResponder {
 
@@ -20,8 +19,8 @@ public class FirstResponder extends TBWFirstResponder {
 	//********************************************************************
 
 	@Override
-	public WOActionResults createFirstResponseAction(String loginUri) {
-		WOActionResults result = super.createFirstResponseAction(loginUri);
+	public ITBWActionResults createFirstResponseAction(String loginUri) {
+		ITBWActionResults result = super.createFirstResponseAction(loginUri);
 		if (result != null) {
 			// we got something from TB itself
 			// ...

@@ -1,9 +1,8 @@
 package org.treasureboat.app.components;
 
 import org.treasureboat.webcore.appserver.TBContext;
+import org.treasureboat.webcore.appserver.iface.ITBWActionResults;
 import org.treasureboat.webcore.components.TBComponent;
-
-import com.webobjects.appserver.WOActionResults;
 
 
 public class Login extends TBComponent {
@@ -26,7 +25,7 @@ public class Login extends TBComponent {
     //********************************************************************
     //  Action : アクション
     //********************************************************************
-    public WOActionResults doSubmitAction() {
+    public ITBWActionResults doSubmitAction() {
 
     if("seiya".equals(loginname) && "pass".equals(loginpass))
       { 
@@ -42,7 +41,7 @@ public class Login extends TBComponent {
       }
   }
   
-    public WOActionResults goBackToMainAction() {
+    public ITBWActionResults goBackToMainAction() {
       Main nextPage = pageWithName(Main.class);
       return nextPage;
     }

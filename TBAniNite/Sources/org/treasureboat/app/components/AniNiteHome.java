@@ -2,9 +2,8 @@ package org.treasureboat.app.components;
 
 import org.treasureboat.app.eo.Content;
 import org.treasureboat.webcore.appserver.TBContext;
+import org.treasureboat.webcore.appserver.iface.ITBWActionResults;
 import org.treasureboat.webcore.components.TBComponent;
-
-import com.webobjects.appserver.WOActionResults;
 
 public class AniNiteHome extends TBComponent {
 
@@ -77,13 +76,13 @@ public class AniNiteHome extends TBComponent {
     return Content.fetchContent(editingContext(), Content.CATEGORY.eq("ticketinfo"));
   }
 
-  public WOActionResults doSwitchAutomatic() {
+  public ITBWActionResults doSwitchAutomatic() {
     _isEdit = !_isEdit;
 
     return goToMySelfAction();
   }
 
-  public WOActionResults saveChanges() {
+  public ITBWActionResults saveChanges() {
     _isEdit = !_isEdit;
     editingContext().saveChanges();
     return goToMySelfAction();

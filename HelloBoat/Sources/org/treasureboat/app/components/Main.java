@@ -6,10 +6,10 @@ import org.treasureboat.foundation.image.TBFImage;
 import org.treasureboat.webcore.annotations.TBNonSynchronizing;
 import org.treasureboat.webcore.annotations.TBPageAccess;
 import org.treasureboat.webcore.appserver.TBContext;
+import org.treasureboat.webcore.appserver.iface.ITBWActionResults;
 import org.treasureboat.webcore.appserver.location.TBWStaticResource;
 import org.treasureboat.webcore.components.TBComponent;
 
-import com.webobjects.appserver.WOActionResults;
 import com.webobjects.foundation.NSTimestamp;
 
 @TBPageAccess (
@@ -78,7 +78,7 @@ public String sampleMarkdownImage(){
   
 }
 
-public WOActionResults doDBTestaction(){
+public ITBWActionResults doDBTestaction(){
   
   ToDo todo = ToDo.createAndInsertInstance(editingContext());
   

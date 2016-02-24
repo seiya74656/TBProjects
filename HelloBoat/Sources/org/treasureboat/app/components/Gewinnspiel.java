@@ -10,10 +10,10 @@ import org.treasureboat.foundation.TBFString;
 import org.treasureboat.foundation.date.TBFTimestamp;
 import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.appserver.TBSession;
+import org.treasureboat.webcore.appserver.iface.ITBWActionResults;
 import org.treasureboat.webcore.components.TBComponent;
 import org.treasureboat.webcore.enums.ETBWLanguage;
 
-import com.webobjects.appserver.WOActionResults;
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
 import com.webobjects.foundation.NSTimestamp;
@@ -58,7 +58,7 @@ public class Gewinnspiel extends TBComponent {
 
   public GewinnspielTBL oneGewinnspiel;
 
-  public WOActionResults doCreateAction() {
+  public ITBWActionResults doCreateAction() {
 
     EOEditingContext ec = ERXEC.newEditingContext();
 
@@ -74,17 +74,17 @@ public class Gewinnspiel extends TBComponent {
     return goToMySelfAction();
   }
 
-  public WOActionResults doEnglishAction() {
+  public ITBWActionResults doEnglishAction() {
     TBSession.session().setLanguage(ETBWLanguage.English.name());
     return goToMySelfAction();
   }
 
-  public WOActionResults doGermanAction() {
+  public ITBWActionResults doGermanAction() {
     TBSession.session().setLanguage(ETBWLanguage.German.name());
     return goToMySelfAction();
   }
 
-  public WOActionResults doJapaneseAction() {
+  public ITBWActionResults doJapaneseAction() {
     TBSession.session().setLanguage(ETBWLanguage.Japanese.name());
     return goToMySelfAction();
   }
@@ -150,7 +150,7 @@ public class Gewinnspiel extends TBComponent {
 
   // Datei erstellen und beschreiben
 
-  public WOActionResults doMitmachenAction() throws IOException {
+  public ITBWActionResults doMitmachenAction() throws IOException {
     // WOContext context = context();
     // System.err.println("WOContext --> " + context);
     // System.err.println("WORequest --> " + context.request());

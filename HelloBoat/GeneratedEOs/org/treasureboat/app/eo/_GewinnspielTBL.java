@@ -4,9 +4,9 @@
 // DO NOT EDIT. 
 // Make changes to GewinnspielTBL.java instead.
 //
-// version 7.1.3
+// version 7.2
 //
-// 2008-2014 by TreasureBoat.org
+// 2008-2016 by TreasureBoat.org
 //
 
 /*
@@ -25,11 +25,11 @@
   "Pages.EditEmbeddedGewinnspielTBL" = "Edit Embedded GewinnspielTBL";
   "Pages.CreateEmbeddedGewinnspielTBL" = "Create Embedded GewinnspielTBL";
 
-  "PropertyKey.agb" = "agb";
-  "PropertyKey.antwort" = "antwort";
-  "PropertyKey.datum" = "datum";
-  "PropertyKey.email" = "email";
-  "PropertyKey.name" = "name";
+  "PropertyKey.GewinnspielTBL.agb" = "agb";
+  "PropertyKey.GewinnspielTBL.antwort" = "antwort";
+  "PropertyKey.GewinnspielTBL.datum" = "datum";
+  "PropertyKey.GewinnspielTBL.email" = "email";
+  "PropertyKey.GewinnspielTBL.name" = "name";
 
  * ----------------------------------------
  */
@@ -85,6 +85,7 @@ import org.treasureboat.webcore.security.domain.ITBWDomain;
 import org.treasureboat.webcore.security.domain.TBWMultiDomainSupport;
 import org.treasureboat.webcore.security.grant.TBWGrantAccess;
 import org.treasureboat.webcore.security.password.TBWAccessPermission;
+
 
 import com.webobjects.eoaccess.EOEntity;
 import com.webobjects.eoaccess.EOUtilities;
@@ -502,6 +503,11 @@ public abstract class _GewinnspielTBL extends  TBEOGenericRecord {
     }
     return localInstance;
   }
+
+  //********************************************************************
+  //  TBEnterpriseCopyable
+  //********************************************************************
+
 
   //********************************************************************
   //  Fetch specification : フェッチ・スペシフィケーション

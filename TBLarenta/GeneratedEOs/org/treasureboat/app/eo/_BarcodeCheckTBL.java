@@ -4,9 +4,9 @@
 // DO NOT EDIT. 
 // Make changes to BarcodeCheckTBL.java instead.
 //
-// version 7.1.3
+// version 7.2
 //
-// 2008-2014 by TreasureBoat.org
+// 2008-2016 by TreasureBoat.org
 //
 
 /*
@@ -25,8 +25,8 @@
   "Pages.EditEmbeddedBarcodeCheckTBL" = "Edit Embedded BarcodeCheckTBL";
   "Pages.CreateEmbeddedBarcodeCheckTBL" = "Create Embedded BarcodeCheckTBL";
 
-  "PropertyKey.barcodevalid" = "barcodevalid";
-  "PropertyKey.validDate" = "validDate";
+  "PropertyKey.BarcodeCheckTBL.barcodevalid" = "barcodevalid";
+  "PropertyKey.BarcodeCheckTBL.validDate" = "validDate";
 
  * ----------------------------------------
  */
@@ -82,6 +82,7 @@ import org.treasureboat.webcore.security.domain.ITBWDomain;
 import org.treasureboat.webcore.security.domain.TBWMultiDomainSupport;
 import org.treasureboat.webcore.security.grant.TBWGrantAccess;
 import org.treasureboat.webcore.security.password.TBWAccessPermission;
+
 
 import com.webobjects.eoaccess.EOEntity;
 import com.webobjects.eoaccess.EOUtilities;
@@ -433,6 +434,11 @@ public abstract class _BarcodeCheckTBL extends  TBEOGenericRecord {
     }
     return localInstance;
   }
+
+  //********************************************************************
+  //  TBEnterpriseCopyable
+  //********************************************************************
+
 
   //********************************************************************
   //  Fetch specification : フェッチ・スペシフィケーション

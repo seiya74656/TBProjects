@@ -4,9 +4,9 @@ import org.treasureboat.app.businesslogic.Schaltjahr;
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.foundation.TBFV;
 import org.treasureboat.webcore.appserver.TBContext;
+import org.treasureboat.webcore.appserver.iface.ITBWActionResults;
 import org.treasureboat.webcore.components.TBComponent;
 
-import com.webobjects.appserver.WOActionResults;
 import com.webobjects.foundation.NSArray;
 
 public class Gumbytext extends TBComponent implements SampleInterface {
@@ -103,7 +103,7 @@ public class Gumbytext extends TBComponent implements SampleInterface {
   public String myText;
 
   //BEGIN Dropdown Menu Result after click Send
-  public WOActionResults doSendAction() {
+  public ITBWActionResults doSendAction() {
     String s = selectedPopUp == null ? "[null]" : selectedPopUp.convention();
     System.err.println("// MyText: " + myText +" // Auflistung: "+ s + "//");
     if (s == "AniNite") {
@@ -121,7 +121,7 @@ public class Gumbytext extends TBComponent implements SampleInterface {
   }
   //END Dropdown Menu Result after click Send
 
-  public WOActionResults doCaesarAction() {
+  public ITBWActionResults doCaesarAction() {
     caesarAus = new Caesar(verschluesselungsstring, 1);
     return goToMySelfAction();
   }
@@ -129,7 +129,7 @@ public class Gumbytext extends TBComponent implements SampleInterface {
 
   // BMI Berechnung BEGIN
 
-  public WOActionResults doBMIAction() {
+  public ITBWActionResults doBMIAction() {
 //    Nach dem "doBMIAction" anklicken, sollten am besten gleich alle Werte abgefragt werden um fehler zu vermeinden.
 //    Die TBFString.stringIsNullorEmpty() Methode prüft alle möglichen Variationen ob ein String "null" oder 0 ist. 
     if (TBFString.stringIsNullOrEmpty(geschlecht) || TBFString.stringIsNullOrEmpty(groesse) || TBFString.stringIsNullOrEmpty(gewicht)) {
@@ -163,12 +163,12 @@ public class Gumbytext extends TBComponent implements SampleInterface {
   
   //BMI Berechnung END
 
-  public WOActionResults doSampleAction() {
+  public ITBWActionResults doSampleAction() {
 
     return goToMySelfAction();
   }
 
-  public WOActionResults doTabAction() {
+  public ITBWActionResults doTabAction() {
     log.info("doTabAction wurde aufgerufen.");
     return goToMySelfAction();
   }

@@ -2,8 +2,8 @@ package org.treasureboat.app.components;
 
 import org.treasureboat.app.eo.GewinnspielTBL;
 import org.treasureboat.webcore.appserver.TBContext;
+import org.treasureboat.webcore.appserver.iface.ITBWActionResults;
 
-import com.webobjects.appserver.WOActionResults;
 import com.webobjects.foundation.NSArray;
 
 public class GewinnspielAdmin extends Gewinnspiel {
@@ -22,7 +22,7 @@ public class GewinnspielAdmin extends Gewinnspiel {
   
   public GewinnspielTBL oneGewinnspiel;
 
-  public WOActionResults doSaveAction() {
+  public ITBWActionResults doSaveAction() {
     editingContext().saveChanges();
     return goToMySelfAction();
   }

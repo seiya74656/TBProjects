@@ -4,9 +4,9 @@
 // DO NOT EDIT. 
 // Make changes to SpeisekarteTBL.java instead.
 //
-// version 7.1.3
+// version 7.2
 //
-// 2008-2014 by TreasureBoat.org
+// 2008-2016 by TreasureBoat.org
 //
 
 /*
@@ -25,13 +25,13 @@
   "Pages.EditEmbeddedSpeisekarteTBL" = "Edit Embedded SpeisekarteTBL";
   "Pages.CreateEmbeddedSpeisekarteTBL" = "Create Embedded SpeisekarteTBL";
 
-  "PropertyKey.beschreibung" = "beschreibung";
-  "PropertyKey.name" = "name";
-  "PropertyKey.preis" = "preis";
-  "PropertyKey.sortorder" = "sortorder";
-  "PropertyKey.sprache" = "sprache";
+  "PropertyKey.SpeisekarteTBL.beschreibung" = "beschreibung";
+  "PropertyKey.SpeisekarteTBL.name" = "name";
+  "PropertyKey.SpeisekarteTBL.preis" = "preis";
+  "PropertyKey.SpeisekarteTBL.sortorder" = "sortorder";
+  "PropertyKey.SpeisekarteTBL.sprache" = "sprache";
 
-  "PropertyKey.allergenInfoTBLs" = "allergenInfoTBLs";
+  "PropertyKey.SpeisekarteTBL.allergenInfoTBLs" = "allergenInfoTBLs";
  * ----------------------------------------
  */
 
@@ -86,6 +86,7 @@ import org.treasureboat.webcore.security.domain.ITBWDomain;
 import org.treasureboat.webcore.security.domain.TBWMultiDomainSupport;
 import org.treasureboat.webcore.security.grant.TBWGrantAccess;
 import org.treasureboat.webcore.security.password.TBWAccessPermission;
+
 
 import com.webobjects.eoaccess.EOEntity;
 import com.webobjects.eoaccess.EOUtilities;
@@ -589,6 +590,11 @@ public abstract class _SpeisekarteTBL extends  TBEOGenericRecord {
     }
     return localInstance;
   }
+
+  //********************************************************************
+  //  TBEnterpriseCopyable
+  //********************************************************************
+
 
   //********************************************************************
   //  Fetch specification : フェッチ・スペシフィケーション

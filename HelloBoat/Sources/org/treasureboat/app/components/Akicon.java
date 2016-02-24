@@ -6,10 +6,10 @@ import org.treasureboat.app.eo.ToDo;
 import org.treasureboat.foundation.date.TBFTimestamp;
 import org.treasureboat.webcore.appserver.TBContext;
 import org.treasureboat.webcore.appserver.TBSession;
+import org.treasureboat.webcore.appserver.iface.ITBWActionResults;
 import org.treasureboat.webcore.enums.ETBWLanguage;
 import org.treasureboat.webcore.localization.TBWLocalizer;
 
-import com.webobjects.appserver.WOActionResults;
 import com.webobjects.eocontrol.EOEditingContext;
 import com.webobjects.foundation.NSArray;
 
@@ -64,7 +64,7 @@ public class Akicon extends Convention {
   public ToDo oneTodo;
 
 
-  public WOActionResults doSaveAction() {
+  public ITBWActionResults doSaveAction() {
 
 
     editingContext().saveChanges();
@@ -72,7 +72,7 @@ public class Akicon extends Convention {
     return goToMySelfAction();
   }
 
-  public WOActionResults doCreateAction() {
+  public ITBWActionResults doCreateAction() {
     
     EOEditingContext ec = ERXEC.newEditingContext();
     ToDo neuesToDo = ToDo.createAndInsertInstance(ec);
@@ -85,7 +85,7 @@ public class Akicon extends Convention {
     return goToMySelfAction();
   }
     
-  public WOActionResults doRemoveAction() {
+  public ITBWActionResults doRemoveAction() {
     
     
     oneTodo.delete();

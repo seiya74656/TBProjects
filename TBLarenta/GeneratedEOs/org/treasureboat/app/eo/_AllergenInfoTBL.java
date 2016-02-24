@@ -4,9 +4,9 @@
 // DO NOT EDIT. 
 // Make changes to AllergenInfoTBL.java instead.
 //
-// version 7.1.3
+// version 7.2
 //
-// 2008-2014 by TreasureBoat.org
+// 2008-2016 by TreasureBoat.org
 //
 
 /*
@@ -25,10 +25,10 @@
   "Pages.EditEmbeddedAllergenInfoTBL" = "Edit Embedded AllergenInfoTBL";
   "Pages.CreateEmbeddedAllergenInfoTBL" = "Create Embedded AllergenInfoTBL";
 
-  "PropertyKey.allergen" = "allergen";
-  "PropertyKey.allergeninfocode" = "allergeninfocode";
+  "PropertyKey.AllergenInfoTBL.allergen" = "allergen";
+  "PropertyKey.AllergenInfoTBL.allergeninfocode" = "allergeninfocode";
 
-  "PropertyKey.speisekarteTBLs" = "speisekarteTBLs";
+  "PropertyKey.AllergenInfoTBL.speisekarteTBLs" = "speisekarteTBLs";
  * ----------------------------------------
  */
 
@@ -83,6 +83,7 @@ import org.treasureboat.webcore.security.domain.ITBWDomain;
 import org.treasureboat.webcore.security.domain.TBWMultiDomainSupport;
 import org.treasureboat.webcore.security.grant.TBWGrantAccess;
 import org.treasureboat.webcore.security.password.TBWAccessPermission;
+
 
 import com.webobjects.eoaccess.EOEntity;
 import com.webobjects.eoaccess.EOUtilities;
@@ -520,6 +521,11 @@ public abstract class _AllergenInfoTBL extends  TBEOGenericRecord {
     }
     return localInstance;
   }
+
+  //********************************************************************
+  //  TBEnterpriseCopyable
+  //********************************************************************
+
 
   //********************************************************************
   //  Fetch specification : フェッチ・スペシフィケーション

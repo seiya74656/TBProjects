@@ -4,9 +4,9 @@
 // DO NOT EDIT. 
 // Make changes to BarcodeRechnungTBL.java instead.
 //
-// version 7.1.3
+// version 7.2
 //
-// 2008-2014 by TreasureBoat.org
+// 2008-2016 by TreasureBoat.org
 //
 
 /*
@@ -25,8 +25,8 @@
   "Pages.EditEmbeddedBarcodeRechnungTBL" = "Edit Embedded BarcodeRechnungTBL";
   "Pages.CreateEmbeddedBarcodeRechnungTBL" = "Create Embedded BarcodeRechnungTBL";
 
-  "PropertyKey.barcode" = "barcode";
-  "PropertyKey.scanned" = "scanned";
+  "PropertyKey.BarcodeRechnungTBL.barcode" = "barcode";
+  "PropertyKey.BarcodeRechnungTBL.scanned" = "scanned";
 
  * ----------------------------------------
  */
@@ -82,6 +82,7 @@ import org.treasureboat.webcore.security.domain.ITBWDomain;
 import org.treasureboat.webcore.security.domain.TBWMultiDomainSupport;
 import org.treasureboat.webcore.security.grant.TBWGrantAccess;
 import org.treasureboat.webcore.security.password.TBWAccessPermission;
+
 
 import com.webobjects.eoaccess.EOEntity;
 import com.webobjects.eoaccess.EOUtilities;
@@ -433,6 +434,11 @@ public abstract class _BarcodeRechnungTBL extends  TBEOGenericRecord {
     }
     return localInstance;
   }
+
+  //********************************************************************
+  //  TBEnterpriseCopyable
+  //********************************************************************
+
 
   //********************************************************************
   //  Fetch specification : フェッチ・スペシフィケーション

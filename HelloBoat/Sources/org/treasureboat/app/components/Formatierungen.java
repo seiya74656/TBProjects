@@ -3,9 +3,8 @@ package org.treasureboat.app.components;
 import org.treasureboat.foundation.TBFString;
 import org.treasureboat.webcore.annotations.TBPageAccess;
 import org.treasureboat.webcore.appserver.TBContext;
+import org.treasureboat.webcore.appserver.iface.ITBWActionResults;
 import org.treasureboat.webcore.components.TBComponent;
-
-import com.webobjects.appserver.WOActionResults;
 
 @TBPageAccess (
     navigationState = "Welcome"
@@ -65,7 +64,7 @@ public class Formatierungen extends TBComponent {
 
   // Username GET UND SET END
 
-  public WOActionResults doSubmitAction() {
+  public ITBWActionResults doSubmitAction() {
     setcounter(counter);
     setusernames(username);
     System.err.println( getcounter() + getusernames() );
@@ -74,7 +73,7 @@ public class Formatierungen extends TBComponent {
     return goToMySelfAction();
   }
 
-  public WOActionResults goBackToMainAction() {
+  public ITBWActionResults goBackToMainAction() {
     Main nextPage = pageWithName(Main.class);
     return nextPage;
   }
