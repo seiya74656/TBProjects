@@ -75,6 +75,7 @@ import org.slf4j.LoggerFactory;
 import org.treasureboat.enterprise.eof.TBEOExternalPrimaryKeyHelper;
 import org.treasureboat.enterprise.eof.TBEOGenericRecord;
 import org.treasureboat.enterprise.eof.delete.ITBEnterpriseVirtualDeleteSupport;
+import org.treasureboat.foundation.NSData;
 import org.treasureboat.foundation.crypting.TBFCrypto;
 import org.treasureboat.webcore.appserver.TBSession;
 import org.treasureboat.webcore.concurrency.TBWConcurrencyUtilities;
