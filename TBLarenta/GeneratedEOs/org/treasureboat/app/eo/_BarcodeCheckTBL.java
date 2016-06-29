@@ -4,7 +4,7 @@
 // DO NOT EDIT. 
 // Make changes to BarcodeCheckTBL.java instead.
 //
-// version 7.2
+// version 8.4
 //
 // 2008-2016 by TreasureBoat.org
 //
@@ -74,6 +74,8 @@ import org.slf4j.LoggerFactory;
 import org.treasureboat.enterprise.eof.TBEOExternalPrimaryKeyHelper;
 import org.treasureboat.enterprise.eof.TBEOGenericRecord;
 import org.treasureboat.enterprise.eof.delete.ITBEnterpriseVirtualDeleteSupport;
+import org.treasureboat.foundation.NSData;
+import org.treasureboat.enterprise.qualifiers.TBEnterpriseAndQualifier;
 import org.treasureboat.foundation.crypting.TBFCrypto;
 import org.treasureboat.webcore.appserver.TBSession;
 import org.treasureboat.webcore.concurrency.TBWConcurrencyUtilities;
@@ -83,8 +85,13 @@ import org.treasureboat.webcore.security.domain.TBWMultiDomainSupport;
 import org.treasureboat.webcore.security.grant.TBWGrantAccess;
 import org.treasureboat.webcore.security.password.TBWAccessPermission;
 
+// Logic : TBEnterpriseCopyable
+// Logic : TBTag
+// Logic : ITBEnterpriseStampedEnterpriseObject Support
+// Final Logic
 
-import com.webobjects.eoaccess.EOEntity;
+// Imports
+import com.webobjects.eoaccess.TBEntity;
 import com.webobjects.eoaccess.EOUtilities;
 import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
@@ -93,11 +100,11 @@ import er.extensions.eof.ERXEOAccessUtilities;
 import er.extensions.eof.ERXFetchSpecification;
 import er.extensions.eof.ERXGenericRecord;
 import er.extensions.eof.ERXKey;
-import er.extensions.qualifiers.ERXAndQualifier;
+import er.extensions.eof.ERXKeyGlobalID;
 import er.extensions.validation.ERXValidationException;
 
 @SuppressWarnings("all")
-public abstract class _BarcodeCheckTBL extends  TBEOGenericRecord {
+public abstract class _BarcodeCheckTBL extends  TBEOGenericRecord  {
 
   private static final long serialVersionUID = 1L;
 
@@ -242,6 +249,15 @@ public abstract class _BarcodeCheckTBL extends  TBEOGenericRecord {
   }
 
   //********************************************************************
+  //  Enterprise Object Override : エンタプライス・オブジェクトのオーバライド
+  //********************************************************************
+
+  @Override
+  public void willDelete() throws NSValidation.ValidationException {
+    super.willDelete();
+  }
+
+  //********************************************************************
   //  Attribute Accessor : アトリビュート・アクセス
   //********************************************************************
 
@@ -366,17 +382,17 @@ public abstract class _BarcodeCheckTBL extends  TBEOGenericRecord {
   }
   
   public static NSArray<BarcodeCheckTBL> fetchAllBarcodeCheckTBLsWithCoreQualifier(EOEditingContext editingContext, ITBWDomain domain, NSArray<EOSortOrdering> sortOrderings) {
-    EOEntity entity = ERXEOAccessUtilities.entityNamed(editingContext, _BarcodeCheckTBL.ENTITY_NAME);
+    TBEntity entity = TBEntity.entityNamed(editingContext, _BarcodeCheckTBL.ENTITY_NAME);
     return _BarcodeCheckTBL.fetchBarcodeCheckTBLs(editingContext, TBWCoreQualifierBase.delegate().qualifier(entity, domain), sortOrderings);
   }
   
   public static NSArray<BarcodeCheckTBL> fetchBarcodeCheckTBLsWithCoreQualifier(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
-    EOEntity entity = ERXEOAccessUtilities.entityNamed(editingContext, _BarcodeCheckTBL.ENTITY_NAME);
+    TBEntity entity = TBEntity.entityNamed(editingContext, _BarcodeCheckTBL.ENTITY_NAME);
 
     TBWMultiDomainSupport multiDomainSupport = (TBWMultiDomainSupport) TBSession.session().multiDomain();
     ITBWDomain domain = multiDomainSupport.currentDomain();
 
-    ERXAndQualifier andQualifier = new ERXAndQualifier(TBWCoreQualifierBase.delegate().qualifier(entity, domain), qualifier);
+    TBEnterpriseAndQualifier andQualifier = new TBEnterpriseAndQualifier(TBWCoreQualifierBase.delegate().qualifier(entity, domain), qualifier);
 
     EOFetchSpecification fetchSpec = new EOFetchSpecification(_BarcodeCheckTBL.ENTITY_NAME, andQualifier, sortOrderings);
     fetchSpec.setIsDeep(true);
@@ -437,6 +453,11 @@ public abstract class _BarcodeCheckTBL extends  TBEOGenericRecord {
 
   //********************************************************************
   //  TBEnterpriseCopyable
+  //********************************************************************
+
+
+  //********************************************************************
+  //  TBTag
   //********************************************************************
 
 

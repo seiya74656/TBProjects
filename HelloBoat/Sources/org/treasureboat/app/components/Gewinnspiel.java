@@ -110,7 +110,7 @@ public class Gewinnspiel extends TBComponent {
   // }
 
   // @Override
-  // public WOActionResults invokeAction(WORequest request, WOContext context) {
+  // public ITBWActionResults invokeAction(WORequest request, WOContext context) {
   // return super.invokeAction(request, context);
   // }
   //

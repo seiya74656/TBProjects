@@ -13,7 +13,6 @@
 	<classpathentry kind="con" path="WOFramework/TBDB_MySQL"/>
 	<classpathentry kind="con" path="WOFramework/TBAjax"/>
 	<classpathentry kind="con" path="WOFramework/TBJavaMail"/>
-	<classpathentry kind="con" path="WOFramework/JavaEOControl"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
