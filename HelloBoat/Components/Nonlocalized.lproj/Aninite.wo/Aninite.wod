@@ -1,6 +1,6 @@
 PageWrapper : TBEDefaultPageWrapper {
 }
-personsList : WORepetition {
+personsList : TBRepetition {
 	list = persons;
 	item = personenloop;
 }
