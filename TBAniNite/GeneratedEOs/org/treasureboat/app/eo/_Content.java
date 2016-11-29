@@ -4,7 +4,7 @@
 // DO NOT EDIT. 
 // Make changes to Content.java instead.
 //
-// version 8.4
+// version 8.5
 //
 // 2008-2016 by TreasureBoat.org
 //
@@ -78,13 +78,13 @@ import org.treasureboat.enterprise.eof.delete.ITBEnterpriseVirtualDeleteSupport;
 import org.treasureboat.foundation.NSData;
 import org.treasureboat.enterprise.qualifiers.TBEnterpriseAndQualifier;
 import org.treasureboat.foundation.crypting.TBFCrypto;
+import org.treasureboat.foundation.security.TBFAccessPermission;
 import org.treasureboat.webcore.appserver.TBSession;
 import org.treasureboat.webcore.concurrency.TBWConcurrencyUtilities;
 import org.treasureboat.webcore.override.core.TBWCoreQualifierBase;
 import org.treasureboat.webcore.security.domain.ITBWDomain;
 import org.treasureboat.webcore.security.domain.TBWMultiDomainSupport;
 import org.treasureboat.webcore.security.grant.TBWGrantAccess;
-import org.treasureboat.webcore.security.password.TBWAccessPermission;
 
 // Logic : TBEnterpriseCopyable
 // Logic : TBTag
@@ -177,7 +177,7 @@ public abstract class _Content extends  TBEOGenericRecord  {
     if(TBWGrantAccess.isEntityGrantForCreate(ENTITY_NAME)) {
       return true;
     }
-    return TBWAccessPermission.instance().can(ACCSESS_CREATE);
+    return TBFAccessPermission.instance().can(ACCSESS_CREATE);
   }
 
   /**
@@ -186,7 +186,7 @@ public abstract class _Content extends  TBEOGenericRecord  {
    * @return true if it allowed to read Data
    */
   public boolean canRead() {
-    return TBWAccessPermission.instance().can(ACCSESS_READ);
+    return TBFAccessPermission.instance().can(ACCSESS_READ);
   }
   
   /** 
@@ -200,7 +200,7 @@ public abstract class _Content extends  TBEOGenericRecord  {
     if(TBWGrantAccess.isEntityGrantForUpdate(ENTITY_NAME)) {
       return true;
     }
-    return TBWAccessPermission.instance().can(ACCSESS_UPDATE);
+    return TBFAccessPermission.instance().can(ACCSESS_UPDATE);
   }
   
   /** 
@@ -214,7 +214,52 @@ public abstract class _Content extends  TBEOGenericRecord  {
     if(TBWGrantAccess.isEntityGrantForDelete(ENTITY_NAME)) {
       return true;
     } 
-    return TBWAccessPermission.instance().can(ACCSESS_DELETE);
+    return TBFAccessPermission.instance().can(ACCSESS_DELETE);
+  }
+  
+  protected static String BUTTON_INSPECT = "Content.hide.inspect";
+  protected static String BUTTON_EDIT = "Content.hide.edit";
+  protected static String BUTTON_DELETE = "Content.hide.delete";
+  protected static String BUTTON_REMOVE = "Content.hide.remove";
+
+  /**
+   * this is a helper method that helps to decide to show the inspect button on a list page used in D3W, can be used in other places also
+   * 
+   * @return usually return true except there is something with this object
+   */
+  @Override
+  public boolean canDisplayInspectButton() {
+    return !TBFAccessPermission.instance().can(BUTTON_INSPECT);
+  }
+
+  /**
+   * this is a helper method that helps to decide to show the edit button on a list page used in D3W, can be used in other places also
+   * 
+   * @return usually returns true except there is something with this object
+   */
+  @Override
+  public boolean canDisplayEditButton() {
+    return !TBFAccessPermission.instance().can(BUTTON_EDIT);
+  }
+
+  /**
+   * this is a helper method that helps to decide to show the delete button on a list page used in D3W, can be used in other places also
+   * 
+   * @return usually returns true except there is something with this object
+   */
+  @Override
+  public boolean canDisplayDeleteButton() {
+    return !TBFAccessPermission.instance().can(BUTTON_DELETE);
+  }
+
+  /**
+   * this is a helper method that helps to decide to show the remove button on a list page used in D3W, can be used in other places also
+   * 
+   * @return usually returns true except there is something with this object
+   */
+  @Override
+  public boolean canDisplayRemoveButton() {
+    return !TBFAccessPermission.instance().can(BUTTON_REMOVE);
   }
 
   //********************************************************************
@@ -412,7 +457,7 @@ public abstract class _Content extends  TBEOGenericRecord  {
   public static NSArray<Content> fetchContentsWithCoreQualifier(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     TBEntity entity = TBEntity.entityNamed(editingContext, _Content.ENTITY_NAME);
 
-    TBWMultiDomainSupport multiDomainSupport = (TBWMultiDomainSupport) TBSession.session().multiDomain();
+    TBWMultiDomainSupport multiDomainSupport = TBSession.session().multiDomain();
     ITBWDomain domain = multiDomainSupport.currentDomain();
 
     TBEnterpriseAndQualifier andQualifier = new TBEnterpriseAndQualifier(TBWCoreQualifierBase.delegate().qualifier(entity, domain), qualifier);
